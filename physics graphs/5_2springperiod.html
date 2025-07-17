@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass vs Period Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Mass vs Period</h1>
+    <canvas id="myChart"></canvas>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Data
+        const masses = [0.01011, 0.02018, 0.05024, 0.10068, 0.15093, 0.20147, 0.30216];
+        const periods = [0.366, 0.432, 0.593, 0.81, 0.98, 1.109, 1.36];
+        const periodUncertainties = [0.004, 0.005, 0.002, 0.01, 0.01, 0.005, 0.02];
+        const massUncertainty = 0.00001;
+
+        // Fixed power law coefficients
+        const a = 2.06;
+        const b = 0.39;
+
+        // Generate trendline data using fixed coefficients
+        const minMass = Math.min(...masses);
+        const maxMass = Math.max(...masses);
+        const trendlineData = [];
+        for(let x = minMass; x <= maxMass; x += (maxMass - minMass) / 100) {
+            trendlineData.push({ x: x, y: a * Math.pow(x, b) });
+        }
+
+        // Create error bar data format
+        const data = masses.map((mass, index) => ({
+            x: mass,
+            y: periods[index],
+            yMin: periods[index] - periodUncertainties[index],
+            yMax: periods[index] + periodUncertainties[index],
+            xMin: mass - massUncertainty,
+            xMax: mass + massUncertainty
+        }));
+
+        // Create chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Experimental Data',
+                        data: data,
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        pointRadius: 5,
+                        pointHoverRadius: 7
+                    },
+                    {
+                        label: `Power Trendline: y = 2.06x^{0.39}`,
+                        data: trendlineData,
+                        borderColor: 'red',
+                        borderWidth: 2,
+                        fill: false,
+                        pointRadius: 0,
+                        type: 'line'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Mass vs. Period Relationship",
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Mass (kg)'
+                        },
+                        min: 0,
+                        max: 0.32,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toFixed(2);
+                            }
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Period (s)'
+                        },
+                        min: 0,
+                        max: 1.5,
+                        ticks: {
+                            stepSize: 0.2
+                        }
+                    }
+                }
+            },
+            plugins: [{
+                id: 'errorBars',
+                afterDatasetsDraw(chart, args, options) {
+                    const {ctx, data, scales: {x, y}} = chart;
+
+                    ctx.save();
+                    data.datasets[0].data.forEach(dataPoint => {
+                        const xPos = x.getPixelForValue(dataPoint.x);
+                        const yPos = y.getPixelForValue(dataPoint.y);
+                        
+                        // Vertical error (period uncertainty)
+                        const yTop = y.getPixelForValue(dataPoint.yMax);
+                        const yBottom = y.getPixelForValue(dataPoint.yMin);
+                        
+                        // Horizontal error (mass uncertainty)
+                        const xLeft = x.getPixelForValue(dataPoint.xMin);
+                        const xRight = x.getPixelForValue(dataPoint.xMax);
+
+                        // Draw vertical error bar
+                        ctx.beginPath();
+                        ctx.moveTo(xPos, yTop);
+                        ctx.lineTo(xPos, yBottom);
+                        ctx.strokeStyle = 'black';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+
+                        // Draw horizontal error bar
+                        ctx.beginPath();
+                        ctx.moveTo(xLeft, yPos);
+                        ctx.lineTo(xRight, yPos);
+                        ctx.stroke();
+
+                        // Draw caps
+                        ctx.beginPath();
+                        ctx.moveTo(xPos - 3, yTop);
+                        ctx.lineTo(xPos + 3, yTop);
+                        ctx.moveTo(xPos - 3, yBottom);
+                        ctx.lineTo(xPos + 3, yBottom);
+                        ctx.moveTo(xLeft, yPos - 3);
+                        ctx.lineTo(xLeft, yPos + 3);
+                        ctx.moveTo(xRight, yPos - 3);
+                        ctx.lineTo(xRight, yPos + 3);
+                        ctx.stroke();
+                    });
+                    ctx.restore();
+                }
+            }]
+        });
+    });
+    </script>
+</body>
+</html>

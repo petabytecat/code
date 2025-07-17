@@ -1,0 +1,1003 @@
+2025-07-16 00:09:11,876 - INFO - Starting training with parallel environments...
+2025-07-16 00:09:11,881 - INFO - Starting episode 0/100
+2025-07-16 00:09:11,955 - INFO - Step 0/100 - Total Steps: 8 - Avg Reward: 0.00
+2025-07-16 00:09:23,761 - INFO - Update 0/4 - Loss: 287141.1875
+2025-07-16 00:09:56,845 - INFO - Training updates completed - Avg Loss: 706816619124841.2500
+2025-07-16 00:09:56,848 - INFO - Episode 0 completed in 44.92 seconds
+2025-07-16 00:09:56,848 - INFO -   Total Steps: 800
+2025-07-16 00:09:56,849 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:09:56,849 - INFO -   Epsilon: 0.6952
+2025-07-16 00:09:56,849 - INFO -   Avg Loss: 706816619124841.2500
+2025-07-16 00:09:56,850 - INFO -   Speed: 17.8 steps/s
+2025-07-16 00:09:56,883 - INFO - New best model saved with reward: 0.00
+2025-07-16 00:09:56,885 - INFO - Starting episode 1/100
+2025-07-16 00:09:56,928 - INFO - Step 0/100 - Total Steps: 808 - Avg Reward: 0.00
+2025-07-16 00:10:09,062 - INFO - Update 0/4 - Loss: 2898689534197760.0000
+2025-07-16 00:11:07,606 - INFO - Training updates completed - Avg Loss: 262190622188765184.0000
+2025-07-16 00:11:07,610 - INFO - Episode 1 completed in 70.69 seconds
+2025-07-16 00:11:07,611 - INFO -   Total Steps: 1600
+2025-07-16 00:11:07,611 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:11:07,611 - INFO -   Epsilon: 0.6904
+2025-07-16 00:11:07,612 - INFO -   Avg Loss: 262190622188765184.0000
+2025-07-16 00:11:07,612 - INFO -   Speed: 13.8 steps/s
+2025-07-16 00:11:07,613 - INFO - Starting episode 2/100
+2025-07-16 00:11:07,667 - INFO - Step 0/100 - Total Steps: 1608 - Avg Reward: 0.00
+2025-07-16 00:11:24,937 - INFO - Update 0/4 - Loss: 6097268717387776.0000
+2025-07-16 00:12:29,465 - INFO - Training updates completed - Avg Loss: 1524317415534400.0000
+2025-07-16 00:12:29,468 - INFO - Episode 2 completed in 81.81 seconds
+2025-07-16 00:12:29,468 - INFO -   Total Steps: 2400
+2025-07-16 00:12:29,469 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:12:29,469 - INFO -   Epsilon: 0.6856
+2025-07-16 00:12:29,470 - INFO -   Avg Loss: 1524317415534400.0000
+2025-07-16 00:12:29,470 - INFO -   Speed: 12.1 steps/s
+2025-07-16 00:12:29,470 - INFO - Starting episode 3/100
+2025-07-16 00:12:29,516 - INFO - Step 0/100 - Total Steps: 2408 - Avg Reward: 0.00
+2025-07-16 00:12:42,593 - INFO - Update 0/4 - Loss: 683301312.0000
+2025-07-16 00:13:27,374 - INFO - Training updates completed - Avg Loss: 316860056176.0000
+2025-07-16 00:13:27,378 - INFO - Episode 3 completed in 57.87 seconds
+2025-07-16 00:13:27,378 - INFO -   Total Steps: 3200
+2025-07-16 00:13:27,378 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:13:27,379 - INFO -   Epsilon: 0.6808
+2025-07-16 00:13:27,379 - INFO -   Avg Loss: 316860056176.0000
+2025-07-16 00:13:27,380 - INFO -   Speed: 12.5 steps/s
+2025-07-16 00:13:27,380 - INFO - Starting episode 4/100
+2025-07-16 00:13:27,425 - INFO - Step 0/100 - Total Steps: 3208 - Avg Reward: 0.00
+2025-07-16 00:13:37,636 - INFO - Update 0/4 - Loss: 34141917184.0000
+2025-07-16 00:15:02,719 - INFO - Training updates completed - Avg Loss: 18053498880.0000
+2025-07-16 00:15:02,727 - INFO - Episode 4 completed in 95.31 seconds
+2025-07-16 00:15:02,729 - INFO -   Total Steps: 4000
+2025-07-16 00:15:02,730 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:15:02,730 - INFO -   Epsilon: 0.6760
+2025-07-16 00:15:02,732 - INFO -   Avg Loss: 18053498880.0000
+2025-07-16 00:15:02,733 - INFO -   Speed: 11.4 steps/s
+2025-07-16 00:15:02,735 - INFO - Starting episode 5/100
+2025-07-16 00:15:02,920 - INFO - Step 0/100 - Total Steps: 4008 - Avg Reward: 0.00
+2025-07-16 00:15:26,556 - INFO - Update 0/4 - Loss: 4063986432.0000
+2025-07-16 00:16:56,892 - INFO - Training updates completed - Avg Loss: 3590181720.0000
+2025-07-16 00:16:56,898 - INFO - Episode 5 completed in 114.01 seconds
+2025-07-16 00:16:56,899 - INFO -   Total Steps: 4800
+2025-07-16 00:16:56,900 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:16:56,901 - INFO -   Epsilon: 0.6712
+2025-07-16 00:16:56,901 - INFO -   Avg Loss: 3590181720.0000
+2025-07-16 00:16:56,902 - INFO -   Speed: 10.3 steps/s
+2025-07-16 00:16:56,904 - INFO - Starting episode 6/100
+2025-07-16 00:16:57,077 - INFO - Step 0/100 - Total Steps: 4808 - Avg Reward: 0.00
+2025-07-16 00:17:33,930 - INFO - Update 0/4 - Loss: 13744301056.0000
+2025-07-16 00:18:55,184 - INFO - Training updates completed - Avg Loss: 13719755776.0000
+2025-07-16 00:18:55,193 - INFO - Episode 6 completed in 118.15 seconds
+2025-07-16 00:18:55,195 - INFO -   Total Steps: 5600
+2025-07-16 00:18:55,196 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:18:55,196 - INFO -   Epsilon: 0.6664
+2025-07-16 00:18:55,197 - INFO -   Avg Loss: 13719755776.0000
+2025-07-16 00:18:55,199 - INFO -   Speed: 9.6 steps/s
+2025-07-16 00:18:55,201 - INFO - Starting episode 7/100
+2025-07-16 00:18:55,405 - INFO - Step 0/100 - Total Steps: 5608 - Avg Reward: 0.00
+2025-07-16 00:19:23,199 - INFO - Update 0/4 - Loss: 2437627392.0000
+2025-07-16 00:20:59,019 - INFO - Training updates completed - Avg Loss: 5822458816.0000
+2025-07-16 00:20:59,026 - INFO - Episode 7 completed in 123.66 seconds
+2025-07-16 00:20:59,027 - INFO -   Total Steps: 6400
+2025-07-16 00:20:59,029 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:20:59,030 - INFO -   Epsilon: 0.6616
+2025-07-16 00:20:59,031 - INFO -   Avg Loss: 5822458816.0000
+2025-07-16 00:20:59,032 - INFO -   Speed: 9.1 steps/s
+2025-07-16 00:20:59,035 - INFO - Starting episode 8/100
+2025-07-16 00:20:59,235 - INFO - Step 0/100 - Total Steps: 6408 - Avg Reward: 0.00
+2025-07-16 00:21:36,529 - INFO - Update 0/4 - Loss: 15623474176.0000
+2025-07-16 00:22:39,935 - INFO - Training updates completed - Avg Loss: 7863283251.8750
+2025-07-16 00:22:39,939 - INFO - Episode 8 completed in 100.74 seconds
+2025-07-16 00:22:39,939 - INFO -   Total Steps: 7200
+2025-07-16 00:22:39,939 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:22:39,939 - INFO -   Epsilon: 0.6568
+2025-07-16 00:22:39,940 - INFO -   Avg Loss: 7863283251.8750
+2025-07-16 00:22:39,940 - INFO -   Speed: 8.9 steps/s
+2025-07-16 00:22:39,940 - INFO - Starting episode 9/100
+2025-07-16 00:22:39,997 - INFO - Step 0/100 - Total Steps: 7208 - Avg Reward: 0.00
+2025-07-16 00:22:56,241 - INFO - Update 0/4 - Loss: 1913644800.0000
+2025-07-16 00:24:05,352 - INFO - Training updates completed - Avg Loss: 2477647376.0000
+2025-07-16 00:24:05,359 - INFO - Episode 9 completed in 85.37 seconds
+2025-07-16 00:24:05,361 - INFO -   Total Steps: 8000
+2025-07-16 00:24:05,362 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:24:05,364 - INFO -   Epsilon: 0.6520
+2025-07-16 00:24:05,364 - INFO -   Avg Loss: 2477647376.0000
+2025-07-16 00:24:05,365 - INFO -   Speed: 9.0 steps/s
+2025-07-16 00:24:05,367 - INFO - Starting episode 10/100
+2025-07-16 00:24:05,557 - INFO - Step 0/100 - Total Steps: 8008 - Avg Reward: 0.00
+2025-07-16 00:24:25,401 - INFO - Update 0/4 - Loss: 2356485632.0000
+2025-07-16 00:25:13,537 - INFO - Training updates completed - Avg Loss: 5517529728.0000
+2025-07-16 00:25:13,540 - INFO - Episode 10 completed in 68.02 seconds
+2025-07-16 00:25:13,541 - INFO -   Total Steps: 8800
+2025-07-16 00:25:13,541 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:25:13,541 - INFO -   Epsilon: 0.6472
+2025-07-16 00:25:13,541 - INFO -   Avg Loss: 5517529728.0000
+2025-07-16 00:25:13,542 - INFO -   Speed: 9.2 steps/s
+2025-07-16 00:25:13,542 - INFO - Starting episode 11/100
+2025-07-16 00:25:13,593 - INFO - Step 0/100 - Total Steps: 8808 - Avg Reward: 0.00
+2025-07-16 00:25:26,050 - INFO - Update 0/4 - Loss: 1114471680.0000
+2025-07-16 00:25:58,337 - INFO - Training updates completed - Avg Loss: 4451197632.0000
+2025-07-16 00:25:58,340 - INFO - Episode 11 completed in 44.76 seconds
+2025-07-16 00:25:58,341 - INFO -   Total Steps: 9600
+2025-07-16 00:25:58,341 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:25:58,341 - INFO -   Epsilon: 0.6424
+2025-07-16 00:25:58,341 - INFO -   Avg Loss: 4451197632.0000
+2025-07-16 00:25:58,342 - INFO -   Speed: 9.5 steps/s
+2025-07-16 00:25:58,342 - INFO - Starting episode 12/100
+2025-07-16 00:25:58,387 - INFO - Step 0/100 - Total Steps: 9608 - Avg Reward: 0.00
+2025-07-16 00:26:09,195 - INFO - Update 0/4 - Loss: 4754222080.0000
+2025-07-16 00:26:48,169 - INFO - Training updates completed - Avg Loss: 4671325184.0000
+2025-07-16 00:26:48,172 - INFO - Episode 12 completed in 49.79 seconds
+2025-07-16 00:26:48,173 - INFO -   Total Steps: 10400
+2025-07-16 00:26:48,173 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:26:48,173 - INFO -   Epsilon: 0.6376
+2025-07-16 00:26:48,174 - INFO -   Avg Loss: 4671325184.0000
+2025-07-16 00:26:48,174 - INFO -   Speed: 9.8 steps/s
+2025-07-16 00:26:48,176 - INFO - Starting episode 13/100
+2025-07-16 00:26:48,220 - INFO - Step 0/100 - Total Steps: 10408 - Avg Reward: 0.00
+2025-07-16 00:26:59,723 - INFO - Update 0/4 - Loss: 13728991232.0000
+2025-07-16 00:27:36,536 - INFO - Training updates completed - Avg Loss: 7892563392.0000
+2025-07-16 00:27:36,540 - INFO - Episode 13 completed in 48.33 seconds
+2025-07-16 00:27:36,541 - INFO -   Total Steps: 11200
+2025-07-16 00:27:36,541 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:27:36,541 - INFO -   Epsilon: 0.6328
+2025-07-16 00:27:36,541 - INFO -   Avg Loss: 7892563392.0000
+2025-07-16 00:27:36,542 - INFO -   Speed: 10.1 steps/s
+2025-07-16 00:27:36,542 - INFO - Starting episode 14/100
+2025-07-16 00:27:36,592 - INFO - Step 0/100 - Total Steps: 11208 - Avg Reward: 0.00
+2025-07-16 00:27:47,960 - INFO - Update 0/4 - Loss: 6425724928.0000
+2025-07-16 00:28:21,419 - INFO - Training updates completed - Avg Loss: 5678792096.0000
+2025-07-16 00:28:21,422 - INFO - Episode 14 completed in 44.84 seconds
+2025-07-16 00:28:21,423 - INFO -   Total Steps: 12000
+2025-07-16 00:28:21,423 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:28:21,424 - INFO -   Epsilon: 0.6280
+2025-07-16 00:28:21,424 - INFO -   Avg Loss: 5678792096.0000
+2025-07-16 00:28:21,424 - INFO -   Speed: 10.4 steps/s
+2025-07-16 00:28:21,425 - INFO - Starting episode 15/100
+2025-07-16 00:28:21,465 - INFO - Step 0/100 - Total Steps: 12008 - Avg Reward: 0.00
+2025-07-16 00:28:34,452 - INFO - Update 0/4 - Loss: 3198530560.0000
+2025-07-16 00:29:07,962 - INFO - Training updates completed - Avg Loss: 5374661504.0000
+2025-07-16 00:29:07,965 - INFO - Episode 15 completed in 46.51 seconds
+2025-07-16 00:29:07,966 - INFO -   Total Steps: 12800
+2025-07-16 00:29:07,966 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:29:07,966 - INFO -   Epsilon: 0.6232
+2025-07-16 00:29:07,966 - INFO -   Avg Loss: 5374661504.0000
+2025-07-16 00:29:07,967 - INFO -   Speed: 10.7 steps/s
+2025-07-16 00:29:07,967 - INFO - Starting episode 16/100
+2025-07-16 00:29:08,012 - INFO - Step 0/100 - Total Steps: 12808 - Avg Reward: 0.00
+2025-07-16 00:29:20,928 - INFO - Update 0/4 - Loss: 9771344.0000
+2025-07-16 00:29:56,929 - INFO - Training updates completed - Avg Loss: 8694062932.0000
+2025-07-16 00:29:56,933 - INFO - Episode 16 completed in 48.93 seconds
+2025-07-16 00:29:56,933 - INFO -   Total Steps: 13600
+2025-07-16 00:29:56,934 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:29:56,934 - INFO -   Epsilon: 0.6184
+2025-07-16 00:29:56,934 - INFO -   Avg Loss: 8694062932.0000
+2025-07-16 00:29:56,935 - INFO -   Speed: 10.9 steps/s
+2025-07-16 00:29:56,935 - INFO - Starting episode 17/100
+2025-07-16 00:29:56,978 - INFO - Step 0/100 - Total Steps: 13608 - Avg Reward: 0.00
+2025-07-16 00:30:09,977 - INFO - Update 0/4 - Loss: 11923236864.0000
+2025-07-16 00:30:45,626 - INFO - Training updates completed - Avg Loss: 4777559124.0000
+2025-07-16 00:30:45,629 - INFO - Episode 17 completed in 48.66 seconds
+2025-07-16 00:30:45,630 - INFO -   Total Steps: 14400
+2025-07-16 00:30:45,630 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:30:45,630 - INFO -   Epsilon: 0.6136
+2025-07-16 00:30:45,631 - INFO -   Avg Loss: 4777559124.0000
+2025-07-16 00:30:45,631 - INFO -   Speed: 11.1 steps/s
+2025-07-16 00:30:45,631 - INFO - Starting episode 18/100
+2025-07-16 00:30:45,711 - INFO - Step 0/100 - Total Steps: 14408 - Avg Reward: 0.00
+2025-07-16 00:30:57,867 - INFO - Update 0/4 - Loss: 4297549824.0000
+2025-07-16 00:31:28,069 - INFO - Training updates completed - Avg Loss: 1716429232.0000
+2025-07-16 00:31:28,072 - INFO - Episode 18 completed in 42.37 seconds
+2025-07-16 00:31:28,073 - INFO -   Total Steps: 15200
+2025-07-16 00:31:28,073 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:31:28,073 - INFO -   Epsilon: 0.6088
+2025-07-16 00:31:28,073 - INFO -   Avg Loss: 1716429232.0000
+2025-07-16 00:31:28,074 - INFO -   Speed: 11.4 steps/s
+2025-07-16 00:31:28,074 - INFO - Starting episode 19/100
+2025-07-16 00:31:28,117 - INFO - Step 0/100 - Total Steps: 15208 - Avg Reward: 0.00
+2025-07-16 00:31:38,620 - INFO - Update 0/4 - Loss: 97611816.0000
+2025-07-16 00:32:07,655 - INFO - Training updates completed - Avg Loss: 1012784058.0000
+2025-07-16 00:32:07,658 - INFO - Episode 19 completed in 39.55 seconds
+2025-07-16 00:32:07,658 - INFO -   Total Steps: 16000
+2025-07-16 00:32:07,658 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:32:07,659 - INFO -   Epsilon: 0.6040
+2025-07-16 00:32:07,659 - INFO -   Avg Loss: 1012784058.0000
+2025-07-16 00:32:07,660 - INFO -   Speed: 11.6 steps/s
+2025-07-16 00:32:07,660 - INFO - Starting episode 20/100
+2025-07-16 00:32:07,700 - INFO - Step 0/100 - Total Steps: 16008 - Avg Reward: 0.00
+2025-07-16 00:32:17,622 - INFO - Update 0/4 - Loss: 585231616.0000
+2025-07-16 00:32:46,135 - INFO - Training updates completed - Avg Loss: 818660464.0000
+2025-07-16 00:32:46,138 - INFO - Episode 20 completed in 38.45 seconds
+2025-07-16 00:32:46,139 - INFO -   Total Steps: 16800
+2025-07-16 00:32:46,139 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:32:46,139 - INFO -   Epsilon: 0.5992
+2025-07-16 00:32:46,139 - INFO -   Avg Loss: 818660464.0000
+2025-07-16 00:32:46,140 - INFO -   Speed: 11.9 steps/s
+2025-07-16 00:32:46,140 - INFO - Starting episode 21/100
+2025-07-16 00:32:46,183 - INFO - Step 0/100 - Total Steps: 16808 - Avg Reward: 0.00
+2025-07-16 00:32:58,530 - INFO - Update 0/4 - Loss: 976996096.0000
+2025-07-16 00:33:27,562 - INFO - Training updates completed - Avg Loss: 1341346056.0000
+2025-07-16 00:33:27,566 - INFO - Episode 21 completed in 41.39 seconds
+2025-07-16 00:33:27,566 - INFO -   Total Steps: 17600
+2025-07-16 00:33:27,566 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:33:27,567 - INFO -   Epsilon: 0.5944
+2025-07-16 00:33:27,567 - INFO -   Avg Loss: 1341346056.0000
+2025-07-16 00:33:27,568 - INFO -   Speed: 12.1 steps/s
+2025-07-16 00:33:27,568 - INFO - Starting episode 22/100
+2025-07-16 00:33:27,613 - INFO - Step 0/100 - Total Steps: 17608 - Avg Reward: 0.00
+2025-07-16 00:33:37,941 - INFO - Update 0/4 - Loss: 1447781632.0000
+2025-07-16 00:34:06,472 - INFO - Training updates completed - Avg Loss: 480458304.1250
+2025-07-16 00:34:06,476 - INFO - Episode 22 completed in 38.87 seconds
+2025-07-16 00:34:06,476 - INFO -   Total Steps: 18400
+2025-07-16 00:34:06,476 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:34:06,477 - INFO -   Epsilon: 0.5896
+2025-07-16 00:34:06,477 - INFO -   Avg Loss: 480458304.1250
+2025-07-16 00:34:06,478 - INFO -   Speed: 12.3 steps/s
+2025-07-16 00:34:06,478 - INFO - Starting episode 23/100
+2025-07-16 00:34:06,518 - INFO - Step 0/100 - Total Steps: 18408 - Avg Reward: 0.00
+2025-07-16 00:34:16,734 - INFO - Update 0/4 - Loss: 1954122368.0000
+2025-07-16 00:34:45,333 - INFO - Training updates completed - Avg Loss: 1932066192.0000
+2025-07-16 00:34:45,337 - INFO - Episode 23 completed in 38.83 seconds
+2025-07-16 00:34:45,337 - INFO -   Total Steps: 19200
+2025-07-16 00:34:45,338 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:34:45,338 - INFO -   Epsilon: 0.5848
+2025-07-16 00:34:45,338 - INFO -   Avg Loss: 1932066192.0000
+2025-07-16 00:34:45,338 - INFO -   Speed: 12.5 steps/s
+2025-07-16 00:34:45,339 - INFO - Starting episode 24/100
+2025-07-16 00:34:45,379 - INFO - Step 0/100 - Total Steps: 19208 - Avg Reward: 0.00
+2025-07-16 00:34:55,403 - INFO - Update 0/4 - Loss: 2172078080.0000
+2025-07-16 00:35:22,752 - INFO - Training updates completed - Avg Loss: 1364828672.0000
+2025-07-16 00:35:22,755 - INFO - Episode 24 completed in 37.38 seconds
+2025-07-16 00:35:22,755 - INFO -   Total Steps: 20000
+2025-07-16 00:35:22,756 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:35:22,756 - INFO -   Epsilon: 0.5800
+2025-07-16 00:35:22,756 - INFO -   Avg Loss: 1364828672.0000
+2025-07-16 00:35:22,757 - INFO -   Speed: 12.7 steps/s
+2025-07-16 00:35:22,757 - INFO - Starting episode 25/100
+2025-07-16 00:35:22,796 - INFO - Step 0/100 - Total Steps: 20008 - Avg Reward: 0.00
+2025-07-16 00:35:34,031 - INFO - Update 0/4 - Loss: 348447488.0000
+2025-07-16 00:36:03,269 - INFO - Training updates completed - Avg Loss: 750607888.0000
+2025-07-16 00:36:03,272 - INFO - Episode 25 completed in 40.48 seconds
+2025-07-16 00:36:03,272 - INFO -   Total Steps: 20800
+2025-07-16 00:36:03,273 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:36:03,273 - INFO -   Epsilon: 0.5752
+2025-07-16 00:36:03,273 - INFO -   Avg Loss: 750607888.0000
+2025-07-16 00:36:03,273 - INFO -   Speed: 12.9 steps/s
+2025-07-16 00:36:03,274 - INFO - Starting episode 26/100
+2025-07-16 00:36:03,319 - INFO - Step 0/100 - Total Steps: 20808 - Avg Reward: 0.00
+2025-07-16 00:36:14,168 - INFO - Update 0/4 - Loss: 1401958528.0000
+2025-07-16 00:36:42,195 - INFO - Training updates completed - Avg Loss: 1241363136.0000
+2025-07-16 00:36:42,198 - INFO - Episode 26 completed in 38.89 seconds
+2025-07-16 00:36:42,198 - INFO -   Total Steps: 21600
+2025-07-16 00:36:42,198 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:36:42,199 - INFO -   Epsilon: 0.5704
+2025-07-16 00:36:42,199 - INFO -   Avg Loss: 1241363136.0000
+2025-07-16 00:36:42,199 - INFO -   Speed: 13.1 steps/s
+2025-07-16 00:36:42,200 - INFO - Starting episode 27/100
+2025-07-16 00:36:42,241 - INFO - Step 0/100 - Total Steps: 21608 - Avg Reward: 0.00
+2025-07-16 00:36:52,217 - INFO - Update 0/4 - Loss: 262411184.0000
+2025-07-16 00:37:20,020 - INFO - Training updates completed - Avg Loss: 432450892.0000
+2025-07-16 00:37:20,024 - INFO - Episode 27 completed in 37.79 seconds
+2025-07-16 00:37:20,024 - INFO -   Total Steps: 22400
+2025-07-16 00:37:20,024 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:37:20,025 - INFO -   Epsilon: 0.5656
+2025-07-16 00:37:20,025 - INFO -   Avg Loss: 432450892.0000
+2025-07-16 00:37:20,025 - INFO -   Speed: 13.3 steps/s
+2025-07-16 00:37:20,026 - INFO - Starting episode 28/100
+2025-07-16 00:37:20,067 - INFO - Step 0/100 - Total Steps: 22408 - Avg Reward: 0.00
+2025-07-16 00:37:29,852 - INFO - Update 0/4 - Loss: 785689664.0000
+2025-07-16 00:37:58,768 - INFO - Training updates completed - Avg Loss: 509625720.0000
+2025-07-16 00:37:58,772 - INFO - Episode 28 completed in 38.71 seconds
+2025-07-16 00:37:58,772 - INFO -   Total Steps: 23200
+2025-07-16 00:37:58,773 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:37:58,774 - INFO -   Epsilon: 0.5608
+2025-07-16 00:37:58,774 - INFO -   Avg Loss: 509625720.0000
+2025-07-16 00:37:58,774 - INFO -   Speed: 13.4 steps/s
+2025-07-16 00:37:58,775 - INFO - Starting episode 29/100
+2025-07-16 00:37:58,816 - INFO - Step 0/100 - Total Steps: 23208 - Avg Reward: 0.00
+2025-07-16 00:38:09,804 - INFO - Update 0/4 - Loss: 715210304.0000
+2025-07-16 00:38:38,816 - INFO - Training updates completed - Avg Loss: 966049008.0000
+2025-07-16 00:38:38,818 - INFO - Episode 29 completed in 40.01 seconds
+2025-07-16 00:38:38,819 - INFO -   Total Steps: 24000
+2025-07-16 00:38:38,819 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:38:38,819 - INFO -   Epsilon: 0.5560
+2025-07-16 00:38:38,820 - INFO -   Avg Loss: 966049008.0000
+2025-07-16 00:38:38,820 - INFO -   Speed: 13.6 steps/s
+2025-07-16 00:38:38,821 - INFO - Starting episode 30/100
+2025-07-16 00:38:38,860 - INFO - Step 0/100 - Total Steps: 24008 - Avg Reward: 0.00
+2025-07-16 00:38:48,675 - INFO - Update 0/4 - Loss: 625072448.0000
+2025-07-16 00:39:17,347 - INFO - Training updates completed - Avg Loss: 679233308.0000
+2025-07-16 00:39:17,351 - INFO - Episode 30 completed in 38.50 seconds
+2025-07-16 00:39:17,351 - INFO -   Total Steps: 24800
+2025-07-16 00:39:17,352 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:39:17,352 - INFO -   Epsilon: 0.5512
+2025-07-16 00:39:17,352 - INFO -   Avg Loss: 679233308.0000
+2025-07-16 00:39:17,352 - INFO -   Speed: 13.7 steps/s
+2025-07-16 00:39:17,353 - INFO - Starting episode 31/100
+2025-07-16 00:39:17,396 - INFO - Step 0/100 - Total Steps: 24808 - Avg Reward: 0.00
+2025-07-16 00:39:27,873 - INFO - Update 0/4 - Loss: 1775599744.0000
+2025-07-16 00:40:00,031 - INFO - Training updates completed - Avg Loss: 1685687584.0000
+2025-07-16 00:40:00,033 - INFO - Episode 31 completed in 42.65 seconds
+2025-07-16 00:40:00,034 - INFO -   Total Steps: 25600
+2025-07-16 00:40:00,034 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:40:00,034 - INFO -   Epsilon: 0.5464
+2025-07-16 00:40:00,035 - INFO -   Avg Loss: 1685687584.0000
+2025-07-16 00:40:00,035 - INFO -   Speed: 13.9 steps/s
+2025-07-16 00:40:00,036 - INFO - Starting episode 32/100
+2025-07-16 00:40:00,078 - INFO - Step 0/100 - Total Steps: 25608 - Avg Reward: 0.00
+2025-07-16 00:40:10,461 - INFO - Update 0/4 - Loss: 803220480.0000
+2025-07-16 00:40:40,014 - INFO - Training updates completed - Avg Loss: 495850000.0000
+2025-07-16 00:40:40,017 - INFO - Episode 32 completed in 39.95 seconds
+2025-07-16 00:40:40,018 - INFO -   Total Steps: 26400
+2025-07-16 00:40:40,019 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:40:40,019 - INFO -   Epsilon: 0.5416
+2025-07-16 00:40:40,019 - INFO -   Avg Loss: 495850000.0000
+2025-07-16 00:40:40,020 - INFO -   Speed: 14.0 steps/s
+2025-07-16 00:40:40,020 - INFO - Starting episode 33/100
+2025-07-16 00:40:40,060 - INFO - Step 0/100 - Total Steps: 26408 - Avg Reward: 0.00
+2025-07-16 00:40:52,856 - INFO - Update 0/4 - Loss: 788525312.0000
+2025-07-16 00:41:20,480 - INFO - Training updates completed - Avg Loss: 640280736.0000
+2025-07-16 00:41:20,484 - INFO - Episode 33 completed in 40.43 seconds
+2025-07-16 00:41:20,484 - INFO -   Total Steps: 27200
+2025-07-16 00:41:20,485 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:41:20,485 - INFO -   Epsilon: 0.5368
+2025-07-16 00:41:20,485 - INFO -   Avg Loss: 640280736.0000
+2025-07-16 00:41:20,485 - INFO -   Speed: 14.1 steps/s
+2025-07-16 00:41:20,486 - INFO - Starting episode 34/100
+2025-07-16 00:41:20,527 - INFO - Step 0/100 - Total Steps: 27208 - Avg Reward: 0.00
+2025-07-16 00:41:30,680 - INFO - Update 0/4 - Loss: 356389952.0000
+2025-07-16 00:41:58,578 - INFO - Training updates completed - Avg Loss: 290114476.0000
+2025-07-16 00:41:58,581 - INFO - Episode 34 completed in 38.06 seconds
+2025-07-16 00:41:58,581 - INFO -   Total Steps: 28000
+2025-07-16 00:41:58,581 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:41:58,582 - INFO -   Epsilon: 0.5320
+2025-07-16 00:41:58,582 - INFO -   Avg Loss: 290114476.0000
+2025-07-16 00:41:58,582 - INFO -   Speed: 14.2 steps/s
+2025-07-16 00:41:58,583 - INFO - Starting episode 35/100
+2025-07-16 00:41:58,627 - INFO - Step 0/100 - Total Steps: 28008 - Avg Reward: 0.00
+2025-07-16 00:42:09,912 - INFO - Update 0/4 - Loss: 492300448.0000
+2025-07-16 00:42:40,988 - INFO - Training updates completed - Avg Loss: 560649288.0000
+2025-07-16 00:42:40,991 - INFO - Episode 35 completed in 42.37 seconds
+2025-07-16 00:42:40,991 - INFO -   Total Steps: 28800
+2025-07-16 00:42:40,991 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:42:40,992 - INFO -   Epsilon: 0.5272
+2025-07-16 00:42:40,992 - INFO -   Avg Loss: 560649288.0000
+2025-07-16 00:42:40,992 - INFO -   Speed: 14.3 steps/s
+2025-07-16 00:42:40,992 - INFO - Starting episode 36/100
+2025-07-16 00:42:41,038 - INFO - Step 0/100 - Total Steps: 28808 - Avg Reward: 0.00
+2025-07-16 00:42:52,854 - INFO - Update 0/4 - Loss: 174789856.0000
+2025-07-16 00:43:24,709 - INFO - Training updates completed - Avg Loss: 468662492.0000
+2025-07-16 00:43:24,713 - INFO - Episode 36 completed in 43.69 seconds
+2025-07-16 00:43:24,713 - INFO -   Total Steps: 29600
+2025-07-16 00:43:24,714 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:43:24,714 - INFO -   Epsilon: 0.5224
+2025-07-16 00:43:24,714 - INFO -   Avg Loss: 468662492.0000
+2025-07-16 00:43:24,715 - INFO -   Speed: 14.4 steps/s
+2025-07-16 00:43:24,717 - INFO - Starting episode 37/100
+2025-07-16 00:43:24,761 - INFO - Step 0/100 - Total Steps: 29608 - Avg Reward: 0.00
+2025-07-16 00:43:35,541 - INFO - Update 0/4 - Loss: 415032640.0000
+2025-07-16 00:44:10,840 - INFO - Training updates completed - Avg Loss: 509302016.0000
+2025-07-16 00:44:10,844 - INFO - Episode 37 completed in 46.09 seconds
+2025-07-16 00:44:10,844 - INFO -   Total Steps: 30400
+2025-07-16 00:44:10,845 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:44:10,845 - INFO -   Epsilon: 0.5176
+2025-07-16 00:44:10,845 - INFO -   Avg Loss: 509302016.0000
+2025-07-16 00:44:10,845 - INFO -   Speed: 14.5 steps/s
+2025-07-16 00:44:10,846 - INFO - Starting episode 38/100
+2025-07-16 00:44:10,887 - INFO - Step 0/100 - Total Steps: 30408 - Avg Reward: 0.00
+2025-07-16 00:44:22,702 - INFO - Update 0/4 - Loss: 1078049408.0000
+2025-07-16 00:44:55,264 - INFO - Training updates completed - Avg Loss: 1134542544.0000
+2025-07-16 00:44:55,270 - INFO - Episode 38 completed in 44.39 seconds
+2025-07-16 00:44:55,270 - INFO -   Total Steps: 31200
+2025-07-16 00:44:55,271 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:44:55,271 - INFO -   Epsilon: 0.5128
+2025-07-16 00:44:55,271 - INFO -   Avg Loss: 1134542544.0000
+2025-07-16 00:44:55,272 - INFO -   Speed: 14.6 steps/s
+2025-07-16 00:44:55,273 - INFO - Starting episode 39/100
+2025-07-16 00:44:55,320 - INFO - Step 0/100 - Total Steps: 31208 - Avg Reward: 0.00
+2025-07-16 00:45:09,250 - INFO - Update 0/4 - Loss: 1527110656.0000
+2025-07-16 00:45:40,293 - INFO - Training updates completed - Avg Loss: 1336693808.0000
+2025-07-16 00:45:40,296 - INFO - Episode 39 completed in 44.99 seconds
+2025-07-16 00:45:40,297 - INFO -   Total Steps: 32000
+2025-07-16 00:45:40,297 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:45:40,298 - INFO -   Epsilon: 0.5080
+2025-07-16 00:45:40,298 - INFO -   Avg Loss: 1336693808.0000
+2025-07-16 00:45:40,298 - INFO -   Speed: 14.6 steps/s
+2025-07-16 00:45:40,299 - INFO - Starting episode 40/100
+2025-07-16 00:45:40,343 - INFO - Step 0/100 - Total Steps: 32008 - Avg Reward: 0.00
+2025-07-16 00:45:51,335 - INFO - Update 0/4 - Loss: 647788352.0000
+2025-07-16 00:46:19,254 - INFO - Training updates completed - Avg Loss: 553929352.0000
+2025-07-16 00:46:19,257 - INFO - Episode 40 completed in 38.92 seconds
+2025-07-16 00:46:19,257 - INFO -   Total Steps: 32800
+2025-07-16 00:46:19,257 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:46:19,258 - INFO -   Epsilon: 0.5032
+2025-07-16 00:46:19,258 - INFO -   Avg Loss: 553929352.0000
+2025-07-16 00:46:19,258 - INFO -   Speed: 14.7 steps/s
+2025-07-16 00:46:19,259 - INFO - Starting episode 41/100
+2025-07-16 00:46:19,299 - INFO - Step 0/100 - Total Steps: 32808 - Avg Reward: 0.00
+2025-07-16 00:46:29,119 - INFO - Update 0/4 - Loss: 308877728.0000
+2025-07-16 00:46:56,189 - INFO - Training updates completed - Avg Loss: 525079272.0000
+2025-07-16 00:46:56,192 - INFO - Episode 41 completed in 36.90 seconds
+2025-07-16 00:46:56,192 - INFO -   Total Steps: 33600
+2025-07-16 00:46:56,193 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:46:56,193 - INFO -   Epsilon: 0.4984
+2025-07-16 00:46:56,193 - INFO -   Avg Loss: 525079272.0000
+2025-07-16 00:46:56,193 - INFO -   Speed: 14.8 steps/s
+2025-07-16 00:46:56,194 - INFO - Starting episode 42/100
+2025-07-16 00:46:56,237 - INFO - Step 0/100 - Total Steps: 33608 - Avg Reward: 0.00
+2025-07-16 00:47:06,121 - INFO - Update 0/4 - Loss: 97194248.0000
+2025-07-16 00:47:34,668 - INFO - Training updates completed - Avg Loss: 424271538.0000
+2025-07-16 00:47:34,672 - INFO - Episode 42 completed in 38.44 seconds
+2025-07-16 00:47:34,672 - INFO -   Total Steps: 34400
+2025-07-16 00:47:34,672 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:47:34,673 - INFO -   Epsilon: 0.4936
+2025-07-16 00:47:34,673 - INFO -   Avg Loss: 424271538.0000
+2025-07-16 00:47:34,673 - INFO -   Speed: 14.9 steps/s
+2025-07-16 00:47:34,674 - INFO - Starting episode 43/100
+2025-07-16 00:47:34,716 - INFO - Step 0/100 - Total Steps: 34408 - Avg Reward: 0.00
+2025-07-16 00:47:44,986 - INFO - Update 0/4 - Loss: 654800960.0000
+2025-07-16 00:48:13,948 - INFO - Training updates completed - Avg Loss: 589836080.0000
+2025-07-16 00:48:13,951 - INFO - Episode 43 completed in 39.25 seconds
+2025-07-16 00:48:13,952 - INFO -   Total Steps: 35200
+2025-07-16 00:48:13,952 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:48:13,953 - INFO -   Epsilon: 0.4888
+2025-07-16 00:48:13,953 - INFO -   Avg Loss: 589836080.0000
+2025-07-16 00:48:13,953 - INFO -   Speed: 15.0 steps/s
+2025-07-16 00:48:13,954 - INFO - Starting episode 44/100
+2025-07-16 00:48:13,994 - INFO - Step 0/100 - Total Steps: 35208 - Avg Reward: 0.00
+2025-07-16 00:48:24,383 - INFO - Update 0/4 - Loss: 616673984.0000
+2025-07-16 00:48:52,920 - INFO - Training updates completed - Avg Loss: 318643920.0000
+2025-07-16 00:48:52,923 - INFO - Episode 44 completed in 38.94 seconds
+2025-07-16 00:48:52,923 - INFO -   Total Steps: 36000
+2025-07-16 00:48:52,924 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:48:52,924 - INFO -   Epsilon: 0.4840
+2025-07-16 00:48:52,925 - INFO -   Avg Loss: 318643920.0000
+2025-07-16 00:48:52,925 - INFO -   Speed: 15.1 steps/s
+2025-07-16 00:48:52,925 - INFO - Starting episode 45/100
+2025-07-16 00:48:52,965 - INFO - Step 0/100 - Total Steps: 36008 - Avg Reward: 0.00
+2025-07-16 00:49:03,276 - INFO - Update 0/4 - Loss: 243920704.0000
+2025-07-16 00:49:32,386 - INFO - Training updates completed - Avg Loss: 354248944.0000
+2025-07-16 00:49:32,389 - INFO - Episode 45 completed in 39.43 seconds
+2025-07-16 00:49:32,389 - INFO -   Total Steps: 36800
+2025-07-16 00:49:32,390 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:49:32,390 - INFO -   Epsilon: 0.4792
+2025-07-16 00:49:32,390 - INFO -   Avg Loss: 354248944.0000
+2025-07-16 00:49:32,391 - INFO -   Speed: 15.2 steps/s
+2025-07-16 00:49:32,392 - INFO - Starting episode 46/100
+2025-07-16 00:49:32,433 - INFO - Step 0/100 - Total Steps: 36808 - Avg Reward: 0.00
+2025-07-16 00:49:43,010 - INFO - Update 0/4 - Loss: 185063520.0000
+2025-07-16 00:50:14,519 - INFO - Training updates completed - Avg Loss: 399165760.0000
+2025-07-16 00:50:14,530 - INFO - Episode 46 completed in 42.11 seconds
+2025-07-16 00:50:14,530 - INFO -   Total Steps: 37600
+2025-07-16 00:50:14,531 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:50:14,531 - INFO -   Epsilon: 0.4744
+2025-07-16 00:50:14,531 - INFO -   Avg Loss: 399165760.0000
+2025-07-16 00:50:14,531 - INFO -   Speed: 15.3 steps/s
+2025-07-16 00:50:14,532 - INFO - Starting episode 47/100
+2025-07-16 00:50:14,591 - INFO - Step 0/100 - Total Steps: 37608 - Avg Reward: 0.00
+2025-07-16 00:50:26,036 - INFO - Update 0/4 - Loss: 319334400.0000
+2025-07-16 00:50:55,344 - INFO - Training updates completed - Avg Loss: 305014840.0000
+2025-07-16 00:50:55,349 - INFO - Episode 47 completed in 40.77 seconds
+2025-07-16 00:50:55,349 - INFO -   Total Steps: 38400
+2025-07-16 00:50:55,349 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:50:55,350 - INFO -   Epsilon: 0.4696
+2025-07-16 00:50:55,350 - INFO -   Avg Loss: 305014840.0000
+2025-07-16 00:50:55,350 - INFO -   Speed: 15.3 steps/s
+2025-07-16 00:50:55,351 - INFO - Starting episode 48/100
+2025-07-16 00:50:55,408 - INFO - Step 0/100 - Total Steps: 38408 - Avg Reward: 0.00
+2025-07-16 00:51:06,390 - INFO - Update 0/4 - Loss: 304284928.0000
+2025-07-16 00:51:35,619 - INFO - Training updates completed - Avg Loss: 285331872.0000
+2025-07-16 00:51:35,625 - INFO - Episode 48 completed in 40.23 seconds
+2025-07-16 00:51:35,626 - INFO -   Total Steps: 39200
+2025-07-16 00:51:35,626 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:51:35,626 - INFO -   Epsilon: 0.4648
+2025-07-16 00:51:35,627 - INFO -   Avg Loss: 285331872.0000
+2025-07-16 00:51:35,627 - INFO -   Speed: 15.4 steps/s
+2025-07-16 00:51:35,627 - INFO - Starting episode 49/100
+2025-07-16 00:51:35,688 - INFO - Step 0/100 - Total Steps: 39208 - Avg Reward: 0.00
+2025-07-16 00:51:45,889 - INFO - Update 0/4 - Loss: 291942240.0000
+2025-07-16 00:52:15,297 - INFO - Training updates completed - Avg Loss: 324915976.0000
+2025-07-16 00:52:15,301 - INFO - Episode 49 completed in 39.63 seconds
+2025-07-16 00:52:15,301 - INFO -   Total Steps: 40000
+2025-07-16 00:52:15,301 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:52:15,302 - INFO -   Epsilon: 0.4600
+2025-07-16 00:52:15,302 - INFO -   Avg Loss: 324915976.0000
+2025-07-16 00:52:15,303 - INFO -   Speed: 15.5 steps/s
+2025-07-16 00:52:15,304 - INFO - Starting episode 50/100
+2025-07-16 00:52:15,361 - INFO - Step 0/100 - Total Steps: 40008 - Avg Reward: 0.00
+2025-07-16 00:52:25,639 - INFO - Update 0/4 - Loss: 336293568.0000
+2025-07-16 00:52:54,108 - INFO - Training updates completed - Avg Loss: 292424212.0000
+2025-07-16 00:52:54,112 - INFO - Episode 50 completed in 38.77 seconds
+2025-07-16 00:52:54,113 - INFO -   Total Steps: 40800
+2025-07-16 00:52:54,113 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:52:54,113 - INFO -   Epsilon: 0.4552
+2025-07-16 00:52:54,114 - INFO -   Avg Loss: 292424212.0000
+2025-07-16 00:52:54,114 - INFO -   Speed: 15.6 steps/s
+2025-07-16 00:52:54,114 - INFO - Starting episode 51/100
+2025-07-16 00:52:54,156 - INFO - Step 0/100 - Total Steps: 40808 - Avg Reward: 0.00
+2025-07-16 00:53:04,634 - INFO - Update 0/4 - Loss: 407096448.0000
+2025-07-16 00:53:31,949 - INFO - Training updates completed - Avg Loss: 289419474.0000
+2025-07-16 00:53:31,952 - INFO - Episode 51 completed in 37.81 seconds
+2025-07-16 00:53:31,952 - INFO -   Total Steps: 41600
+2025-07-16 00:53:31,953 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:53:31,953 - INFO -   Epsilon: 0.4504
+2025-07-16 00:53:31,953 - INFO -   Avg Loss: 289419474.0000
+2025-07-16 00:53:31,954 - INFO -   Speed: 15.6 steps/s
+2025-07-16 00:53:31,965 - INFO - Starting episode 52/100
+2025-07-16 00:53:32,005 - INFO - Step 0/100 - Total Steps: 41608 - Avg Reward: 0.00
+2025-07-16 00:53:41,749 - INFO - Update 0/4 - Loss: 476065504.0000
+2025-07-16 00:54:09,048 - INFO - Training updates completed - Avg Loss: 299322798.0000
+2025-07-16 00:54:09,052 - INFO - Episode 52 completed in 37.05 seconds
+2025-07-16 00:54:09,052 - INFO -   Total Steps: 42400
+2025-07-16 00:54:09,052 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:54:09,053 - INFO -   Epsilon: 0.4456
+2025-07-16 00:54:09,053 - INFO -   Avg Loss: 299322798.0000
+2025-07-16 00:54:09,053 - INFO -   Speed: 15.7 steps/s
+2025-07-16 00:54:09,053 - INFO - Starting episode 53/100
+2025-07-16 00:54:09,095 - INFO - Step 0/100 - Total Steps: 42408 - Avg Reward: 0.00
+2025-07-16 00:54:19,056 - INFO - Update 0/4 - Loss: 532209152.0000
+2025-07-16 00:54:46,482 - INFO - Training updates completed - Avg Loss: 311491065.0000
+2025-07-16 00:54:46,485 - INFO - Episode 53 completed in 37.40 seconds
+2025-07-16 00:54:46,486 - INFO -   Total Steps: 43200
+2025-07-16 00:54:46,486 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:54:46,487 - INFO -   Epsilon: 0.4408
+2025-07-16 00:54:46,488 - INFO -   Avg Loss: 311491065.0000
+2025-07-16 00:54:46,488 - INFO -   Speed: 15.8 steps/s
+2025-07-16 00:54:46,488 - INFO - Starting episode 54/100
+2025-07-16 00:54:46,528 - INFO - Step 0/100 - Total Steps: 43208 - Avg Reward: 0.00
+2025-07-16 00:54:57,143 - INFO - Update 0/4 - Loss: 588351744.0000
+2025-07-16 00:55:24,820 - INFO - Training updates completed - Avg Loss: 327713817.5000
+2025-07-16 00:55:24,823 - INFO - Episode 54 completed in 38.30 seconds
+2025-07-16 00:55:24,823 - INFO -   Total Steps: 44000
+2025-07-16 00:55:24,824 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:55:24,824 - INFO -   Epsilon: 0.4360
+2025-07-16 00:55:24,824 - INFO -   Avg Loss: 327713817.5000
+2025-07-16 00:55:24,825 - INFO -   Speed: 15.9 steps/s
+2025-07-16 00:55:24,825 - INFO - Starting episode 55/100
+2025-07-16 00:55:24,870 - INFO - Step 0/100 - Total Steps: 44008 - Avg Reward: 0.00
+2025-07-16 00:55:35,870 - INFO - Update 0/4 - Loss: 630734272.0000
+2025-07-16 00:56:12,099 - INFO - Training updates completed - Avg Loss: 343357208.5000
+2025-07-16 00:56:12,104 - INFO - Episode 55 completed in 47.24 seconds
+2025-07-16 00:56:12,105 - INFO -   Total Steps: 44800
+2025-07-16 00:56:12,105 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:56:12,105 - INFO -   Epsilon: 0.4312
+2025-07-16 00:56:12,106 - INFO -   Avg Loss: 343357208.5000
+2025-07-16 00:56:12,106 - INFO -   Speed: 15.9 steps/s
+2025-07-16 00:56:12,107 - INFO - Starting episode 56/100
+2025-07-16 00:56:12,156 - INFO - Step 0/100 - Total Steps: 44808 - Avg Reward: 0.00
+2025-07-16 00:56:27,333 - INFO - Update 0/4 - Loss: 670806016.0000
+2025-07-16 00:57:06,503 - INFO - Training updates completed - Avg Loss: 358179820.2500
+2025-07-16 00:57:06,507 - INFO - Episode 56 completed in 54.36 seconds
+2025-07-16 00:57:06,507 - INFO -   Total Steps: 45600
+2025-07-16 00:57:06,507 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:57:06,507 - INFO -   Epsilon: 0.4264
+2025-07-16 00:57:06,508 - INFO -   Avg Loss: 358179820.2500
+2025-07-16 00:57:06,508 - INFO -   Speed: 15.9 steps/s
+2025-07-16 00:57:06,508 - INFO - Starting episode 57/100
+2025-07-16 00:57:06,552 - INFO - Step 0/100 - Total Steps: 45608 - Avg Reward: 0.00
+2025-07-16 00:57:20,671 - INFO - Update 0/4 - Loss: 705486912.0000
+2025-07-16 00:57:55,169 - INFO - Training updates completed - Avg Loss: 372420194.2500
+2025-07-16 00:57:55,172 - INFO - Episode 57 completed in 48.63 seconds
+2025-07-16 00:57:55,173 - INFO -   Total Steps: 46400
+2025-07-16 00:57:55,173 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:57:55,173 - INFO -   Epsilon: 0.4216
+2025-07-16 00:57:55,173 - INFO -   Avg Loss: 372420194.2500
+2025-07-16 00:57:55,173 - INFO -   Speed: 15.9 steps/s
+2025-07-16 00:57:55,174 - INFO - Starting episode 58/100
+2025-07-16 00:57:55,216 - INFO - Step 0/100 - Total Steps: 46408 - Avg Reward: 0.00
+2025-07-16 00:58:07,417 - INFO - Update 0/4 - Loss: 732552832.0000
+2025-07-16 00:58:41,236 - INFO - Training updates completed - Avg Loss: 383514467.9375
+2025-07-16 00:58:41,240 - INFO - Episode 58 completed in 46.03 seconds
+2025-07-16 00:58:41,240 - INFO -   Total Steps: 47200
+2025-07-16 00:58:41,241 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:58:41,241 - INFO -   Epsilon: 0.4168
+2025-07-16 00:58:41,241 - INFO -   Avg Loss: 383514467.9375
+2025-07-16 00:58:41,242 - INFO -   Speed: 15.9 steps/s
+2025-07-16 00:58:41,242 - INFO - Starting episode 59/100
+2025-07-16 00:58:41,289 - INFO - Step 0/100 - Total Steps: 47208 - Avg Reward: 0.00
+2025-07-16 00:58:52,575 - INFO - Update 0/4 - Loss: 756326912.0000
+2025-07-16 00:59:25,975 - INFO - Training updates completed - Avg Loss: 377888915.4062
+2025-07-16 00:59:25,979 - INFO - Episode 59 completed in 44.70 seconds
+2025-07-16 00:59:25,979 - INFO -   Total Steps: 48000
+2025-07-16 00:59:25,980 - INFO -   Avg Reward (50): 0.00
+2025-07-16 00:59:25,980 - INFO -   Epsilon: 0.4120
+2025-07-16 00:59:25,980 - INFO -   Avg Loss: 377888915.4062
+2025-07-16 00:59:25,980 - INFO -   Speed: 15.9 steps/s
+2025-07-16 00:59:25,981 - INFO - Starting episode 60/100
+2025-07-16 00:59:26,023 - INFO - Step 0/100 - Total Steps: 48008 - Avg Reward: 0.00
+2025-07-16 00:59:38,396 - INFO - Update 0/4 - Loss: 669853376.0000
+2025-07-16 01:00:12,844 - INFO - Training updates completed - Avg Loss: 361424176.0000
+2025-07-16 01:00:12,860 - INFO - Episode 60 completed in 46.83 seconds
+2025-07-16 01:00:12,860 - INFO -   Total Steps: 48800
+2025-07-16 01:00:12,860 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:00:12,861 - INFO -   Epsilon: 0.4072
+2025-07-16 01:00:12,861 - INFO -   Avg Loss: 361424176.0000
+2025-07-16 01:00:12,861 - INFO -   Speed: 15.9 steps/s
+2025-07-16 01:00:12,862 - INFO - Starting episode 61/100
+2025-07-16 01:00:12,910 - INFO - Step 0/100 - Total Steps: 48808 - Avg Reward: 0.00
+2025-07-16 01:00:24,481 - INFO - Update 0/4 - Loss: 551332608.0000
+2025-07-16 01:00:59,223 - INFO - Training updates completed - Avg Loss: 383868980.0000
+2025-07-16 01:00:59,233 - INFO - Episode 61 completed in 46.33 seconds
+2025-07-16 01:00:59,233 - INFO -   Total Steps: 49600
+2025-07-16 01:00:59,233 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:00:59,234 - INFO -   Epsilon: 0.4024
+2025-07-16 01:00:59,234 - INFO -   Avg Loss: 383868980.0000
+2025-07-16 01:00:59,234 - INFO -   Speed: 16.0 steps/s
+2025-07-16 01:00:59,234 - INFO - Starting episode 62/100
+2025-07-16 01:00:59,292 - INFO - Step 0/100 - Total Steps: 49608 - Avg Reward: 0.00
+2025-07-16 01:01:09,937 - INFO - Update 0/4 - Loss: 525027968.0000
+2025-07-16 01:01:42,297 - INFO - Training updates completed - Avg Loss: 384468808.0000
+2025-07-16 01:01:42,301 - INFO - Episode 62 completed in 43.02 seconds
+2025-07-16 01:01:42,301 - INFO -   Total Steps: 50400
+2025-07-16 01:01:42,301 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:01:42,302 - INFO -   Epsilon: 0.3976
+2025-07-16 01:01:42,302 - INFO -   Avg Loss: 384468808.0000
+2025-07-16 01:01:42,302 - INFO -   Speed: 16.0 steps/s
+2025-07-16 01:01:42,303 - INFO - Starting episode 63/100
+2025-07-16 01:01:42,343 - INFO - Step 0/100 - Total Steps: 50408 - Avg Reward: 0.00
+2025-07-16 01:01:54,788 - INFO - Update 0/4 - Loss: 551399232.0000
+2025-07-16 01:02:27,235 - INFO - Training updates completed - Avg Loss: 350560508.0000
+2025-07-16 01:02:27,239 - INFO - Episode 63 completed in 44.90 seconds
+2025-07-16 01:02:27,239 - INFO -   Total Steps: 51200
+2025-07-16 01:02:27,240 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:02:27,240 - INFO -   Epsilon: 0.3928
+2025-07-16 01:02:27,240 - INFO -   Avg Loss: 350560508.0000
+2025-07-16 01:02:27,241 - INFO -   Speed: 16.0 steps/s
+2025-07-16 01:02:27,241 - INFO - Starting episode 64/100
+2025-07-16 01:02:27,282 - INFO - Step 0/100 - Total Steps: 51208 - Avg Reward: 0.00
+2025-07-16 01:02:38,023 - INFO - Update 0/4 - Loss: 509509376.0000
+2025-07-16 01:03:09,637 - INFO - Training updates completed - Avg Loss: 317527048.0000
+2025-07-16 01:03:09,641 - INFO - Episode 64 completed in 42.37 seconds
+2025-07-16 01:03:09,642 - INFO -   Total Steps: 52000
+2025-07-16 01:03:09,643 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:03:09,644 - INFO -   Epsilon: 0.3880
+2025-07-16 01:03:09,644 - INFO -   Avg Loss: 317527048.0000
+2025-07-16 01:03:09,644 - INFO -   Speed: 16.1 steps/s
+2025-07-16 01:03:09,645 - INFO - Starting episode 65/100
+2025-07-16 01:03:09,686 - INFO - Step 0/100 - Total Steps: 52008 - Avg Reward: 0.00
+2025-07-16 01:03:23,608 - INFO - Update 0/4 - Loss: 378545504.0000
+2025-07-16 01:03:52,962 - INFO - Training updates completed - Avg Loss: 323417272.0000
+2025-07-16 01:03:52,965 - INFO - Episode 65 completed in 43.29 seconds
+2025-07-16 01:03:52,966 - INFO -   Total Steps: 52800
+2025-07-16 01:03:52,966 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:03:52,966 - INFO -   Epsilon: 0.3832
+2025-07-16 01:03:52,966 - INFO -   Avg Loss: 323417272.0000
+2025-07-16 01:03:52,967 - INFO -   Speed: 16.1 steps/s
+2025-07-16 01:03:52,967 - INFO - Starting episode 66/100
+2025-07-16 01:03:53,008 - INFO - Step 0/100 - Total Steps: 52808 - Avg Reward: 0.00
+2025-07-16 01:04:03,585 - INFO - Update 0/4 - Loss: 354654464.0000
+2025-07-16 01:04:35,178 - INFO - Training updates completed - Avg Loss: 377607880.0000
+2025-07-16 01:04:35,180 - INFO - Episode 66 completed in 42.18 seconds
+2025-07-16 01:04:35,181 - INFO -   Total Steps: 53600
+2025-07-16 01:04:35,181 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:04:35,181 - INFO -   Epsilon: 0.3784
+2025-07-16 01:04:35,182 - INFO -   Avg Loss: 377607880.0000
+2025-07-16 01:04:35,182 - INFO -   Speed: 16.1 steps/s
+2025-07-16 01:04:35,182 - INFO - Starting episode 67/100
+2025-07-16 01:04:35,223 - INFO - Step 0/100 - Total Steps: 53608 - Avg Reward: 0.00
+2025-07-16 01:04:45,668 - INFO - Update 0/4 - Loss: 265423424.0000
+2025-07-16 01:05:20,266 - INFO - Training updates completed - Avg Loss: 306808768.0000
+2025-07-16 01:05:20,270 - INFO - Episode 67 completed in 45.06 seconds
+2025-07-16 01:05:20,271 - INFO -   Total Steps: 54400
+2025-07-16 01:05:20,272 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:05:20,272 - INFO -   Epsilon: 0.3736
+2025-07-16 01:05:20,273 - INFO -   Avg Loss: 306808768.0000
+2025-07-16 01:05:20,273 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:05:20,274 - INFO - Starting episode 68/100
+2025-07-16 01:05:20,315 - INFO - Step 0/100 - Total Steps: 54408 - Avg Reward: 0.00
+2025-07-16 01:05:30,858 - INFO - Update 0/4 - Loss: 260614432.0000
+2025-07-16 01:06:02,469 - INFO - Training updates completed - Avg Loss: 358636264.0000
+2025-07-16 01:06:02,473 - INFO - Episode 68 completed in 42.17 seconds
+2025-07-16 01:06:02,474 - INFO -   Total Steps: 55200
+2025-07-16 01:06:02,474 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:06:02,474 - INFO -   Epsilon: 0.3688
+2025-07-16 01:06:02,475 - INFO -   Avg Loss: 358636264.0000
+2025-07-16 01:06:02,475 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:06:02,475 - INFO - Starting episode 69/100
+2025-07-16 01:06:02,517 - INFO - Step 0/100 - Total Steps: 55208 - Avg Reward: 0.00
+2025-07-16 01:06:13,374 - INFO - Update 0/4 - Loss: 434240320.0000
+2025-07-16 01:06:44,474 - INFO - Training updates completed - Avg Loss: 320918224.0000
+2025-07-16 01:06:44,477 - INFO - Episode 69 completed in 41.97 seconds
+2025-07-16 01:06:44,477 - INFO -   Total Steps: 56000
+2025-07-16 01:06:44,478 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:06:44,478 - INFO -   Epsilon: 0.3640
+2025-07-16 01:06:44,478 - INFO -   Avg Loss: 320918224.0000
+2025-07-16 01:06:44,478 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:06:44,479 - INFO - Starting episode 70/100
+2025-07-16 01:06:44,521 - INFO - Step 0/100 - Total Steps: 56008 - Avg Reward: 0.00
+2025-07-16 01:06:54,965 - INFO - Update 0/4 - Loss: 363145152.0000
+2025-07-16 01:07:39,203 - INFO - Training updates completed - Avg Loss: 296277116.0000
+2025-07-16 01:07:39,215 - INFO - Episode 70 completed in 54.70 seconds
+2025-07-16 01:07:39,215 - INFO -   Total Steps: 56800
+2025-07-16 01:07:39,215 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:07:39,216 - INFO -   Epsilon: 0.3592
+2025-07-16 01:07:39,216 - INFO -   Avg Loss: 296277116.0000
+2025-07-16 01:07:39,216 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:07:39,217 - INFO - Starting episode 71/100
+2025-07-16 01:07:39,281 - INFO - Step 0/100 - Total Steps: 56808 - Avg Reward: 0.00
+2025-07-16 01:07:53,467 - INFO - Update 0/4 - Loss: 436509952.0000
+2025-07-16 01:08:34,013 - INFO - Training updates completed - Avg Loss: 340612444.0000
+2025-07-16 01:08:34,018 - INFO - Episode 71 completed in 54.76 seconds
+2025-07-16 01:08:34,018 - INFO -   Total Steps: 57600
+2025-07-16 01:08:34,019 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:08:34,019 - INFO -   Epsilon: 0.3544
+2025-07-16 01:08:34,019 - INFO -   Avg Loss: 340612444.0000
+2025-07-16 01:08:34,020 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:08:34,020 - INFO - Starting episode 72/100
+2025-07-16 01:08:34,064 - INFO - Step 0/100 - Total Steps: 57608 - Avg Reward: 0.00
+2025-07-16 01:08:46,648 - INFO - Update 0/4 - Loss: 374189376.0000
+2025-07-16 01:09:22,010 - INFO - Training updates completed - Avg Loss: 315700672.0000
+2025-07-16 01:09:22,013 - INFO - Episode 72 completed in 47.96 seconds
+2025-07-16 01:09:22,014 - INFO -   Total Steps: 58400
+2025-07-16 01:09:22,014 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:09:22,015 - INFO -   Epsilon: 0.3496
+2025-07-16 01:09:22,015 - INFO -   Avg Loss: 315700672.0000
+2025-07-16 01:09:22,015 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:09:22,015 - INFO - Starting episode 73/100
+2025-07-16 01:09:22,057 - INFO - Step 0/100 - Total Steps: 58408 - Avg Reward: 0.00
+2025-07-16 01:09:36,711 - INFO - Update 0/4 - Loss: 393885952.0000
+2025-07-16 01:10:08,220 - INFO - Training updates completed - Avg Loss: 334604248.0000
+2025-07-16 01:10:08,223 - INFO - Episode 73 completed in 46.18 seconds
+2025-07-16 01:10:08,223 - INFO -   Total Steps: 59200
+2025-07-16 01:10:08,224 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:10:08,224 - INFO -   Epsilon: 0.3448
+2025-07-16 01:10:08,224 - INFO -   Avg Loss: 334604248.0000
+2025-07-16 01:10:08,224 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:10:08,225 - INFO - Starting episode 74/100
+2025-07-16 01:10:08,268 - INFO - Step 0/100 - Total Steps: 59208 - Avg Reward: 0.00
+2025-07-16 01:10:24,047 - INFO - Update 0/4 - Loss: 443786144.0000
+2025-07-16 01:10:55,697 - INFO - Training updates completed - Avg Loss: 319963824.0000
+2025-07-16 01:10:55,704 - INFO - Episode 74 completed in 47.44 seconds
+2025-07-16 01:10:55,705 - INFO -   Total Steps: 60000
+2025-07-16 01:10:55,705 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:10:55,706 - INFO -   Epsilon: 0.3400
+2025-07-16 01:10:55,706 - INFO -   Avg Loss: 319963824.0000
+2025-07-16 01:10:55,707 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:10:55,708 - INFO - Starting episode 75/100
+2025-07-16 01:10:55,770 - INFO - Step 0/100 - Total Steps: 60008 - Avg Reward: 0.00
+2025-07-16 01:11:07,858 - INFO - Update 0/4 - Loss: 494721664.0000
+2025-07-16 01:11:42,739 - INFO - Training updates completed - Avg Loss: 317646340.0000
+2025-07-16 01:11:42,742 - INFO - Episode 75 completed in 46.99 seconds
+2025-07-16 01:11:42,742 - INFO -   Total Steps: 60800
+2025-07-16 01:11:42,743 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:11:42,743 - INFO -   Epsilon: 0.3352
+2025-07-16 01:11:42,743 - INFO -   Avg Loss: 317646340.0000
+2025-07-16 01:11:42,743 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:11:42,744 - INFO - Starting episode 76/100
+2025-07-16 01:11:42,786 - INFO - Step 0/100 - Total Steps: 60808 - Avg Reward: 0.00
+2025-07-16 01:11:54,366 - INFO - Update 0/4 - Loss: 543477376.0000
+2025-07-16 01:12:29,621 - INFO - Training updates completed - Avg Loss: 324388022.0000
+2025-07-16 01:12:29,624 - INFO - Episode 76 completed in 46.85 seconds
+2025-07-16 01:12:29,625 - INFO -   Total Steps: 61600
+2025-07-16 01:12:29,625 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:12:29,625 - INFO -   Epsilon: 0.3304
+2025-07-16 01:12:29,626 - INFO -   Avg Loss: 324388022.0000
+2025-07-16 01:12:29,626 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:12:29,627 - INFO - Starting episode 77/100
+2025-07-16 01:12:29,669 - INFO - Step 0/100 - Total Steps: 61608 - Avg Reward: 0.00
+2025-07-16 01:12:42,290 - INFO - Update 0/4 - Loss: 595634944.0000
+2025-07-16 01:13:17,180 - INFO - Training updates completed - Avg Loss: 337060374.0000
+2025-07-16 01:13:17,184 - INFO - Episode 77 completed in 47.52 seconds
+2025-07-16 01:13:17,184 - INFO -   Total Steps: 62400
+2025-07-16 01:13:17,184 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:13:17,185 - INFO -   Epsilon: 0.3256
+2025-07-16 01:13:17,185 - INFO -   Avg Loss: 337060374.0000
+2025-07-16 01:13:17,185 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:13:17,186 - INFO - Starting episode 78/100
+2025-07-16 01:13:17,231 - INFO - Step 0/100 - Total Steps: 62408 - Avg Reward: 0.00
+2025-07-16 01:13:29,379 - INFO - Update 0/4 - Loss: 640598016.0000
+2025-07-16 01:14:04,305 - INFO - Training updates completed - Avg Loss: 350182862.5000
+2025-07-16 01:14:04,309 - INFO - Episode 78 completed in 47.09 seconds
+2025-07-16 01:14:04,310 - INFO -   Total Steps: 63200
+2025-07-16 01:14:04,310 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:14:04,311 - INFO -   Epsilon: 0.3208
+2025-07-16 01:14:04,311 - INFO -   Avg Loss: 350182862.5000
+2025-07-16 01:14:04,311 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:14:04,312 - INFO - Starting episode 79/100
+2025-07-16 01:14:04,355 - INFO - Step 0/100 - Total Steps: 63208 - Avg Reward: 0.00
+2025-07-16 01:14:16,927 - INFO - Update 0/4 - Loss: 675427264.0000
+2025-07-16 01:14:53,248 - INFO - Training updates completed - Avg Loss: 345426078.0000
+2025-07-16 01:14:53,252 - INFO - Episode 79 completed in 48.91 seconds
+2025-07-16 01:14:53,252 - INFO -   Total Steps: 64000
+2025-07-16 01:14:53,252 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:14:53,253 - INFO -   Epsilon: 0.3160
+2025-07-16 01:14:53,253 - INFO -   Avg Loss: 345426078.0000
+2025-07-16 01:14:53,253 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:14:53,254 - INFO - Starting episode 80/100
+2025-07-16 01:14:53,303 - INFO - Step 0/100 - Total Steps: 64008 - Avg Reward: 0.00
+2025-07-16 01:15:06,157 - INFO - Update 0/4 - Loss: 588817280.0000
+2025-07-16 01:15:49,377 - INFO - Training updates completed - Avg Loss: 328169902.0000
+2025-07-16 01:15:49,384 - INFO - Episode 80 completed in 56.09 seconds
+2025-07-16 01:15:49,384 - INFO -   Total Steps: 64800
+2025-07-16 01:15:49,385 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:15:49,385 - INFO -   Epsilon: 0.3112
+2025-07-16 01:15:49,386 - INFO -   Avg Loss: 328169902.0000
+2025-07-16 01:15:49,386 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:15:49,386 - INFO - Starting episode 81/100
+2025-07-16 01:15:49,433 - INFO - Step 0/100 - Total Steps: 64808 - Avg Reward: 0.00
+2025-07-16 01:16:01,927 - INFO - Update 0/4 - Loss: 473352384.0000
+2025-07-16 01:16:41,458 - INFO - Training updates completed - Avg Loss: 425453808.0000
+2025-07-16 01:16:41,461 - INFO - Episode 81 completed in 52.04 seconds
+2025-07-16 01:16:41,461 - INFO -   Total Steps: 65600
+2025-07-16 01:16:41,462 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:16:41,462 - INFO -   Epsilon: 0.3064
+2025-07-16 01:16:41,462 - INFO -   Avg Loss: 425453808.0000
+2025-07-16 01:16:41,462 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:16:41,463 - INFO - Starting episode 82/100
+2025-07-16 01:16:41,505 - INFO - Step 0/100 - Total Steps: 65608 - Avg Reward: 0.00
+2025-07-16 01:16:54,065 - INFO - Update 0/4 - Loss: 471743712.0000
+2025-07-16 01:17:32,828 - INFO - Training updates completed - Avg Loss: 441741824.0000
+2025-07-16 01:17:32,833 - INFO - Episode 82 completed in 51.34 seconds
+2025-07-16 01:17:32,834 - INFO -   Total Steps: 66400
+2025-07-16 01:17:32,834 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:17:32,835 - INFO -   Epsilon: 0.3016
+2025-07-16 01:17:32,835 - INFO -   Avg Loss: 441741824.0000
+2025-07-16 01:17:32,835 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:17:32,836 - INFO - Starting episode 83/100
+2025-07-16 01:17:32,877 - INFO - Step 0/100 - Total Steps: 66408 - Avg Reward: 0.00
+2025-07-16 01:17:46,472 - INFO - Update 0/4 - Loss: 559534336.0000
+2025-07-16 01:18:19,918 - INFO - Training updates completed - Avg Loss: 383565340.0000
+2025-07-16 01:18:19,921 - INFO - Episode 83 completed in 47.05 seconds
+2025-07-16 01:18:19,921 - INFO -   Total Steps: 67200
+2025-07-16 01:18:19,921 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:18:19,922 - INFO -   Epsilon: 0.2968
+2025-07-16 01:18:19,922 - INFO -   Avg Loss: 383565340.0000
+2025-07-16 01:18:19,922 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:18:19,923 - INFO - Starting episode 84/100
+2025-07-16 01:18:19,964 - INFO - Step 0/100 - Total Steps: 67208 - Avg Reward: 0.00
+2025-07-16 01:18:31,801 - INFO - Update 0/4 - Loss: 733721600.0000
+2025-07-16 01:19:03,165 - INFO - Training updates completed - Avg Loss: 369424845.6250
+2025-07-16 01:19:03,169 - INFO - Episode 84 completed in 43.21 seconds
+2025-07-16 01:19:03,170 - INFO -   Total Steps: 68000
+2025-07-16 01:19:03,171 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:19:03,172 - INFO -   Epsilon: 0.2920
+2025-07-16 01:19:03,172 - INFO -   Avg Loss: 369424845.6250
+2025-07-16 01:19:03,172 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:19:03,173 - INFO - Starting episode 85/100
+2025-07-16 01:19:03,215 - INFO - Step 0/100 - Total Steps: 68008 - Avg Reward: 0.00
+2025-07-16 01:19:14,738 - INFO - Update 0/4 - Loss: 656250880.0000
+2025-07-16 01:19:47,924 - INFO - Training updates completed - Avg Loss: 361490352.0000
+2025-07-16 01:19:47,927 - INFO - Episode 85 completed in 44.72 seconds
+2025-07-16 01:19:47,928 - INFO -   Total Steps: 68800
+2025-07-16 01:19:47,928 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:19:47,928 - INFO -   Epsilon: 0.2872
+2025-07-16 01:19:47,928 - INFO -   Avg Loss: 361490352.0000
+2025-07-16 01:19:47,929 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:19:47,929 - INFO - Starting episode 86/100
+2025-07-16 01:19:47,978 - INFO - Step 0/100 - Total Steps: 68808 - Avg Reward: 0.00
+2025-07-16 01:20:01,247 - INFO - Update 0/4 - Loss: 453424704.0000
+2025-07-16 01:20:35,954 - INFO - Training updates completed - Avg Loss: 378551144.0000
+2025-07-16 01:20:35,958 - INFO - Episode 86 completed in 48.00 seconds
+2025-07-16 01:20:35,958 - INFO -   Total Steps: 69600
+2025-07-16 01:20:35,958 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:20:35,959 - INFO -   Epsilon: 0.2824
+2025-07-16 01:20:35,960 - INFO -   Avg Loss: 378551144.0000
+2025-07-16 01:20:35,961 - INFO -   Speed: 16.2 steps/s
+2025-07-16 01:20:35,961 - INFO - Starting episode 87/100
+2025-07-16 01:20:36,004 - INFO - Step 0/100 - Total Steps: 69608 - Avg Reward: 0.00
+2025-07-16 01:20:47,840 - INFO - Update 0/4 - Loss: 280601088.0000
+2025-07-16 01:21:22,124 - INFO - Training updates completed - Avg Loss: 363325180.0000
+2025-07-16 01:21:22,129 - INFO - Episode 87 completed in 46.13 seconds
+2025-07-16 01:21:22,129 - INFO -   Total Steps: 70400
+2025-07-16 01:21:22,129 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:21:22,130 - INFO -   Epsilon: 0.2776
+2025-07-16 01:21:22,130 - INFO -   Avg Loss: 363325180.0000
+2025-07-16 01:21:22,130 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:21:22,130 - INFO - Starting episode 88/100
+2025-07-16 01:21:22,173 - INFO - Step 0/100 - Total Steps: 70408 - Avg Reward: 0.00
+2025-07-16 01:21:33,963 - INFO - Update 0/4 - Loss: 170805872.0000
+2025-07-16 01:22:06,820 - INFO - Training updates completed - Avg Loss: 380405232.0000
+2025-07-16 01:22:06,824 - INFO - Episode 88 completed in 44.66 seconds
+2025-07-16 01:22:06,824 - INFO -   Total Steps: 71200
+2025-07-16 01:22:06,825 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:22:06,825 - INFO -   Epsilon: 0.2728
+2025-07-16 01:22:06,826 - INFO -   Avg Loss: 380405232.0000
+2025-07-16 01:22:06,826 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:22:06,827 - INFO - Starting episode 89/100
+2025-07-16 01:22:06,868 - INFO - Step 0/100 - Total Steps: 71208 - Avg Reward: 0.00
+2025-07-16 01:22:18,693 - INFO - Update 0/4 - Loss: 181303936.0000
+2025-07-16 01:22:50,147 - INFO - Training updates completed - Avg Loss: 332664000.0000
+2025-07-16 01:22:50,151 - INFO - Episode 89 completed in 43.29 seconds
+2025-07-16 01:22:50,151 - INFO -   Total Steps: 72000
+2025-07-16 01:22:50,152 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:22:50,152 - INFO -   Epsilon: 0.2680
+2025-07-16 01:22:50,152 - INFO -   Avg Loss: 332664000.0000
+2025-07-16 01:22:50,152 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:22:50,153 - INFO - Starting episode 90/100
+2025-07-16 01:22:50,193 - INFO - Step 0/100 - Total Steps: 72008 - Avg Reward: 0.00
+2025-07-16 01:23:01,808 - INFO - Update 0/4 - Loss: 281251712.0000
+2025-07-16 01:23:35,620 - INFO - Training updates completed - Avg Loss: 283763992.0000
+2025-07-16 01:23:35,623 - INFO - Episode 90 completed in 45.44 seconds
+2025-07-16 01:23:35,624 - INFO -   Total Steps: 72800
+2025-07-16 01:23:35,624 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:23:35,624 - INFO -   Epsilon: 0.2632
+2025-07-16 01:23:35,624 - INFO -   Avg Loss: 283763992.0000
+2025-07-16 01:23:35,625 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:23:35,625 - INFO - Starting episode 91/100
+2025-07-16 01:23:35,668 - INFO - Step 0/100 - Total Steps: 72808 - Avg Reward: 0.00
+2025-07-16 01:23:51,110 - INFO - Update 0/4 - Loss: 455777984.0000
+2025-07-16 01:24:32,599 - INFO - Training updates completed - Avg Loss: 283129248.0000
+2025-07-16 01:24:32,603 - INFO - Episode 91 completed in 56.95 seconds
+2025-07-16 01:24:32,603 - INFO -   Total Steps: 73600
+2025-07-16 01:24:32,604 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:24:32,605 - INFO -   Epsilon: 0.2584
+2025-07-16 01:24:32,606 - INFO -   Avg Loss: 283129248.0000
+2025-07-16 01:24:32,606 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:24:32,607 - INFO - Starting episode 92/100
+2025-07-16 01:24:32,649 - INFO - Step 0/100 - Total Steps: 73608 - Avg Reward: 0.00
+2025-07-16 01:24:47,304 - INFO - Update 0/4 - Loss: 374792160.0000
+2025-07-16 01:25:23,239 - INFO - Training updates completed - Avg Loss: 283648696.0000
+2025-07-16 01:25:23,242 - INFO - Episode 92 completed in 50.60 seconds
+2025-07-16 01:25:23,243 - INFO -   Total Steps: 74400
+2025-07-16 01:25:23,243 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:25:23,243 - INFO -   Epsilon: 0.2536
+2025-07-16 01:25:23,243 - INFO -   Avg Loss: 283648696.0000
+2025-07-16 01:25:23,244 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:25:23,244 - INFO - Starting episode 93/100
+2025-07-16 01:25:23,285 - INFO - Step 0/100 - Total Steps: 74408 - Avg Reward: 0.00
+2025-07-16 01:25:36,618 - INFO - Update 0/4 - Loss: 381730368.0000
+2025-07-16 01:26:12,340 - INFO - Training updates completed - Avg Loss: 315919384.0000
+2025-07-16 01:26:12,343 - INFO - Episode 93 completed in 49.07 seconds
+2025-07-16 01:26:12,343 - INFO -   Total Steps: 75200
+2025-07-16 01:26:12,344 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:26:12,344 - INFO -   Epsilon: 0.2488
+2025-07-16 01:26:12,344 - INFO -   Avg Loss: 315919384.0000
+2025-07-16 01:26:12,344 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:26:12,345 - INFO - Starting episode 94/100
+2025-07-16 01:26:12,387 - INFO - Step 0/100 - Total Steps: 75208 - Avg Reward: 0.00
+2025-07-16 01:26:26,377 - INFO - Update 0/4 - Loss: 358812224.0000
+2025-07-16 01:27:03,545 - INFO - Training updates completed - Avg Loss: 288841700.0000
+2025-07-16 01:27:03,551 - INFO - Episode 94 completed in 51.17 seconds
+2025-07-16 01:27:03,553 - INFO -   Total Steps: 76000
+2025-07-16 01:27:03,554 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:27:03,555 - INFO -   Epsilon: 0.2440
+2025-07-16 01:27:03,556 - INFO -   Avg Loss: 288841700.0000
+2025-07-16 01:27:03,556 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:27:03,557 - INFO - Starting episode 95/100
+2025-07-16 01:27:03,605 - INFO - Step 0/100 - Total Steps: 76008 - Avg Reward: 0.00
+2025-07-16 01:27:16,789 - INFO - Update 0/4 - Loss: 362721760.0000
+2025-07-16 01:27:52,925 - INFO - Training updates completed - Avg Loss: 352607336.0000
+2025-07-16 01:27:52,929 - INFO - Episode 95 completed in 49.33 seconds
+2025-07-16 01:27:52,929 - INFO -   Total Steps: 76800
+2025-07-16 01:27:52,930 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:27:52,930 - INFO -   Epsilon: 0.2392
+2025-07-16 01:27:52,930 - INFO -   Avg Loss: 352607336.0000
+2025-07-16 01:27:52,931 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:27:52,931 - INFO - Starting episode 96/100
+2025-07-16 01:27:52,974 - INFO - Step 0/100 - Total Steps: 76808 - Avg Reward: 0.00
+2025-07-16 01:28:05,913 - INFO - Update 0/4 - Loss: 426630976.0000
+2025-07-16 01:28:41,959 - INFO - Training updates completed - Avg Loss: 327841224.0000
+2025-07-16 01:28:41,962 - INFO - Episode 96 completed in 49.00 seconds
+2025-07-16 01:28:41,962 - INFO -   Total Steps: 77600
+2025-07-16 01:28:41,963 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:28:41,963 - INFO -   Epsilon: 0.2344
+2025-07-16 01:28:41,963 - INFO -   Avg Loss: 327841224.0000
+2025-07-16 01:28:41,964 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:28:41,964 - INFO - Starting episode 97/100
+2025-07-16 01:28:42,010 - INFO - Step 0/100 - Total Steps: 77608 - Avg Reward: 0.00
+2025-07-16 01:28:53,690 - INFO - Update 0/4 - Loss: 510359104.0000
+2025-07-16 01:29:28,372 - INFO - Training updates completed - Avg Loss: 316028250.0000
+2025-07-16 01:29:28,375 - INFO - Episode 97 completed in 46.38 seconds
+2025-07-16 01:29:28,376 - INFO -   Total Steps: 78400
+2025-07-16 01:29:28,376 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:29:28,377 - INFO -   Epsilon: 0.2296
+2025-07-16 01:29:28,377 - INFO -   Avg Loss: 316028250.0000
+2025-07-16 01:29:28,377 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:29:28,378 - INFO - Starting episode 98/100
+2025-07-16 01:29:28,420 - INFO - Step 0/100 - Total Steps: 78408 - Avg Reward: 0.00
+2025-07-16 01:29:41,777 - INFO - Update 0/4 - Loss: 635479232.0000
+2025-07-16 01:30:15,333 - INFO - Training updates completed - Avg Loss: 328393592.5000
+2025-07-16 01:30:15,337 - INFO - Episode 98 completed in 46.93 seconds
+2025-07-16 01:30:15,337 - INFO -   Total Steps: 79200
+2025-07-16 01:30:15,338 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:30:15,338 - INFO -   Epsilon: 0.2248
+2025-07-16 01:30:15,338 - INFO -   Avg Loss: 328393592.5000
+2025-07-16 01:30:15,339 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:30:15,340 - INFO - Starting episode 99/100
+2025-07-16 01:30:15,380 - INFO - Step 0/100 - Total Steps: 79208 - Avg Reward: 0.00
+2025-07-16 01:30:28,008 - INFO - Update 0/4 - Loss: 573072768.0000
+2025-07-16 01:31:04,524 - INFO - Training updates completed - Avg Loss: 342624920.0000
+2025-07-16 01:31:04,528 - INFO - Episode 99 completed in 49.16 seconds
+2025-07-16 01:31:04,528 - INFO -   Total Steps: 80000
+2025-07-16 01:31:04,529 - INFO -   Avg Reward (50): 0.00
+2025-07-16 01:31:04,530 - INFO -   Epsilon: 0.2200
+2025-07-16 01:31:04,530 - INFO -   Avg Loss: 342624920.0000
+2025-07-16 01:31:04,531 - INFO -   Speed: 16.3 steps/s
+2025-07-16 01:31:04,569 - INFO - Training complete. Models saved.

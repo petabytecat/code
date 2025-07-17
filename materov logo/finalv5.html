@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROVolutionaries Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .outer-circle {
+            position: absolute;
+            width: 375px;
+            height: 375px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 351.5625px;
+            height: 351.5625px;
+        }
+        .dot, .inner-dot {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .dot {
+            background-color: #0077be;
+        }
+        .inner-dot {
+            background-color: #ff7f50;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="outer-circle" id="outerCircle"></div>
+        <div class="inner-circle" id="innerCircle"></div>
+    </div>
+
+    <script>
+        function createInnerSpirals() {
+            const innerCircle = document.getElementById('innerCircle');
+            const spiralCount = 6;
+            const dotsPerSpiral = 6;
+            const startRadius = 50;
+            const endRadius = 100;
+            const rotations = 0.25;
+            const minSize = 6;
+            const maxSize = 16.5;
+
+            for (let i = 0; i < spiralCount; i++) {
+                const startAngle = (i / spiralCount) * 2 * Math.PI;
+                for (let j = 0; j < dotsPerSpiral; j++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'inner-dot';
+                    const t = j / (dotsPerSpiral - 1);
+                    const radius = startRadius + (endRadius - startRadius) * t;
+                    const angle = startAngle + t * 2 * Math.PI * rotations;
+
+                    const size = minSize + (maxSize - minSize) * Math.pow(Math.sin(t * Math.PI), 2);
+
+                    const x = Math.cos(angle) * radius + 175.78125;
+                    const y = Math.sin(angle) * radius + 175.78125;
+                    dot.style.width = `${size}px`;
+                    dot.style.height = `${size}px`;
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    innerCircle.appendChild(dot);
+                }
+            }
+        }
+
+        function easeInQuint(x) {
+            return x * x * x ;
+        }
+
+        function animateOuterDots() {
+            const outerCircle = document.getElementById('outerCircle');
+            const maxDots = 12000;
+            let dots = [];
+            let startTime = Date.now();
+            const rampUpDuration = 0;
+            const dotsPerFrame = 3;
+
+            function createDot() {
+                if (dots.length >= maxDots) return;
+
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                const angle = Math.random() * 2 * Math.PI;
+                const radius = 150;
+                const x = Math.cos(angle) * radius + 187.5;
+                const y = Math.sin(angle) * radius + 187.5;
+                const size = Math.random() * 2.5 + 1.25;
+
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                dot.style.left = `${x}px`;
+                dot.style.top = `${y}px`;
+                dot.style.opacity = 1;
+
+                outerCircle.appendChild(dot);
+                dots.push({
+                    element: dot,
+                    startX: x,
+                    startY: y,
+                    progress: 0,
+                    speed: Math.random() * 0.0006 + 0.0004,
+                    opacityFactor: Math.random() * 0.2 + 0.9
+                });
+            }
+
+            function updateDots() {
+                dots.forEach((dot, index) => {
+                    dot.progress += dot.speed;
+                    if (dot.progress >= 1) {
+                        outerCircle.removeChild(dot.element);
+                        dots.splice(index, 1);
+                        return;
+                    }
+
+                    const easeProgress = easeInQuint(dot.progress);
+                    const x = dot.startX + (187.5 - dot.startX) * easeProgress;
+                    const y = dot.startY + (187.5 - dot.startY) * easeProgress;
+                    dot.element.style.left = `${x}px`;
+                    dot.element.style.top = `${y}px`;
+
+                    const opacityBase = Math.max(0, 1 - Math.pow(easeProgress, 2) * 5);
+                    const opacity = Math.pow(opacityBase, 2.5) * dot.opacityFactor;
+                    dot.element.style.opacity = opacity;
+                });
+            }
+
+            function animate() {
+                const currentTime = Date.now();
+                const elapsedTime = currentTime - startTime;
+
+                let currentMaxDots;
+                if (elapsedTime < rampUpDuration) {
+                    currentMaxDots = Math.floor((elapsedTime / rampUpDuration) * maxDots);
+                } else {
+                    currentMaxDots = maxDots;
+                }
+
+                for (let i = 0; i < dotsPerFrame; i++) {
+                    if (dots.length < currentMaxDots) {
+                        createDot();
+                    }
+                }
+                updateDots();
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        createInnerSpirals();
+        animateOuterDots();
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seeds Visualization</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .seed-group {
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .seed {
+            width: 8px;
+            height: 8px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .seed-label {
+            font-family: monospace;
+            font-size: 11px;
+            white-space: nowrap;
+            text-align: center;
+            margin-top: 2px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1px 3px;
+            border-radius: 2px;
+        }
+
+        .controls {
+            margin-bottom: 10px;
+        }
+
+        #filePath {
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        .button {
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <input type="file" id="fileInput" accept=".json" style="display: none;">
+        <input type="text" id="filePath" readonly placeholder="Selected file path">
+        <button class="button" onclick="document.getElementById('fileInput').click()">Choose File</button>
+        <button class="button" onclick="startMonitoring()">Start Monitoring</button>
+        <button class="button" onclick="stopMonitoring()">Stop Monitoring</button>
+        <input type="number" id="refreshInterval" value="1000" min="100" step="100">
+        <label for="refreshInterval">Refresh interval (ms)</label>
+    </div>
+    <div class="container" id="visualizer"></div>
+
+    <script>
+        let monitoringInterval;
+        let selectedFile = null;
+
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            selectedFile = e.target.files[0];
+            document.getElementById('filePath').value = selectedFile.name;
+            // Initial load of the file
+            readAndVisualizeFile();
+        });
+
+        function startMonitoring() {
+            if (!selectedFile) {
+                alert('Please choose a file first');
+                return;
+            }
+
+            const interval = parseInt(document.getElementById('refreshInterval').value);
+
+            // Set up periodic refresh
+            monitoringInterval = setInterval(() => {
+                readAndVisualizeFile();
+            }, interval);
+        }
+
+        function stopMonitoring() {
+            if (monitoringInterval) {
+                clearInterval(monitoringInterval);
+                monitoringInterval = null;
+            }
+        }
+
+        function readAndVisualizeFile() {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    visualizeSeeds(data);
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                }
+            };
+            reader.readAsText(selectedFile);
+        }
+
+        function visualizeSeeds(data) {
+            const container = document.getElementById('visualizer');
+            container.style.width = data.window.width + 'px';
+            container.style.height = data.window.height + 'px';
+
+            container.innerHTML = '';
+
+            data.seeds.forEach(seed => {
+                const seedGroup = document.createElement('div');
+                seedGroup.className = 'seed-group';
+                seedGroup.style.left = seed.x + 'px';
+                seedGroup.style.top = seed.y + 'px';
+
+                const seedElement = document.createElement('div');
+                seedElement.className = 'seed';
+
+                const label = document.createElement('div');
+                label.className = 'seed-label';
+                label.textContent = `ID: ${seed.id} (${seed.x}, ${seed.y})`;
+
+                seedGroup.appendChild(seedElement);
+                seedGroup.appendChild(label);
+                container.appendChild(seedGroup);
+            });
+        }
+    </script>
+</body>
+</html>

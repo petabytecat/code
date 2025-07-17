@@ -1,0 +1,58 @@
+Alliteration:  The repetition of consonant sounds at the beginning of words close to each other.
+Allusion:  A brief and indirect reference to a person, place, thing, or idea of historical, cultural, literary, or political significance.
+Anadiplosis:  The repetition of the last word of one clause or sentence at the beginning of the next.
+Anagnorisis:  A moment in a play or other work when a character makes a critical discovery.
+Anaphora:  The repetition of a word or phrase at the beginning of successive clauses.
+Analepsis (Flashback):  A narrative technique that involves a shift in the chronology of the story, taking the narrative back in time to an earlier event.
+Antithesis:  A rhetorical device in which two opposite ideas are put together in a sentence to achieve a contrasting effect.
+Apostrophe:  A figure of speech in which the speaker directly addresses an absent or imaginary person, or a personified abstraction.
+Asyndeton:  The omission or absence of a conjunction between parts of a sentence.
+Caesura:  A natural pause or break in a line of poetry, usually near the middle of the line.
+Chiasmus:  A rhetorical or literary figure in which words, grammatical constructions, or concepts are repeated in reverse order.
+Connotation:  The associated or secondary meaning of a word in addition to its explicit or primary meaning.
+Consonance:  The repetition of consonant sounds within or at the end of words in a phrase or sentence.
+Diction:  The choice and use of words and phrases in speech or writing.
+Dramatic Irony:  When the audience knows something that the characters do not.
+Enjambment:  The continuation of a sentence or clause over a line-break.
+Epiphany:  A moment of sudden revelation or insight.
+Epistolary Narrative:  A narrative told through a series of documents, such as letters, diary entries, or newspaper clippings.
+Epistrophe:  The repetition of a word at the end of successive clauses or sentences.
+Focalization:  The perspective through which a narrative is presented, determining what information the reader has access to.
+Foil:  A character who contrasts with another character, typically the protagonist, to highlight particular qualities of the other character.
+Foreshadowing:  A literary device that gives an advance hint of what is to come later in the story.
+Frame Narrative:  A story within a story, where an introductory or main narrative is presented to set the stage for a more emphasized second narrative or a series of shorter stories.
+Free Indirect Discourse:  A style of third-person narration that blends the narrator’s voice with the thoughts or speech of a character.
+Hyperbole:  Exaggerated statements or claims not meant to be taken literally.
+Hubris:  Excessive pride or self-confidence, often leading to a character's downfall.
+Hypophora:  A figure of speech in which the speaker poses a question and then immediately answers it.
+Imagery:  Descriptive language that appeals to the senses.
+In Media Res:  A narrative technique in which a story begins in the middle of the action.
+Interior Monologue:  A narrative technique that presents the thoughts of a character as they occur, often in a direct and uninterrupted flow.
+Irony:  A contrast between expectations and reality.
+Juxtaposition:  The placement of two or more ideas, characters, actions, settings, phrases, or words side by side for the purpose of developing comparisons and contrasts.
+Litotes:  A form of understatement in which a sentiment is expressed ironically by negating its contrary.
+Metaphor:  A figure of speech that directly compares two unlike things without using “like” or “as.”
+Metonymy:  A figure of speech in which one word or phrase is substituted for another with which it is closely associated.
+Motif:  A recurring literary device, subject, or idea in a literary work.
+Narratology:  The study of narrative structure and how it affects our perception of a story, including concepts like plot, theme, and point of view.
+Onomatopoeia:  A word that imitates the sound it represents.
+Oxymoron:  A figure of speech in which two opposite ideas are joined to create an effect.
+Paradox:  A statement that appears self-contradictory, but that reveals a deeper truth.
+Parataxis:  The placement of clauses or phrases one after another, without words to indicate coordination or subordination.
+Peripeteia:  A sudden reversal of fortune or change in circumstances, especially in reference to a fictional narrative.
+Personification:  Attributing human characteristics to non-human entities or inanimate objects.
+Polyptoton:  A rhetorical device where the same root word is repeated in different forms or cases.
+Polysyndeton:  The use of several conjunctions in close succession, especially where some might be omitted.
+Retrospective Narration:  A narrative that looks back on events that have already taken place, often with the benefit of hindsight.
+Sibilance:  A literary device where strongly stressed consonants are created deliberately by producing a hissing sound.
+Simile:  A figure of speech comparing two unlike things using “like” or “as.”
+Soliloquy:  A long speech expressing the thoughts of a character alone on stage.
+Stream of Consciousness:  A narrative technique that attempts to capture the flow of thoughts and feelings as they occur, often in an unstructured, free-form style.
+Stichomythia:  A form of dialogue in which two characters speak alternate lines of verse, often used in drama to convey a sense of tension or conflict.
+Symbolism:  The use of symbols to represent ideas or qualities.
+Synecdoche:  A figure of speech in which a part is made to represent the whole or vice versa.
+Theme:  The central topic or idea explored in a text.
+Tone:  The attitude or approach that the author takes toward the work’s central theme or subject.
+Understatement:  A figure of speech in which a writer or speaker deliberately makes a situation seem less important or serious than it is.
+Unreliable Narrator:  A narrator whose credibility is compromised, often leading the reader to question the truth of the story being told.
+Zeugma:  A figure of speech in which a word applies to multiple parts of the sentence, often in different senses.

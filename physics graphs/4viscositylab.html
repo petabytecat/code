@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Terminal Velocity vs Mass Graph</title>
+    <!-- Load React and ReactDOM -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Load Recharts (UMD build) -->
+    <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+    <!-- Load Babel for in-browser JSX transformation -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .chart-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="chart-container"></div>
+    
+    <script type="text/babel">
+      const { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ErrorBar } = Recharts;
+
+      const data = [
+        { mass: 0.01100, velocity: 0.131, uncertainty: 0.001 },
+        { mass: 0.02933, velocity: 0.547, uncertainty: 0.001 },
+        { mass: 0.03167, velocity: 0.59, uncertainty: 0.04 },
+        { mass: 0.03345, velocity: 0.62, uncertainty: 0.02 },
+        { mass: 0.04100, velocity: 0.8, uncertainty: 0.2 }
+      ];
+
+      const Graph = () => {
+        // Calculate best-fit line using the least squares method
+        const n = data.length;
+        let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+        data.forEach(point => {
+          sumX += point.mass;
+          sumY += point.velocity;
+          sumXY += point.mass * point.velocity;
+          sumXX += point.mass * point.mass;
+        });
+        
+        const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+        const intercept = (sumY - slope * sumX) / n;
+
+        // Incorporate uncertainties into the data points
+        const pointsWithUncertainty = data.map(point => ({
+          ...point,
+          velocityMax: point.velocity + point.uncertainty,
+          velocityMin: point.velocity - point.uncertainty
+        }));
+
+        let maxSepPoints = { p1: null, p2: null, separation: 0 };
+
+        for (let i = 0; i < data.length; i++) {
+          for (let j = i + 1; j < data.length; j++) {
+            const sep = Math.abs(
+              pointsWithUncertainty[j].velocityMax - pointsWithUncertainty[i].velocityMin
+            );
+            if (sep > maxSepPoints.separation) {
+              maxSepPoints = {
+                p1: pointsWithUncertainty[i],
+                p2: pointsWithUncertainty[j],
+                separation: sep
+              };
+            }
+          }
+        }
+
+        // Calculate maximum and minimum slopes based on uncertainty bounds
+        const maxSlope = (maxSepPoints.p2.velocityMax - maxSepPoints.p1.velocityMin) / 
+                         (maxSepPoints.p2.mass - maxSepPoints.p1.mass);
+        const minSlope = (maxSepPoints.p2.velocityMin - maxSepPoints.p1.velocityMax) / 
+                         (maxSepPoints.p2.mass - maxSepPoints.p1.mass);
+
+        // Create data points for the lines using the min and max mass values
+        const minMass = Math.min(...data.map(d => d.mass));
+        const maxMass = Math.max(...data.map(d => d.mass));
+
+        const bestFitLine = [
+          { mass: minMass, velocity: slope * minMass + intercept },
+          { mass: maxMass, velocity: slope * maxMass + intercept }
+        ];
+
+        const maxSlopeLine = [
+          { mass: minMass, velocity: maxSlope * minMass + (maxSepPoints.p1.velocityMin - maxSlope * maxSepPoints.p1.mass) },
+          { mass: maxMass, velocity: maxSlope * maxMass + (maxSepPoints.p1.velocityMin - maxSlope * maxSepPoints.p1.mass) }
+        ];
+
+        const minSlopeLine = [
+          { mass: minMass, velocity: minSlope * minMass + (maxSepPoints.p1.velocityMax - minSlope * maxSepPoints.p1.mass) },
+          { mass: maxMass, velocity: minSlope * maxMass + (maxSepPoints.p1.velocityMax - minSlope * maxSepPoints.p1.mass) }
+        ];
+
+        return (
+          <div>
+            <h2>Terminal Velocity vs Mass</h2>
+            <ScatterChart width={600} height={400} margin={{ top: 20, right: 30, bottom: 40, left: 40 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis 
+                dataKey="mass" 
+                type="number" 
+                label={{ value: 'Mass (kg)', position: 'bottom' }}
+                domain={['auto', 'auto']}
+              />
+              <YAxis 
+                dataKey="velocity" 
+                type="number"
+                label={{ value: 'Terminal Velocity (m/s)', angle: -90, position: 'left' }}
+                domain={[0, 'auto']}
+              />
+              <Tooltip />
+              <Scatter name="Data Points" data={data} fill="#8884d8">
+                <ErrorBar dataKey="uncertainty" direction="y" width={4} />
+              </Scatter>
+              <Scatter 
+                name="Best Fit" 
+                data={bestFitLine} 
+                line={{ stroke: 'red' }} 
+                shape={() => null}
+              />
+              <Scatter 
+                name="Max Slope" 
+                data={maxSlopeLine} 
+                line={{ stroke: 'green', strokeDasharray: '5 5' }} 
+                shape={() => null}
+              />
+              <Scatter 
+                name="Min Slope" 
+                data={minSlopeLine} 
+                line={{ stroke: 'blue', strokeDasharray: '5 5' }} 
+                shape={() => null}
+              />
+            </ScatterChart>
+            <div style={{ marginTop: '20px', fontSize: '14px' }}>
+              <p>Best Fit Slope: {slope.toFixed(2)} m/s/kg</p>
+              <p>Intercept: {intercept.toFixed(2)} m/s</p>
+              <p>
+                Best Fit Equation: y = {slope.toFixed(2)}x {intercept >= 0 ? '+' : '-'} {Math.abs(intercept).toFixed(2)}
+              </p>
+              <p>Maximum Slope: {maxSlope.toFixed(2)} m/s/kg</p>
+              <p>Minimum Slope: {minSlope.toFixed(2)} m/s/kg</p>
+              <p>Slope Uncertainty: ±{((maxSlope - minSlope) / 2).toFixed(2)} m/s/kg</p>
+            </div>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Graph />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

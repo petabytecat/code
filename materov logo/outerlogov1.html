@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rovolutionaries Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        .outer-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .dot {
+            position: absolute;
+            background-color: #0077be;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+        }
+        .inner-dot {
+            position: absolute;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #0077be;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="outer-circle" id="outerCircle"></div>
+        <div class="inner-circle" id="innerCircle"></div>
+        <div class="text">ROVOLUTIONARIES</div>
+    </div>
+
+    <script>
+        function createInnerSpirals() {
+            const innerCircle = document.getElementById('innerCircle');
+            const spiralCount = 4;
+            const dotsPerSpiral = 8;
+
+            for (let i = 0; i < spiralCount; i++) {
+                const angle = (i / spiralCount) * 2 * Math.PI;
+                for (let j = 0; j < dotsPerSpiral; j++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'inner-dot';
+                    const radius = 35 * Math.sin((j / (dotsPerSpiral - 1)) * Math.PI);
+                    const size = 3 + 3 * Math.sin((j / (dotsPerSpiral - 1)) * Math.PI);
+                    const x = Math.cos(angle + (j / dotsPerSpiral) * 1.5) * radius + 40;
+                    const y = Math.sin(angle + (j / dotsPerSpiral) * 1.5) * radius + 40;
+                    dot.style.width = `${size}px`;
+                    dot.style.height = `${size}px`;
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    innerCircle.appendChild(dot);
+                }
+            }
+        }
+
+        function createOuterDots() {
+            const outerCircle = document.getElementById('outerCircle');
+            const dotCount = 1000;
+
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                resetDot(dot);
+                outerCircle.appendChild(dot);
+                animateDot(dot);
+            }
+        }
+
+        function resetDot(dot) {
+            const angle = Math.random() * 2 * Math.PI;
+            const radius = 150;
+            const x = Math.cos(angle) * radius + 150;
+            const y = Math.sin(angle) * radius + 150;
+            const size = Math.random() * 2 + 1;
+
+            dot.style.width = `${size}px`;
+            dot.style.height = `${size}px`;
+            dot.style.left = `${x}px`;
+            dot.style.top = `${y}px`;
+            dot.style.opacity = 1;
+        }
+
+        function animateDot(dot) {
+            const duration = Math.random() * 3000 + 2000;
+            const targetX = 150;
+            const targetY = 150;
+
+            const startX = parseFloat(dot.style.left);
+            const startY = parseFloat(dot.style.top);
+            const startTime = Date.now();
+
+            function step() {
+                const progress = (Date.now() - startTime) / duration;
+                if (progress < 1) {
+                    const x = startX + (targetX - startX) * progress;
+                    const y = startY + (targetY - startY) * progress;
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    dot.style.opacity = 1 - progress;
+                    requestAnimationFrame(step);
+                } else {
+                    resetDot(dot);
+                    animateDot(dot);
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        createInnerSpirals();
+        createOuterDots();
+    </script>
+</body>
+</html>

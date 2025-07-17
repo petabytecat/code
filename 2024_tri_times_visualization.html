@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Sprint Performance Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>KAUST Triathlon Individual Sprint Analysis (2022 vs. 2024)</h1>
+
+    <h2>Performance Distribution</h2>
+    <canvas id="individualSprintChart" width="800" height="400"></canvas>
+
+    <script>
+        const swimTimes2022 = [15.01, 10.27, 13.21, 14.34, 13.23, 18.06, 12.40, 22.24, 12.30, 12.43, 11.43, 9.15, 10.09, 8.37, 10.28, 10.02, 9.22, 12.33, 11.34, 10.30, 11.26, 8.44, 11.04, 12.30, 14.05, 16.18, 12.33, 15.49, 12.14, 10.30, 13.11, 12.54, 11.29, 15.02, 14.29, 14.04, 12.29, 13.27, 15.13, 19.42, 10.30, 9.06, 13.38, 17.28, 18.45, 11.39];
+        const bikeTimes2022 = [37.20, 40.92, 43.93, 48.73, 45.03, 45.07, 45.98, 51.30, 38.35, 38.27, 32.48, 37.43, 29.03, 33.95, 36.13, 37.50, 38.12, 38.45, 39.35, 36.37, 38.28, 36.30, 47.40, 38.35, 40.38, 41.45, 40.53, 45.55, 40.62, 40.28, 37.22, 44.45, 35.78, 37.60, 40.00, 43.35, 44.00, 45.12, 36.53, 36.00, 36.70, 41.85, 62.43, 35.78];
+        const runTimes2022 = [28.33, 29.57, 26.10, 29.93, 38.00, 36.67, 40.33, 40.92, 34.43, 34.43, 26.50, 29.45, 22.00, 21.70, 24.00, 25.22, 22.23, 23.28, 25.55, 26.85, 28.37, 28.75, 14.02, 25.02, 24.07, 27.15, 25.03, 24.90, 29.43, 26.83, 32.38, 28.72, 31.82, 31.82, 33.08, 31.12, 33.00, 31.58, 24.22, 30.30, 26.70, 29.23, 19.72, 32.72];
+
+        const swimTimes2024 = [8.683333333, 8.266666667, 8.6, 13.61666667, 10.05, 10.61666667, 10.45, 10, 11.33333333, 11.96666667, 11.85, 9.366666667, 7.933333333, 8.4, 10.43333333, 8.466666667, 7.433333333, 15.75, 13.36666667, 9.8, 7.75, 11.86666667, 12.51666667, 20.46666667, 7.583333333, 9.05, 9.683333333, 8.066666667, 12.06666667, 12.13333333, 12.03333333, 16.7, 16.43333333, 18.35, 9.833333333, 14.5, 10.3, 9.466666667, 9.866666667, 10.6, 10.68333333];
+        const bikeTimes2024 = [23.33333333, 29.36666667, 39.76666667, 27.01666667, 34.65, 23.45, 30.2, 23.96666667, 27.53333333, 22.01666667, 25.08333333, 26.76666667, 29.21666667, 33.66666667, 21.31666667, 34.83333333, 35.7, 37.3, 33.56666667, 33.16666667, 22.66666667, 20.71666667, 24.78333333, 27.4, 27.38333333, 22.96666667, 33.58333333, 25.63333333, 34.76666667, 41.51666667, 46.88333333, 32.3, 23.85, 32.93333333];
+        const runTimes2024 = [33.11666667, 42.08333333, 39.7, 47.66666667, 54.98333333, 39.95, 40.93333333, 46.15, 51.76666667, 32.85, 34.76666667, 38.01666667, 40.98333333, 39.31666667, 45.38333333, 35.41666667, 46.21666667, 47.16666667, 55.8, 23.16666667, 33.18333333, 36.35, 37.21666667, 39.86666667, 42.6, 44.13333333, 42.15, 48.66666667, 48.55, 39.65, 38.5, 40.03333333, 50.26666667, 48.26666667];
+
+        function createHistogram(data, binCount = 10) {
+            const min = Math.min(...data);
+            const max = Math.max(...data);
+            const binSize = (max - min) / binCount;
+            const bins = Array(binCount).fill(0);
+
+            data.forEach(value => {
+                const binIndex = Math.min(Math.floor((value - min) / binSize), binCount - 1);
+                bins[binIndex]++;
+            });
+
+            return {
+                bins,
+                labels: bins.map((_, index) => min + (index + 0.5) * binSize)
+            };
+        }
+
+        const swimHist2022 = createHistogram(swimTimes2022);
+        const bikeHist2022 = createHistogram(bikeTimes2022);
+        const runHist2022 = createHistogram(runTimes2022);
+
+        const swimHist2024 = createHistogram(swimTimes2024);
+        const bikeHist2024 = createHistogram(bikeTimes2024);
+        const runHist2024 = createHistogram(runTimes2024);
+
+        const ctx = document.getElementById('individualSprintChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [
+                    {
+                        label: 'Swim 2022',
+                        data: swimHist2022.bins.map((y, i) => ({ x: swimHist2022.labels[i], y: y })),
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Bike 2022',
+                        data: bikeHist2022.bins.map((y, i) => ({ x: bikeHist2022.labels[i], y: y })),
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Run 2022',
+                        data: runHist2022.bins.map((y, i) => ({ x: runHist2022.labels[i], y: y })),
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Swim 2024',
+                        data: swimHist2024.bins.map((y, i) => ({ x: swimHist2024.labels[i], y: y })),
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Bike 2024',
+                        data: bikeHist2024.bins.map((y, i) => ({ x: bikeHist2024.labels[i], y: y })),
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Run 2024',
+                        data: runHist2024.bins.map((y, i) => ({ x: runHist2024.labels[i], y: y })),
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Time (minutes)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Frequency'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Individual Sprint Performance Distribution (2022 vs. 2024)'
+                    },
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

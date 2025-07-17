@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral Logo Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .logo-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+        }
+        .inner-dot {
+            position: absolute;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            max-width: 400px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        input[type="number"] {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="inner-circle" id="innerCircle"></div>
+    </div>
+    <div class="controls">
+        <div class="control-group">
+            <label for="spiralCount">Spiral Count:</label>
+            <input type="range" id="spiralCount" min="1" max="10" value="3" step="1">
+            <input type="number" id="spiralCountValue" value="3" min="1" max="10">
+        </div>
+        <div class="control-group">
+            <label for="dotsPerSpiral">Dots Per Spiral:</label>
+            <input type="range" id="dotsPerSpiral" min="5" max="30" value="15" step="1">
+            <input type="number" id="dotsPerSpiralValue" value="15" min="5" max="30">
+        </div>
+        <div class="control-group">
+            <label for="startRadius">Start Radius:</label>
+            <input type="range" id="startRadius" min="0" max="100" value="20" step="1">
+            <input type="number" id="startRadiusValue" value="20" min="0" max="100">
+        </div>
+        <div class="control-group">
+            <label for="endRadius">End Radius:</label>
+            <input type="range" id="endRadius" min="50" max="150" value="90" step="1">
+            <input type="number" id="endRadiusValue" value="90" min="50" max="150">
+        </div>
+        <div class="control-group">
+            <label for="rotations">Rotations:</label>
+            <input type="range" id="rotations" min="0" max="2" value="1.5" step="0.05">
+            <input type="number" id="rotationsValue" value="1.5" min="0" max="2" step="0.05">
+        </div>
+        <div class="control-group">
+            <label for="minSize">Min Size:</label>
+            <input type="range" id="minSize" min="1" max="10" value="2" step="0.5">
+            <input type="number" id="minSizeValue" value="2" min="1" max="10" step="0.5">
+        </div>
+        <div class="control-group">
+            <label for="maxSize">Max Size:</label>
+            <input type="range" id="maxSize" min="5" max="30" value="20" step="0.5">
+            <input type="number" id="maxSizeValue" value="20" min="5" max="30" step="0.5">
+        </div>
+        <div class="control-group">
+            <label for="dotColor">Dot Color:</label>
+            <input type="color" id="dotColor" value="#ff6b6b">
+        </div>
+    </div>
+
+    <script>
+        function createInnerSpirals() {
+            const innerCircle = document.getElementById('innerCircle');
+            innerCircle.innerHTML = ''; // Clear existing dots
+
+            const spiralCount = parseInt(document.getElementById('spiralCount').value);
+            const dotsPerSpiral = parseInt(document.getElementById('dotsPerSpiral').value);
+            const startRadius = parseInt(document.getElementById('startRadius').value);
+            const endRadius = parseInt(document.getElementById('endRadius').value);
+            const rotations = parseFloat(document.getElementById('rotations').value);
+            const minSize = parseFloat(document.getElementById('minSize').value);
+            const maxSize = parseFloat(document.getElementById('maxSize').value);
+            const dotColor = document.getElementById('dotColor').value;
+
+            for (let i = 0; i < spiralCount; i++) {
+                const startAngle = (i / spiralCount) * 2 * Math.PI;
+                for (let j = 0; j < dotsPerSpiral; j++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'inner-dot';
+                    const t = j / (dotsPerSpiral - 1);
+                    const radius = startRadius + (endRadius - startRadius) * t;
+                    const angle = startAngle + t * 2 * Math.PI * rotations;
+
+                    const size = minSize + (maxSize - minSize) * Math.pow(Math.sin(t * Math.PI), 2);
+
+                    const x = Math.cos(angle) * radius + 100;
+                    const y = Math.sin(angle) * radius + 100;
+                    dot.style.width = `${size}px`;
+                    dot.style.height = `${size}px`;
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    dot.style.backgroundColor = dotColor;
+                    innerCircle.appendChild(dot);
+                }
+            }
+        }
+
+        // Set up event listeners for all inputs
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.type === 'range' || this.type === 'number') {
+                    // Update the corresponding value input
+                    const valueInput = this.type === 'range' ?
+                        document.getElementById(this.id + 'Value') :
+                        document.getElementById(this.id.replace('Value', ''));
+                    valueInput.value = this.value;
+                }
+                createInnerSpirals();
+            });
+        });
+
+        // Initial creation
+        createInnerSpirals();
+    </script>
+</body>
+</html>

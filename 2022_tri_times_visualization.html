@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triathlon Performance Distribution</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="https://my.raceresult.com/224128/#1_A4463C" target="_blank">2022 Kaust Triathlon Analysis</a></h1>
+
+    <h2>Fastest Times and Speeds</h2>
+    <table id="fastestTimes"></table>
+
+    <h2>Individual Sprint</h2>
+    <canvas id="individualSprintChart" width="800" height="400"></canvas>
+    <div id="individualSprintStats"></div>
+
+    <h2>Team Sprint</h2>
+    <canvas id="teamSprintChart" width="800" height="400"></canvas>
+    <div id="teamSprintStats"></div>
+
+    <h2>Combined Sprint</h2>
+    <canvas id="combinedSprintChart" width="800" height="400"></canvas>
+    <div id="combinedSprintStats"></div>
+
+    <h2>Individual Olympic</h2>
+    <canvas id="individualOlympicChart" width="800" height="400"></canvas>
+    <div id="individualOlympicStats"></div>
+
+    <script>
+        const individualSprintSwimTimes = [15.01, 10.27, 13.21, 14.34, 13.23, 18.06, 12.40, 22.24, 12.30, 12.43, 11.43, 9.15, 10.09, 8.37, 10.28, 10.02, 9.22, 12.33, 11.34, 10.30, 11.26, 8.44, 11.04, 12.30, 14.05, 16.18, 12.33, 15.49, 12.14, 10.30, 13.11, 12.54, 11.29, 15.02, 14.29, 14.04, 12.29, 13.27, 15.13, 19.42, 10.30, 9.06, 13.38, 17.28, 18.45, 11.39];
+        const individualSprintBikeTimes = [37.20, 40.92, 43.93, 48.73, 45.03, 45.07, 45.98, 51.30, 38.35, 38.27, 32.48, 37.43, 29.03, 33.95, 36.13, 37.50, 38.12, 38.45, 39.35, 36.37, 38.28, 36.30, 47.40, 38.35, 40.38, 41.45, 40.53, 45.55, 40.62, 40.28, 37.22, 44.45, 35.78, 37.60, 40.00, 43.35, 44.00, 45.12, 36.53, 36.00, 36.70, 41.85, 62.43, 35.78];
+        const individualSprintRunTimes = [28.33, 29.57, 26.10, 29.93, 38.00, 36.67, 40.33, 40.92, 34.43, 34.43, 26.50, 29.45, 22.00, 21.70, 24.00, 25.22, 22.23, 23.28, 25.55, 26.85, 28.37, 28.75, 14.02, 25.02, 24.07, 27.15, 25.03, 24.90, 29.43, 26.83, 32.38, 28.72, 31.82, 31.82, 33.08, 31.12, 33.00, 31.58, 24.22, 30.30, 26.70, 29.23, 19.72, 32.72];
+
+        const teamSprintSwimTimes = [9.13, 7.55, 9.08, 11.41, 8.23, 10.23, 12.29, 13.21, 11.36, 10.25, 14.10, 15.17, 15.31, 10.28, 16.53, 15.07, 14.38, 12.32, 19.50, 13.09, 21.44, 19.41, 14.09, 11.21, 15.35];
+        const teamSprintBikeTimes = [37.56, 35.34, 37.36, 35.12, 40.04, 36.06, 40.47, 36.27, 43.44, 39.15, 37.01, 42.35, 41.09, 44.42, 50.30, 38.22, 44.24, 43.46, 36.13, 41.35, 47.05, 50.24, 53.02, 51.39];
+        const teamSprintRunTimes = [18.29, 22.30, 22.34, 23.19, 21.48, 25.19, 19.02, 22.51, 20.17, 28.13, 27.56, 23.31, 25.52, 28.15, 17.56, 32.35, 30.16, 25.38, 42.04, 32.04, 30.40, 32.20, 34.01, 34.45];
+
+        const individualOlympicSwimTimes = [35.17, 44.10, 45.29, 22.49, 30.58, 30.44, 30.38, 35.26, 41.51, 36.32, 36.52, 37.42, 43.45, 32.55, 32.47];
+        const individualOlympicBikeTimes = [68.09, 78.18, 71.24, 60.27, 56.59, 66.11, 67.43, 65.33, 63.34, 50.42, 70.51, 67.00, 80.11, 63.46, 64.02];
+        const individualOlympicRunTimes = [45.09, 53.48, 63.57, 41.25, 41.26, 47.10, 46.38, 48.12, 48.40, 56.53, 60.28, 59.43, 47.23, 52.05];
+
+        const combinedSprintSwimTimes = [...individualSprintSwimTimes, ...teamSprintSwimTimes];
+        const combinedSprintBikeTimes = [...individualSprintBikeTimes, ...teamSprintBikeTimes];
+        const combinedSprintRunTimes = [...individualSprintRunTimes, ...teamSprintRunTimes];
+
+        const allTimes = [...combinedSprintSwimTimes, ...combinedSprintBikeTimes, ...combinedSprintRunTimes, ...individualOlympicSwimTimes, ...individualOlympicBikeTimes, ...individualOlympicRunTimes];
+        const overallMean = allTimes.reduce((a, b) => a + b) / allTimes.length;
+        const overallStdev = Math.sqrt(allTimes.reduce((sq, n) => sq + Math.pow(n - overallMean, 2), 0) / (allTimes.length - 1));
+
+        function createHistogram(data, binCount = 10) {
+            const min = Math.min(...data);
+            const max = Math.max(...data);
+            const binSize = (max - min) / binCount;
+            const bins = Array(binCount).fill(0);
+
+            data.forEach(value => {
+                const binIndex = Math.min(Math.floor((value - min) / binSize), binCount - 1);
+                bins[binIndex]++;
+            });
+
+            return {
+                bins,
+                labels: bins.map((_, index) => min + (index + 0.5) * binSize)
+            };
+        }
+
+        function calculateStats(data, overallMean, overallStdev) {
+            const mean = data.reduce((a, b) => a + b) / data.length;
+            const sd = Math.sqrt(data.reduce((sq, n) => sq + Math.pow(n - mean, 2), 0) / (data.length - 1));
+            const cv = (sd / overallMean);
+            const abilityToImprove = sd / mean;
+            return { mean, sd, cv, abilityToImprove };
+        }
+
+        function displayStats(containerId, swimStats, bikeStats, runStats) {
+            document.getElementById(containerId).innerHTML = `
+                <h3>Ability to Improve:</h3>
+                <p>Swim: ${swimStats.abilityToImprove.toFixed(4)}</p>
+                <p>Bike: ${bikeStats.abilityToImprove.toFixed(4)}</p>
+                <p>Run: ${runStats.abilityToImprove.toFixed(4)}</p>
+                <h3>Importance of Improvement:</h3>
+                <p>Swim: ${swimStats.cv.toFixed(4)}</p>
+                <p>Bike: ${bikeStats.cv.toFixed(4)}</p>
+                <p>Run: ${runStats.cv.toFixed(4)}</p>
+            `;
+        }
+
+        function createChart(ctx, label, swimHist, bikeHist, runHist) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: `${label} Swim`,
+                        data: swimHist.bins.map((y, i) => ({ x: swimHist.labels[i], y: y })),
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    }, {
+                        label: `${label} Bike`,
+                        data: bikeHist.bins.map((y, i) => ({ x: bikeHist.labels[i], y: y })),
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    }, {
+                        label: `${label} Run`,
+                        data: runHist.bins.map((y, i) => ({ x: runHist.labels[i], y: y })),
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'Time (minutes)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Frequency'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: `${label} Performance Distribution`
+                        },
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+        }
+
+        function findFastestTimeAndSpeed(times, distance) {
+            const fastestTime = Math.min(...times);
+            const speed = distance / (fastestTime / 60); // km/h
+            return { fastestTime, speed };
+        }
+
+        function displayFastestTimes() {
+            const sprintSwim = findFastestTimeAndSpeed(combinedSprintSwimTimes, 0.4);
+            const sprintBike = findFastestTimeAndSpeed(combinedSprintBikeTimes, 20);
+            const sprintRun = findFastestTimeAndSpeed(combinedSprintRunTimes, 5);
+            const olympicSwim = findFastestTimeAndSpeed(individualOlympicSwimTimes, 1.5);
+            const olympicBike = findFastestTimeAndSpeed(individualOlympicBikeTimes, 40);
+            const olympicRun = findFastestTimeAndSpeed(individualOlympicRunTimes, 10);
+
+            const table = document.getElementById('fastestTimes');
+            table.innerHTML = `
+                <tr>
+                    <th>Sport</th>
+                    <th>Distance</th>
+                    <th>Fastest Time (min)</th>
+                    <th>Speed (km/h)</th>
+                </tr>
+                <tr>
+                    <td>Sprint Swim</td>
+                    <td>400m</td>
+                    <td>${sprintSwim.fastestTime.toFixed(2)}</td>
+                    <td>${sprintSwim.speed.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td>Sprint Bike</td>
+                    <td>20km</td>
+                    <td>${sprintBike.fastestTime.toFixed(2)}</td>
+                    <td>${sprintBike.speed.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td>Sprint Run</td>
+                    <td>5km</td>
+                    <td>${sprintRun.fastestTime.toFixed(2)}</td>
+                    <td>${sprintRun.speed.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td>Olympic Swim</td>
+                    <td>1.5km</td>
+                    <td>${olympicSwim.fastestTime.toFixed(2)}</td>
+                    <td>${olympicSwim.speed.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td>Olympic Bike</td>
+                    <td>40km</td>
+                    <td>${olympicBike.fastestTime.toFixed(2)}</td>
+                    <td>${olympicBike.speed.toFixed(2)}</td>
+                </tr>
+                <tr>
+                    <td>Olympic Run</td>
+                    <td>10km</td>
+                    <td>${olympicRun.fastestTime.toFixed(2)}</td>
+                    <td>${olympicRun.speed.toFixed(2)}</td>
+                </tr>
+            `;
+        }
+
+        const individualSprintSwimHist = createHistogram(individualSprintSwimTimes);
+        const individualSprintBikeHist = createHistogram(individualSprintBikeTimes);
+        const individualSprintRunHist = createHistogram(individualSprintRunTimes);
+
+        const teamSprintSwimHist = createHistogram(teamSprintSwimTimes);
+        const teamSprintBikeHist = createHistogram(teamSprintBikeTimes);
+        const teamSprintRunHist = createHistogram(teamSprintRunTimes);
+
+        const combinedSprintSwimHist = createHistogram(combinedSprintSwimTimes);
+        const combinedSprintBikeHist = createHistogram(combinedSprintBikeTimes);
+        const combinedSprintRunHist = createHistogram(combinedSprintRunTimes);
+
+        const individualOlympicSwimHist = createHistogram(individualOlympicSwimTimes);
+        const individualOlympicBikeHist = createHistogram(individualOlympicBikeTimes);
+        const individualOlympicRunHist = createHistogram(individualOlympicRunTimes);
+
+        const individualSprintCtx = document.getElementById('individualSprintChart').getContext('2d');
+        const teamSprintCtx = document.getElementById('teamSprintChart').getContext('2d');
+        const combinedSprintCtx = document.getElementById('combinedSprintChart').getContext('2d');
+        const individualOlympicCtx = document.getElementById('individualOlympicChart').getContext('2d');
+
+        createChart(individualSprintCtx, 'Individual Sprint', individualSprintSwimHist, individualSprintBikeHist, individualSprintRunHist);
+        createChart(teamSprintCtx, 'Team Sprint', teamSprintSwimHist, teamSprintBikeHist, teamSprintRunHist);
+        createChart(combinedSprintCtx, 'Combined Sprint', combinedSprintSwimHist, combinedSprintBikeHist, combinedSprintRunHist);
+        createChart(individualOlympicCtx, 'Individual Olympic', individualOlympicSwimHist, individualOlympicBikeHist, individualOlympicRunHist);
+
+        const individualSprintSwimStats = calculateStats(individualSprintSwimTimes, overallMean, overallStdev);
+        const individualSprintBikeStats = calculateStats(individualSprintBikeTimes, overallMean, overallStdev);
+        const individualSprintRunStats = calculateStats(individualSprintRunTimes, overallMean, overallStdev);
+
+        const teamSprintSwimStats = calculateStats(teamSprintSwimTimes, overallMean, overallStdev);
+        const teamSprintBikeStats = calculateStats(teamSprintBikeTimes, overallMean, overallStdev);
+        const teamSprintRunStats = calculateStats(teamSprintRunTimes, overallMean, overallStdev);
+
+        const combinedSprintSwimStats = calculateStats(combinedSprintSwimTimes, overallMean, overallStdev);
+        const combinedSprintBikeStats = calculateStats(combinedSprintBikeTimes, overallMean, overallStdev);
+        const combinedSprintRunStats = calculateStats(combinedSprintRunTimes, overallMean, overallStdev);
+
+        const individualOlympicSwimStats = calculateStats(individualOlympicSwimTimes, overallMean, overallStdev);
+        const individualOlympicBikeStats = calculateStats(individualOlympicBikeTimes, overallMean, overallStdev);
+        const individualOlympicRunStats = calculateStats(individualOlympicRunTimes, overallMean, overallStdev);
+
+        displayStats('individualSprintStats', individualSprintSwimStats, individualSprintBikeStats, individualSprintRunStats);
+        displayStats('teamSprintStats', teamSprintSwimStats, teamSprintBikeStats, teamSprintRunStats);
+        displayStats('combinedSprintStats', combinedSprintSwimStats, combinedSprintBikeStats, combinedSprintRunStats);
+        displayStats('individualOlympicStats', individualOlympicSwimStats, individualOlympicBikeStats, individualOlympicRunStats);
+
+        displayFastestTimes();
+    </script>
+</body>
+</html>

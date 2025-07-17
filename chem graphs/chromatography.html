@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retardation Factors with Uncertainties</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .plot {
+            width: 100%;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="raw-plot" class="plot"></div>
+    <div id="average-plot" class="plot"></div>
+
+    <script>
+        // Individual trials with raw uncertainties
+        const rawData = [{
+            type: 'scatter',
+            name: 'Trial 1',
+            x: [0.23, 0.44, 0.06, 0.43, 0.066, 0.06, 0.54, 0.07, 0.45, 0.98, 0.045],
+            y: ['Dark pink (C11)', 'Yellow (C11)', 'Light pink (Y34)', 'Yellow (Y34)', 'Pink (CB71)',
+                'Pink (O23)', 'Yellow (O23)', 'Light pink (EG55)', 'Yellow (EG55)', 'Light blue (EG55)', 'Purple (DV81)'],
+            error_x: {
+                type: 'data',
+                array: [0.01, 0.01, 0.01, 0.01, 0.009, 0.01, 0.01, 0.01, 0.01, 0.02, 0.008],
+                visible: true
+            },
+            mode: 'markers'
+        }, {
+            type: 'scatter',
+            name: 'Trial 2',
+            x: [0.18, 0.41, 0.07, 0.43, 0.06, 0.11, 0.47, 0.07, 0.43, 1.0, 0.11],
+            y: ['Dark pink (C11)', 'Yellow (C11)', 'Light pink (Y34)', 'Yellow (Y34)', 'Pink (CB71)',
+                'Pink (O23)', 'Yellow (O23)', 'Light pink (EG55)', 'Yellow (EG55)', 'Light blue (EG55)', 'Purple (DV81)'],
+            error_x: {
+                type: 'data',
+                array: [0.01, 0.02, 0.01, 0.02, 0.01, 0.01, 0.02, 0.01, 0.01, 0.02, 0.01],
+                visible: true
+            },
+            mode: 'markers'
+        }, {
+            type: 'scatter',
+            name: 'Trial 3',
+            x: [0.20, 0.44, 0.05, 0.48, 0.07, 0.09, 0.43, 0.06, 0.38, 0.98, 0.11],
+            y: ['Dark pink (C11)', 'Yellow (C11)', 'Light pink (Y34)', 'Yellow (Y34)', 'Pink (CB71)',
+                'Pink (O23)', 'Yellow (O23)', 'Light pink (EG55)', 'Yellow (EG55)', 'Light blue (EG55)', 'Purple (DV81)'],
+            error_x: {
+                type: 'data',
+                array: [0.01, 0.02, 0.01, 0.02, 0.01, 0.01, 0.02, 0.01, 0.01, 0.02, 0.01],
+                visible: true
+            },
+            mode: 'markers'
+        }];
+
+        // Averages with midrange uncertainties
+        const averageData = [{
+            type: 'scatter',
+            name: 'Average',
+            x: [0.20, 0.43, 0.06, 0.45, 0.067, 0.09, 0.50, 0.067, 0.48, 0.99, 0.09],
+            y: ['Dark pink (C11)', 'Yellow (C11)', 'Light pink (Y34)', 'Yellow (Y34)', 'Pink (CB71)',
+                'Pink (O23)', 'Yellow (O23)', 'Light pink (EG55)', 'Yellow (EG55)', 'Light blue (EG55)', 'Purple (DV81)'],
+            error_x: {
+                type: 'data',
+                array: [0.02, 0.02, 0.01, 0.02, 0.004, 0.03, 0.04, 0.004, 0.04, 0.01, 0.03],
+                visible: true
+            },
+            mode: 'markers',
+            marker: {
+                size: 10
+            }
+        }];
+
+        const rawLayout = {
+            title: 'Individual Trials with Raw Uncertainties',
+            xaxis: {
+                title: 'Retardation Factor',
+                range: [-0.1, 1.1]
+            },
+            yaxis: {
+                title: 'Dye Color',
+            },
+            showlegend: true,
+            height: 800,
+            margin: {
+                l: 150
+            }
+        };
+
+        const averageLayout = {
+            title: 'Averages with Midrange Uncertainties',
+            xaxis: {
+                title: 'Retardation Factor',
+                range: [-0.1, 1.1]
+            },
+            yaxis: {
+                title: 'Dye Color',
+            },
+            showlegend: true,
+            height: 800,
+            margin: {
+                l: 150
+            }
+        };
+
+        Plotly.newPlot('raw-plot', rawData, rawLayout);
+        Plotly.newPlot('average-plot', averageData, averageLayout);
+    </script>
+</body>
+</html>

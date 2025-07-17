@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rope Length vs Time Squared Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="800" height="600"></canvas>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const data = [
+            {x: 0.125, y: 0.6453444444, error: 0.02},
+            {x: 0.25, y: 1.158493444, error: 0.03},
+            {x: 0.375, y: 1.667541778, error: 0.02},
+            {x: 0.5, y: 2.093809, error: 0.01},
+            {x: 0.625, y: 2.609301778, error: 0.05},
+            {x: 0.75, y: 3.076516, error: 0.009},
+            {x: 0.875, y: 3.611266778, error: 0.09},
+            {x: 1, y: 4.114136111, error: 0.05}
+        ];
+
+        const xOffset = 0.0005;
+
+        const calculateLeastSquares = (data) => {
+            const n = data.length;
+            let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+            for (let i = 0; i < n; i++) {
+                sumX += data[i].x;
+                sumY += data[i].y;
+                sumXY += data[i].x * data[i].y;
+                sumXX += data[i].x * data[i].x;
+            }
+            const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+            const intercept = (sumY - slope * sumX) / n;
+            return { slope, intercept };
+        };
+
+        const { slope: normalSlope, intercept: normalIntercept } = calculateLeastSquares(data);
+
+        const firstPoint = data[0];
+        const lastPoint = data[data.length - 1];
+
+        const maxSlope = (lastPoint.y + lastPoint.error - (firstPoint.y - firstPoint.error)) / (lastPoint.x - firstPoint.x - 2 * xOffset);
+        const minSlope = (lastPoint.y - lastPoint.error - (firstPoint.y + firstPoint.error)) / (lastPoint.x - firstPoint.x + 2 * xOffset);
+
+        const maxIntercept = (firstPoint.y - firstPoint.error) - maxSlope * (firstPoint.x - xOffset);
+        const minIntercept = (firstPoint.y + firstPoint.error) - minSlope * (firstPoint.x + xOffset);
+
+        const calculateRSquared = (data, slope, intercept) => {
+            const yMean = data.reduce((sum, point) => sum + point.y, 0) / data.length;
+            const ssTotal = data.reduce((sum, point) => sum + Math.pow(point.y - yMean, 2), 0);
+            const ssResidual = data.reduce((sum, point) => sum + Math.pow(point.y - (slope * point.x + intercept), 2), 0);
+            return 1 - (ssResidual / ssTotal);
+        };
+
+        const rSquared = calculateRSquared(data, normalSlope, normalIntercept);
+
+        // Generate trendline data
+        const trendlineData = (slope, intercept) => {
+            return [{x: 0, y: intercept}, {x: 1.2, y: slope * 1.2 + intercept}];
+        };
+
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Data Points',
+                    data: data,
+                    backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    error: data.map(point => ({x: 0.0005, y: point.error}))
+                }, {
+                    label: `Normal Trendline (y = ${normalSlope.toFixed(4)}x + ${normalIntercept.toFixed(4)}, R² = ${rSquared.toFixed(4)})`,
+                    data: trendlineData(normalSlope, normalIntercept),
+                    type: 'line',
+                    borderColor: 'rgba(0, 0, 0, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                    pointRadius: 0
+                }, {
+                    label: `Max Slope (y = ${maxSlope.toFixed(4)}x + ${maxIntercept.toFixed(4)})`,
+                    data: trendlineData(maxSlope, maxIntercept),
+                    type: 'line',
+                    borderColor: 'rgba(139, 0, 0, 1)',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0
+                }, {
+                    label: `Min Slope (y = ${minSlope.toFixed(4)}x + ${minIntercept.toFixed(4)})`,
+                    data: trendlineData(minSlope, minIntercept),
+                    type: 'line',
+                    borderColor: 'rgba(0, 100, 0, 1)',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "The Linearized Graph of the Effect on the Pendulum's Rope on the Period Squared",
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 30
+                        }
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += `(${context.parsed.x.toFixed(3)}, ${context.parsed.y.toFixed(3)})`;
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Length of Rope (m ± 0.0005 m)'
+                        },
+                        min: 0,
+                        max: 1.2
+                    },
+                    y: {
+                        type: 'linear',
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Period Squared (s^2)'
+                        },
+                        min: 0
+                    }
+                }
+            },
+            plugins: [{
+                id: 'errorBars',
+                afterDatasetsDraw(chart, args, options) {
+                    const {ctx, data, chartArea: {top, bottom, left, right}, scales: {x, y}} = chart;
+
+                    ctx.save();
+                    data.datasets[0].data.forEach((dataPoint, index) => {
+                        const xPos = x.getPixelForValue(dataPoint.x);
+                        const yPos = y.getPixelForValue(dataPoint.y);
+                        const yError = y.getPixelForValue(dataPoint.y + data.datasets[0].error[index].y) - yPos;
+                        const xError = x.getPixelForValue(dataPoint.x + data.datasets[0].error[index].x) - xPos;
+
+                        // Draw vertical error bar
+                        ctx.beginPath();
+                        ctx.moveTo(xPos, yPos - yError);
+                        ctx.lineTo(xPos, yPos + yError);
+                        ctx.strokeStyle = 'rgba(0, 0, 0, 0.8)';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+
+                        // Draw horizontal error bar
+                        ctx.beginPath();
+                        ctx.moveTo(xPos - xError, yPos);
+                        ctx.lineTo(xPos + xError, yPos);
+                        ctx.stroke();
+
+                        // Draw vertical error bar caps
+                        ctx.beginPath();
+                        ctx.moveTo(xPos - 3, yPos - yError);
+                        ctx.lineTo(xPos + 3, yPos - yError);
+                        ctx.moveTo(xPos - 3, yPos + yError);
+                        ctx.lineTo(xPos + 3, yPos + yError);
+                        ctx.stroke();
+
+                        // Draw horizontal error bar caps
+                        ctx.beginPath();
+                        ctx.moveTo(xPos - xError, yPos - 3);
+                        ctx.lineTo(xPos - xError, yPos + 3);
+                        ctx.moveTo(xPos + xError, yPos - 3);
+                        ctx.lineTo(xPos + xError, yPos + 3);
+                        ctx.stroke();
+                    });
+                    ctx.restore();
+                }
+            }]
+        });
+    </script>
+</body>
+</html>

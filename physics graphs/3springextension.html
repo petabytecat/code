@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Extension Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Gravitational Force vs Spring Extension</h1>
+    <canvas id="myChart"></canvas>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const data = [
+            {x: 0, y: 0.0000, xError: 0, yError: 0.0005},
+            {x: 0.0970, y: 0.0077, xError: 0.0001, yError: 0.0005},
+            {x: 0.1940, y: 0.0267, xError: 0.0001, yError: 0.0005},
+            {x: 0.2911, y: 0.042, xError: 0.0001, yError: 0.001},
+            {x: 0.3881, y: 0.0630, xError: 0.0001, yError: 0.0005},
+            {x: 0.4890, y: 0.079, xError: 0.0001, yError: 0.002}
+        ];
+
+        const calculateLeastSquares = (data) => {
+            const n = data.length;
+            let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+            for (let i = 0; i < n; i++) {
+                sumX += data[i].x;
+                sumY += data[i].y;
+                sumXY += data[i].x * data[i].y;
+                sumXX += data[i].x * data[i].x;
+            }
+            const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+            const intercept = (sumY - slope * sumX) / n;
+            return { slope, intercept };
+        };
+
+        const { slope: normalSlope, intercept: normalIntercept } = calculateLeastSquares(data);
+
+        const firstPoint = data[0];
+        const lastPoint = data[data.length - 1];
+
+        const maxSlope = (lastPoint.y + lastPoint.yError - (firstPoint.y - firstPoint.yError)) /
+                        (lastPoint.x + lastPoint.xError - (firstPoint.x - firstPoint.xError));
+        const minSlope = (lastPoint.y - lastPoint.yError - (firstPoint.y + firstPoint.yError)) /
+                        (lastPoint.x - lastPoint.xError - (firstPoint.x + firstPoint.xError));
+
+        const maxIntercept = (firstPoint.y - firstPoint.yError) - maxSlope * (firstPoint.x - firstPoint.xError);
+        const minIntercept = (firstPoint.y + firstPoint.yError) - minSlope * (firstPoint.x + firstPoint.xError);
+
+        const calculateRSquared = (data, slope, intercept) => {
+            const yMean = data.reduce((sum, point) => sum + point.y, 0) / data.length;
+            const ssTotal = data.reduce((sum, point) => sum + Math.pow(point.y - yMean, 2), 0);
+            const ssResidual = data.reduce((sum, point) => sum + Math.pow(point.y - (slope * point.x + intercept), 2), 0);
+            return 1 - (ssResidual / ssTotal);
+        };
+
+        const rSquared = calculateRSquared(data, normalSlope, normalIntercept);
+
+        // Generate trendline data
+        const trendlineData = (slope, intercept) => {
+            return [{x: 0, y: intercept}, {x: 0.6, y: slope * 0.6 + intercept}];
+        };
+
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Data Points',
+                    data: data,
+                    backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }, {
+                    label: `Best Fit Line (y = ${normalSlope.toFixed(4)}x + ${normalIntercept.toFixed(4)}, R² = ${rSquared.toFixed(4)})`,
+                    data: trendlineData(normalSlope, normalIntercept),
+                    type: 'line',
+                    borderColor: 'rgba(0, 0, 0, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                    pointRadius: 0
+                }, {
+                    label: `Max Slope Line (y = ${maxSlope.toFixed(4)}x + ${maxIntercept.toFixed(4)})`,
+                    data: trendlineData(maxSlope, maxIntercept),
+                    type: 'line',
+                    borderColor: 'rgba(139, 0, 0, 1)',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0
+                }, {
+                    label: `Min Slope Line (y = ${minSlope.toFixed(4)}x + ${minIntercept.toFixed(4)})`,
+                    data: trendlineData(minSlope, minIntercept),
+                    type: 'line',
+                    borderColor: 'rgba(0, 100, 0, 1)',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Gravitational Force vs. Spring Extension (with Uncertainty)",
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Gravitational Force (Fg, N)'
+                        },
+                        min: 0,
+                        max: 0.6
+                    },
+                    y: {
+                        type: 'linear',
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Spring Extension (x, m)'
+                        },
+                        min: -0.005,
+                        max: 0.1
+                    }
+                }
+            },
+            plugins: [{
+                id: 'errorBars',
+                afterDatasetsDraw(chart, args, options) {
+                    const {ctx, data, scales: {x, y}} = chart;
+
+                    ctx.save();
+                    data.datasets[0].data.forEach(dataPoint => {
+                        const xPos = x.getPixelForValue(dataPoint.x);
+                        const yPos = y.getPixelForValue(dataPoint.y);
+                        const yError = Math.abs(y.getPixelForValue(dataPoint.y + dataPoint.yError) - yPos);
+                        const xError = Math.abs(x.getPixelForValue(dataPoint.x + dataPoint.xError) - xPos);
+
+                        // Draw error bars
+                        ctx.beginPath();
+                        ctx.moveTo(xPos, yPos - yError);
+                        ctx.lineTo(xPos, yPos + yError);
+                        ctx.moveTo(xPos - xError, yPos);
+                        ctx.lineTo(xPos + xError, yPos);
+                        ctx.strokeStyle = 'black';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+
+                        // Draw caps
+                        ctx.beginPath();
+                        ctx.moveTo(xPos - 3, yPos - yError);
+                        ctx.lineTo(xPos + 3, yPos - yError);
+                        ctx.moveTo(xPos - 3, yPos + yError);
+                        ctx.lineTo(xPos + 3, yPos + yError);
+                        ctx.moveTo(xPos - xError, yPos - 3);
+                        ctx.lineTo(xPos - xError, yPos + 3);
+                        ctx.moveTo(xPos + xError, yPos - 3);
+                        ctx.lineTo(xPos + xError, yPos + 3);
+                        ctx.stroke();
+                    });
+                    ctx.restore();
+                }
+            }]
+        });
+    </script>
+</body>
+</html>

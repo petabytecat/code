@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROVolutionaries Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        .outer-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px; /* Decreased from 100px */
+            height: 75px; /* Decreased from 100px */
+        }
+        .dot, .inner-dot {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .dot {
+            background-color: #0077be;
+        }
+        .inner-dot {
+            background-color: #ff7f50;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px; /* Decreased from 24px */
+            font-weight: bold;
+            color: #0077be;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="inner-circle" id="innerCircle"></div>
+    </div>
+
+    <script>
+        function createInnerSpirals() {
+            const innerCircle = document.getElementById('innerCircle');
+            const spiralCount = 6;
+            const dotsPerSpiral = 6;
+            const startRadius = 87.5;
+            const endRadius = 175;
+            const rotations = 0.25;
+            const minSize = 10.5;
+            const maxSize = 28.875;
+
+            for (let i = 0; i < spiralCount; i++) {
+                const startAngle = (i / spiralCount) * 2 * Math.PI;
+                for (let j = 0; j < dotsPerSpiral; j++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'inner-dot';
+                    const t = j / (dotsPerSpiral - 1);
+                    const radius = startRadius + (endRadius - startRadius) * t;
+                    const angle = startAngle + t * 2 * Math.PI * rotations;
+
+                    const size = minSize + (maxSize - minSize) * Math.pow(Math.sin(t * Math.PI), 2);
+
+                    const x = Math.cos(angle) * radius;
+                    const y = Math.sin(angle) * radius;
+                    dot.style.width = `${size}px`;
+                    dot.style.height = `${size}px`;
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    innerCircle.appendChild(dot);
+                }
+            }
+        }
+
+        createInnerSpirals();
+    </script>
+</body>
+</html>

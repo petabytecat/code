@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROVolutionaries Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .logo-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        .outer-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .dot {
+            position: absolute;
+            background-color: #0077be;
+            border-radius: 50%;
+        }
+        .inner-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+        }
+        .inner-dot {
+            position: absolute;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #0077be;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="outer-circle" id="outerCircle"></div>
+        <div class="inner-circle" id="innerCircle"></div>
+        <div class="text">ROVolutionaries</div>
+    </div>
+
+    <script>
+        function createInnerSpirals() {
+            const innerCircle = document.getElementById('innerCircle');
+            const spiralCount = 4; // Updated to change the number of spirals
+            const dotsPerSpiral = 16; // Increase to give each spiral more dots
+            const startRadius = 50;
+            const endRadius = 70;
+            const rotations = 0.5; // Updated rotations for more twist
+
+            for (let i = 0; i < spiralCount; i++) {
+                const startAngle = (i / spiralCount) * 2 * Math.PI; // Angle to separate spirals
+                for (let j = 0; j < dotsPerSpiral; j++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'inner-dot';
+                    const t = j / (dotsPerSpiral - 1); // Normalized progress along the spiral
+                    const radius = startRadius + (endRadius - startRadius) * t; // Linear interpolation for radius
+                    const angle = startAngle + t * 2 * Math.PI * rotations; // Adjusted to account for rotations
+                    const size = 4 + 6 * Math.sin(t * Math.PI); // Vary the size
+                    const x = Math.cos(angle) * radius + 100; // X position based on angle and radius
+                    const y = Math.sin(angle) * radius + 100; // Y position based on angle and radius
+                    dot.style.width = `${size}px`;
+                    dot.style.height = `${size}px`;
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                    innerCircle.appendChild(dot);
+                }
+            }
+        }
+
+        function animateOuterDots() {
+            // ... (keep the outer dots animation code unchanged)
+        }
+
+        createInnerSpirals();
+        animateOuterDots();
+    </script>
+</body>
+</html>

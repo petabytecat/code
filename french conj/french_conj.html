@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Conjugation Flashcard Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        .flashcard {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            margin: 10px 0;
+            padding: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        .options {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>French Conjugation Flashcards</h1>
+        <div class="options">
+            <h3>Choose Tenses:</h3>
+            <div class="checkbox-group" id="tenseOptions">
+                <label><input type="checkbox" value="present_tense"> Present Tense</label>
+                <label><input type="checkbox" value="present_participle"> Present Participle</label>
+                <label><input type="checkbox" value="imperative"> Imperative</label>
+                <label><input type="checkbox" value="near_future"> Near Future</label>
+                <label><input type="checkbox" value="simple_future"> Simple Future</label>
+                <label><input type="checkbox" value="future_perfect"> Future Perfect</label>
+                <label><input type="checkbox" value="present_conditional"> Present Conditional</label>
+                <label><input type="checkbox" value="imparfait"> Imparfait</label>
+                <label><input type="checkbox" value="passe_compose"> Passé Composé</label>
+                <label><input type="checkbox" value="past_infinitive"> Past Infinitive</label>
+                <label><input type="checkbox" value="present_subjunctive"> Present Subjunctive</label>
+                <label><input type="checkbox" value="past_subjunctive"> Past Subjunctive</label>
+                <label><input type="checkbox" value="passive_voice"> Passive Voice</label>
+            </div>
+
+            <h3>Choose Verb Types:</h3>
+            <div class="checkbox-group" id="verbTypeOptions">
+                <h4>Irregular:</h4>
+                <label><input type="checkbox" value="auxiliary_verbs"> Auxiliary Verbs</label>
+                <label><input type="checkbox" value="ending_aire"> Ending -aire</label>
+                <label><input type="checkbox" value="ending_ire"> Ending -ire</label>
+                <label><input type="checkbox" value="ending_vre"> Ending -vre</label>
+                <label><input type="checkbox" value="like_dormir"> Like dormir</label>
+                <label><input type="checkbox" value="like_mettre"> Like mettre</label>
+                <label><input type="checkbox" value="like_ouvrir"> Like ouvrir</label>
+                <label><input type="checkbox" value="like_prendre"> Like prendre</label>
+                <label><input type="checkbox" value="like_venir_tenir"> Like venir/tenir</label>
+                <label><input type="checkbox" value="only_il"> Only il</label>
+                <label><input type="checkbox" value="pouvoir_vouloir"> Pouvoir/Vouloir</label>
+                <label><input type="checkbox" value="savoir_connaitre"> Savoir/Connaître</label>
+                <label><input type="checkbox" value="stem_changing_er"> Stem-changing -er</label>
+                <label><input type="checkbox" value="with_oi_in_stem"> With -oi in stem</label>
+
+                <h4>Regular:</h4>
+                <label><input type="checkbox" value="regular_er"> -er</label>
+                <label><input type="checkbox" value="regular_ir"> -ir</label>
+                <label><input type="checkbox" value="regular_re"> -re</label>
+                <label><input type="checkbox" value="reflexive"> Reflexive</label>
+            </div>
+
+            <button onclick="startGame()">Start Game</button>
+        </div>
+        <div class="flashcard" id="flashcard" style="display: none;">
+            <h2 id="verb"></h2>
+            <p id="pronoun"></p>
+            <p id="tense"></p>
+            <input type="text" id="answer" placeholder="Enter conjugation">
+            <button onclick="checkAnswer()">Check</button>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // This is a simplified version. You'll need to expand this with actual verb data.
+        const verbs = {
+            regular_er: ['parler', 'aimer', 'danser'],
+            regular_ir: ['finir', 'choisir', 'réussir'],
+            regular_re: ['vendre', 'attendre', 'répondre'],
+            auxiliary_verbs: ['être', 'avoir', 'aller']
+            // Add more verb categories here
+        };
+
+        const pronouns = ['je', 'tu', 'il/elle', 'nous', 'vous', 'ils/elles'];
+
+        let currentVerb, currentPronoun, currentTense;
+        let selectedTenses = [];
+        let selectedVerbTypes = [];
+
+        function startGame() {
+            selectedTenses = Array.from(document.querySelectorAll('#tenseOptions input:checked')).map(el => el.value);
+            selectedVerbTypes = Array.from(document.querySelectorAll('#verbTypeOptions input:checked')).map(el => el.value);
+
+            if (selectedTenses.length === 0 || selectedVerbTypes.length === 0) {
+                alert("Please select at least one tense and one verb type.");
+                return;
+            }
+
+            currentTense = selectedTenses[Math.floor(Math.random() * selectedTenses.length)];
+            const verbType = selectedVerbTypes[Math.floor(Math.random() * selectedVerbTypes.length)];
+
+            if (!verbs[verbType]) {
+                alert(`No verbs available for type: ${verbType}`);
+                return;
+            }
+
+            currentVerb = verbs[verbType][Math.floor(Math.random() * verbs[verbType].length)];
+            currentPronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
+
+            document.getElementById('verb').textContent = currentVerb;
+            document.getElementById('pronoun').textContent = currentPronoun;
+            document.getElementById('tense').textContent = currentTense.replace('_', ' ');
+            document.getElementById('flashcard').style.display = 'block';
+            document.getElementById('answer').value = '';
+            document.getElementById('result').textContent = '';
+        }
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+            const correctAnswer = getCorrectAnswer();
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('result').textContent = 'Correct!';
+            } else {
+                document.getElementById('result').textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+            }
+        }
+
+        function getCorrectAnswer() {
+            // This is a placeholder. You'll need to implement the actual conjugation rules here.
+            // For irregular verbs, you'll need to check against your CSV data.
+            if (currentTense === 'present_tense') {
+                if (currentVerb.endsWith('er')) {
+                    switch(currentPronoun) {
+                        case 'je': return currentVerb.slice(0, -2) + 'e';
+                        case 'tu': return currentVerb.slice(0, -2) + 'es';
+                        case 'il/elle': return currentVerb.slice(0, -2) + 'e';
+                        case 'nous': return currentVerb.slice(0, -2) + 'ons';
+                        case 'vous': return currentVerb.slice(0, -2) + 'ez';
+                        case 'ils/elles': return currentVerb.slice(0, -2) + 'ent';
+                    }
+                }
+                // Add rules for other verb types and irregular verbs
+            }
+            // Add rules for other tenses
+            return "Not implemented"; // Placeholder
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stress-Strain Curves</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <canvas id="stressStrainChart"></canvas>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('stressStrainChart').getContext('2d');
+            
+            // Dataset 1
+            const data1 = [
+                {strain: 0, stress: 0},
+                {strain: 0.0243902439, stress: 0.0981},
+                {strain: 0.0243902439, stress: 0.1962},
+                {strain: 0.0243902439, stress: 0.3924},
+                {strain: 0.07317073171, stress: 0.5886},
+                {strain: 0.1707317073, stress: 0.6867},
+                {strain: 0.1707317073, stress: 0.72594},
+                {strain: 0.1951219512, stress: 0.7848},
+                {strain: 0.243902439, stress: 0.8829},
+                {strain: 0.2926829268, stress: 0.92214},
+                {strain: 0.3414634146, stress: 0.981},
+                {strain: 0.3902439024, stress: 1.0791},
+                {strain: 0.4634146341, stress: 1.11834},
+                {strain: 0.512195122, stress: 1.1772},
+                {strain: 0.6097560976, stress: 1.3734},
+                {strain: 0.8292682927, stress: 1.4715},
+                {strain: 0.9512195122, stress: 1.5696},
+                {strain: 1.048780488, stress: 1.7658},
+                {strain: 1.097560976, stress: 1.8639},
+                {strain: 1.146341463, stress: 1.962},
+                {strain: 1.170731707, stress: 2.1582}
+            ];
+            
+            // Dataset 2
+            const data2 = [
+                {strain: 0, stress: 0},
+                {strain: 0.1428571429, stress: 0.0981},
+                {strain: 0.2653061224, stress: 0.14715},
+                {strain: 0.3673469388, stress: 0.1962},
+                {strain: 0.5102040816, stress: 0.24525},
+                {strain: 0.693877551, stress: 0.2943},
+                {strain: 0.7959183673, stress: 0.34335},
+                {strain: 0.8367346939, stress: 0.3924},
+                {strain: 0.9183673469, stress: 0.44145},
+                {strain: 0.9795918367, stress: 0.4905},
+                {strain: 1.020408163, stress: 0.53955}
+            ];
+
+            // New PP Dataset
+            const dataPP = [
+                {strain: 0.00, stress: 0},
+                {strain: 0.00, stress: 1.306666667},
+                {strain: 0.00, stress: 1.96},
+                {strain: 0.01, stress: 2.613333333},
+                {strain: 0.01, stress: 3.92},
+                {strain: 0.01, stress: 5.226666667},
+                {strain: 0.01, stress: 6.533333333},
+                {strain: 0.01, stress: 7.84},
+                {strain: 0.01, stress: 9.146666667},
+                {strain: 0.01, stress: 10.45333333},
+                {strain: 0.02, stress: 11.76},
+                {strain: 0.02, stress: 13.06666667},
+                {strain: 0.02, stress: 14.37333333},
+                {strain: 0.03, stress: 15.68},
+                {strain: 0.03, stress: 16.98666667},
+                {strain: 0.03, stress: 18.29333333},
+                {strain: 0.03, stress: 19.6},
+                {strain: 0.03, stress: 20.90666667},
+                {strain: 0.04, stress: 22.21333333},
+                {strain: 0.05, stress: 23.52},
+                {strain: 0.05, stress: 24.82666667},
+                {strain: 0.07, stress: 26.13333333},
+                {strain: 0.73, stress: 27.44},
+                {strain: 1.43, stress: 28.74666667},
+                {strain: 2.37, stress: 30.05333333}
+            ];
+            
+            // Filter out the data point with null strain in dataset 2
+            const filteredData2 = data2.filter(point => point.strain !== null);
+            
+            const stressStrainChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: '0.5:1',
+                        data: data1.map(point => ({x: point.strain, y: point.stress})),
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        showLine: true,
+                        tension: 0.1
+                    }, {
+                        label: '1.5:1',
+                        data: filteredData2.map(point => ({x: point.strain, y: point.stress})),
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        showLine: true,
+                        tension: 0.1
+                    }, {
+                        label: 'PP',
+                        data: dataPP.map(point => ({x: point.strain, y: point.stress})),
+                        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        showLine: true,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'Strain'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Stress (MPa)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Stress-Strain Curves Comparison',
+                            font: {
+                                size: 18
+                            }
+                        },
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Strain: ${context.parsed.x.toFixed(4)}, Stress: ${context.parsed.y.toFixed(4)} MPa`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
