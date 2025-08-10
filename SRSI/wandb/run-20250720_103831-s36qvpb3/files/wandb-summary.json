@@ -1,0 +1,1 @@
+{"_timestamp":1.752998064461055e+09,"_step":2813,"losses/td_loss":0.11441302,"losses/q_values":-2.6323383,"charts/SPS":184,"_wandb":{"runtime":5100},"_runtime":5100,"global_step":173800}

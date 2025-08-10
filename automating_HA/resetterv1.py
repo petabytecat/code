@@ -37,7 +37,13 @@ POKEMON_COORDS = {
     "snivy": (711, 464),
     "rookidee": (711, 456),
     "larvesta": (711, 480),
-    "cleffa": (711, 456)
+    "cleffa": (711, 456),
+    "wooper": (711, 459),
+    "vulpix": (711, 436),
+    "foongus": (711, 460),
+    "swinub": (711, 446),
+    "starly": (711, 459)
+
 }
 
 parser = argparse.ArgumentParser(description='Pokemon Egg Hatcher')
@@ -50,6 +56,9 @@ parser.add_argument('--special_coords', type=parse_coords, default=None,
 # Change type to str for Pokémon names
 parser.add_argument('--pokemon', type=str, default=None,
                     help=f"Which Pokémon are you breeding? Options: {', '.join(POKEMON_COORDS.keys())}")
+parser.add_argument('--subscription', type=str, default=None,
+                    help=f"Your subscription (None, T1, T2, T3)")
+
 
 args = parser.parse_args()
 
@@ -57,8 +66,8 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, "pokemon_state.txt")
 
 state = {
-    "box": 7,
-    "row": 5,
+    "box": 9,
+    "row": 1,
     "column": 1
 }
 reset_timer = 100
@@ -66,6 +75,7 @@ current_box = 1
 
 team = args.eggs
 website = args.website
+subscription = args.subscription if args.subscription in ["T1", "T2", "T3"] else None
 
 # Handle coordinate input logic
 if args.special_coords and args.pokemon:
@@ -137,7 +147,7 @@ while state["box"] <= 50:
     pyautogui.keyUp('shift')
     pyautogui.keyDown('shift')  
 
-    while team < 5:
+    while (subscription is None and team < 5) or (subscription in ["T1", "T2", "T3"]):  # egg to PC
         pyautogui.keyUp('shift')
         pyautogui.keyDown('shift')  
 
@@ -272,6 +282,10 @@ while state["box"] <= 50:
                                 print(r, g, b)
                                 if 0 <= r < 20 and 175 < g < 190 and 85 < b < 105:
                                     break
+                            # clicks on ignore 
+                            pyautogui.moveTo(858, 348)
+                            pyautogui.leftClick()
+                            sleep(0.25)
 
                             pyautogui.moveTo(865, 362) # ignores roblox restarted
                             pyautogui.leftClick()
@@ -355,8 +369,14 @@ while state["box"] <= 50:
                                 else:
                                     break
                             break
-                    else:
+                    else: # it quit unexpectedly
                         times += 1
+
+                        # clicks on ignore 
+                        pyautogui.moveTo(858, 348)
+                        pyautogui.leftClick()
+                        sleep(0.25)
+
                 
             team += 1
 
@@ -503,117 +523,116 @@ while state["box"] <= 50:
 
         pyautogui.keyDown('shift')
 
-    
-    # T3: egg to PC
-    pyautogui.keyDown('w')
-    sleep(0.5)
-    pyautogui.keyUp('w')
-    sleep(3)
-
-    pyautogui.keyDown('d')
-    sleep(0.8)
-    pyautogui.keyUp('d')
-    pyautogui.keyDown('w')
-    sleep(1)
-    pyautogui.keyUp('w')
-    if check_hatch():
-        reset()
-        continue
-
-    sleep(1)
-    pyautogui.moveTo(886, 380)
-    sleep(0.5)
-    pyautogui.leftClick()
-    sleep(4)
-    r, g, b, y = getpixelcolor.pixel(439, 251)
-
-    if r != 217 or g != 87 or b != 84:
-                
-        pyautogui.keyDown('s')
+    if subscription is None: 
+        pyautogui.keyDown('w')
         sleep(0.5)
-        pyautogui.keyUp('s')
+        pyautogui.keyUp('w')
+        sleep(3)
 
+        pyautogui.keyDown('d')
+        sleep(0.8)
+        pyautogui.keyUp('d')
         pyautogui.keyDown('w')
         sleep(1)
         pyautogui.keyUp('w')
-
-        pyautogui.keyDown('d')
-        sleep(0.5)
-        pyautogui.keyUp('d')
-        pyautogui.keyDown('w')
-        sleep(0.8)
-        pyautogui.keyUp('w')
-        sleep(0.5)
         if check_hatch():
+            reset()
+            continue
+
+        sleep(1)
+        pyautogui.moveTo(886, 380)
+        sleep(0.5)
+        pyautogui.leftClick()
+        sleep(4)
+        r, g, b, y = getpixelcolor.pixel(439, 251)
+
+        if r != 217 or g != 87 or b != 84:
+                    
+            pyautogui.keyDown('s')
+            sleep(0.5)
+            pyautogui.keyUp('s')
+
+            pyautogui.keyDown('w')
+            sleep(1)
+            pyautogui.keyUp('w')
+
+            pyautogui.keyDown('d')
+            sleep(0.5)
+            pyautogui.keyUp('d')
+            pyautogui.keyDown('w')
+            sleep(0.8)
+            pyautogui.keyUp('w')
+            sleep(0.5)
+            if check_hatch():
+                reset()
+
+                pyautogui.keyDown('s')
+                sleep(0.5)
+                pyautogui.keyUp('s')
+                sleep(3)
+
+                continue
+
+        pyautogui.keyUp('shift')
+        while team > 0:
+            pyautogui.moveTo(1321, 391)
+            while current_box < state["box"]:
+                
+                event = CGEventCreateScrollWheelEvent(
+                    None,
+                    kCGScrollEventUnitPixel,
+                    1,
+                    -210
+                )
+                CGEventPost(kCGHIDEventTap, event)
+                sleep(0.5)
+                current_box += 1
+            pyautogui.leftClick()
+            sleep(0.5)
+            pyautogui.moveTo(446, 326)
+            pyautogui.mouseDown()
+            row = max(1, min(state["row"], 5))
+            column = max(1, min(state["column"], 6))
+            sleep(1)
+            x0, y0 = 629, 227
+            x1, y1 = 1100, 590
+            cell_width = (x1 - x0) / (6 - 1)
+            cell_height = (y1 - y0) / (5 - 1)
+            x = x0 + (column - 1) * cell_width
+            y = y0 + (row - 1) * cell_height
+            pyautogui.moveTo(x, y, duration=0.2)
+            pyautogui.mouseUp()
+            sleep(1)
+            state["column"] += 1
+            if state["column"] > 6:
+                state["column"] = 1
+                state["row"] += 1
+                if state["row"] > 5:
+                    state["row"] = 1
+                    state["box"] += 1
+            print(f"Next storage position: Box {state['box']}, Row {state['row']}, Column {state['column']}")
+            team -= 1
+            print(f"Team after transfer: {team}")
+        pyautogui.keyDown('shift')
+        pyautogui.moveTo(1146, 95)
+        sleep(1.5)
+        pyautogui.leftClick()
+        sleep(2)
+        pyautogui.keyDown('s')
+        sleep(0.3)
+        pyautogui.keyUp('s')
+        pyautogui.keyDown('a')
+        pyautogui.keyDown('s')
+        sleep(1.4)
+        pyautogui.keyUp('a')
+        pyautogui.keyUp('s')
+        
+        if check_hatch():
+
             reset()
 
             pyautogui.keyDown('s')
             sleep(0.5)
             pyautogui.keyUp('s')
-            sleep(3)
-
-            continue
-
-    pyautogui.keyUp('shift')
-    while team > 0:
-        pyautogui.moveTo(1321, 391)
-        while current_box < state["box"]:
-            
-            event = CGEventCreateScrollWheelEvent(
-                None,
-                kCGScrollEventUnitPixel,
-                1,
-                -210
-            )
-            CGEventPost(kCGHIDEventTap, event)
-            sleep(0.5)
-            current_box += 1
-        pyautogui.leftClick()
-        sleep(0.5)
-        pyautogui.moveTo(446, 326)
-        pyautogui.mouseDown()
-        row = max(1, min(state["row"], 5))
-        column = max(1, min(state["column"], 6))
-        sleep(1)
-        x0, y0 = 629, 227
-        x1, y1 = 1100, 590
-        cell_width = (x1 - x0) / (6 - 1)
-        cell_height = (y1 - y0) / (5 - 1)
-        x = x0 + (column - 1) * cell_width
-        y = y0 + (row - 1) * cell_height
-        pyautogui.moveTo(x, y, duration=0.2)
-        pyautogui.mouseUp()
-        sleep(1)
-        state["column"] += 1
-        if state["column"] > 6:
-            state["column"] = 1
-            state["row"] += 1
-            if state["row"] > 5:
-                state["row"] = 1
-                state["box"] += 1
-        print(f"Next storage position: Box {state['box']}, Row {state['row']}, Column {state['column']}")
-        team -= 1
-        print(f"Team after transfer: {team}")
-    pyautogui.keyDown('shift')
-    pyautogui.moveTo(1146, 95)
-    sleep(1.5)
-    pyautogui.leftClick()
-    sleep(2)
-    pyautogui.keyDown('s')
-    sleep(0.3)
-    pyautogui.keyUp('s')
-    pyautogui.keyDown('a')
-    pyautogui.keyDown('s')
-    sleep(1.4)
-    pyautogui.keyUp('a')
-    pyautogui.keyUp('s')
-    
-    if check_hatch():
-
-        reset()
-
-        pyautogui.keyDown('s')
-        sleep(0.5)
-        pyautogui.keyUp('s')
-    sleep(3)
-    current_box = 1
+        sleep(3)
+        current_box = 1

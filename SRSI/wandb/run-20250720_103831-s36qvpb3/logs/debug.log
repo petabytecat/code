@@ -1,0 +1,19 @@
+2025-07-20 10:38:31,153 INFO    MainThread:46277 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/run-20250720_103831-s36qvpb3/logs/debug.log
+2025-07-20 10:38:31,153 INFO    MainThread:46277 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/run-20250720_103831-s36qvpb3/logs/debug-internal.log
+2025-07-20 10:38:31,153 INFO    MainThread:46277 [wandb_init.py:init():830] calling init triggers
+2025-07-20 10:38:31,153 INFO    MainThread:46277 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'exp_name': 'notebook_run', 'seed': 1, 'torch_deterministic': True, 'cuda': True, 'track': True, 'wandb_project_name': 'cleanRL', 'wandb_entity': None, 'capture_video': False, 'save_model': False, 'upload_model': False, 'hf_entity': '', 'env_id': 'ALE/Pong-v5', 'total_timesteps': 10000000, 'learning_rate': 0.0001, 'num_envs': 1, 'buffer_size': 100, 'gamma': 0.99, 'tau': 1.0, 'target_network_frequency': 1000, 'batch_size': 32, 'start_e': 1, 'end_e': 0.01, 'exploration_fraction': 0.1, 'learning_starts': 80000, 'train_frequency': 4, '_wandb': {'code_path': 'code/0SRSI/test_atari_clearl.ipynb'}}
+2025-07-20 10:38:40,267 INFO    MainThread:46277 [wandb_init.py:init():871] starting backend
+2025-07-20 10:38:40,268 INFO    MainThread:46277 [wandb_init.py:init():874] sending inform_init request
+2025-07-20 10:38:40,272 INFO    MainThread:46277 [wandb_init.py:init():882] backend started and connected
+2025-07-20 10:38:40,289 INFO    MainThread:46277 [wandb_run.py:_label_probe_notebook():1304] probe notebook
+2025-07-20 10:38:40,333 INFO    MainThread:46277 [wandb_init.py:init():953] updated telemetry
+2025-07-20 10:38:40,431 INFO    MainThread:46277 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-07-20 10:38:42,125 INFO    MainThread:46277 [wandb_init.py:init():1029] starting run threads in backend
+2025-07-20 10:38:42,273 INFO    MainThread:46277 [wandb_run.py:_console_start():2458] atexit reg
+2025-07-20 10:38:42,273 INFO    MainThread:46277 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-07-20 10:38:42,273 INFO    MainThread:46277 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-07-20 10:38:42,273 INFO    MainThread:46277 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-07-20 10:38:42,274 INFO    MainThread:46277 [wandb_init.py:init():1075] run started, returning control to user process
+2025-07-20 10:38:42,308 INFO    MainThread:46277 [wandb_run.py:_tensorboard_callback():1572] tensorboard callback: runs/ALE/Pong-v5__notebook_run__1__1752997111, True
+2025-07-20 13:32:58,611 INFO    MsgRouterThr:46277 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 4 handles.

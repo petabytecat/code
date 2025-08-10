@@ -1,0 +1,105 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        code_path: source-cleanRL-test_atari_clearl.ipynb
+        e:
+            xn75231piaobwkv5nyqo7ksuebju8u7a:
+                apple:
+                    ecpuCores: 4
+                    gpuCores: 10
+                    memoryGb: 8
+                    name: Apple M2
+                    pcpuCores: 4
+                    ramTotalBytes: "8589934592"
+                    swapTotalBytes: "4294967296"
+                codePath: 0SRSI/test_atari_clearl.ipynb
+                codePathLocal: test_atari_clearl.ipynb
+                cpu_count: 8
+                cpu_count_logical: 8
+                disk:
+                    /:
+                        total: "245107195904"
+                        used: "220331008000"
+                email: david.zhangblade@gmail.com
+                executable: /Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/bin/python3.12
+                git:
+                    commit: e22805c86a1d0ffc40971f319e4cbe2b003ea4a6
+                    remote: https://github.com/petabytecat/code.git
+                host: KL-25861
+                memory:
+                    total: "8589934592"
+                os: macOS-15.5-arm64-arm-64bit
+                program: test_atari_clearl.ipynb
+                python: CPython 3.12.0
+                root: /Users/dewei.zhang/Documents/GitHub/code/0SRSI
+                startedAt: "2025-07-20T07:30:59.934999Z"
+                writerId: xn75231piaobwkv5nyqo7ksuebju8u7a
+        m: []
+        python_version: 3.12.0
+        session_history: code/_session_history.ipynb
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 2
+                - 13
+                - 16
+                - 35
+            "4": 3.12.0
+            "5": 0.21.0
+            "8":
+                - 1
+            "12": 0.21.0
+            "13": darwin-arm64
+batch_size:
+    value: 32
+buffer_size:
+    value: 100
+capture_video:
+    value: false
+cuda:
+    value: true
+end_e:
+    value: 0.01
+env_id:
+    value: ALE/Pong-v5
+exp_name:
+    value: notebook_run
+exploration_fraction:
+    value: 0.1
+gamma:
+    value: 0.99
+hf_entity:
+    value: ""
+learning_rate:
+    value: 0.0001
+learning_starts:
+    value: 80000
+num_envs:
+    value: 1
+save_model:
+    value: false
+seed:
+    value: 1
+start_e:
+    value: 1
+target_network_frequency:
+    value: 1000
+tau:
+    value: 1
+torch_deterministic:
+    value: true
+total_timesteps:
+    value: 10000000
+track:
+    value: true
+train_frequency:
+    value: 4
+upload_model:
+    value: false
+wandb_entity:
+    value: null
+wandb_project_name:
+    value: cleanRL

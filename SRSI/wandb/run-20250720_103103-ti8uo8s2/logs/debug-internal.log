@@ -1,0 +1,17 @@
+{"time":"2025-07-20T10:31:12.336644+03:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-20T10:31:13.642937+03:00","level":"INFO","msg":"stream: created new stream","id":"ti8uo8s2"}
+{"time":"2025-07-20T10:31:13.643006+03:00","level":"INFO","msg":"stream: started","id":"ti8uo8s2"}
+{"time":"2025-07-20T10:31:13.643+03:00","level":"INFO","msg":"handler: started","stream_id":"ti8uo8s2"}
+{"time":"2025-07-20T10:31:13.643023+03:00","level":"INFO","msg":"sender: started","stream_id":"ti8uo8s2"}
+{"time":"2025-07-20T10:31:13.643006+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"ti8uo8s2"}
+{"time":"2025-07-20T10:31:14.228135+03:00","level":"ERROR","msg":"git repo not found","error":"repository does not exist"}
+{"time":"2025-07-20T10:31:24.377733+03:00","level":"WARN","msg":"tensorboard: no root directory","error":"timed out after 10s"}
+{"time":"2025-07-20T10:31:24.378061+03:00","level":"INFO","msg":"tensorboard: tracking new log directory","rootDir":{},"logDir":"LocalOrCloudPath(LocalPath=\"/Users/dewei.zhang/Documents/GitHub/code/0SRSI/runs/ALE/Pong-v5__notebook_run__1__1752996663\")","namespace":""}
+{"time":"2025-07-20T10:31:24.37876+03:00","level":"INFO","msg":"tensorboard: saving file","fileLocation":"/Users/dewei.zhang/Documents/GitHub/code/0SRSI/runs/ALE/Pong-v5__notebook_run__1__1752996663/events.out.tfevents.1752996674.KL-25861.46277.14","runPath":"runs/ALE/Pong-v5__notebook_run__1__1752996663/events.out.tfevents.1752996674.KL-25861.46277.14"}
+{"time":"2025-07-20T10:38:26.627243+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.285422667},{"desc":"uploading wandb-summary.json","runtime_seconds":0.283406209}],"total_operations":2}}
+{"time":"2025-07-20T10:38:27.791516+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-20T10:38:29.065683+03:00","level":"INFO","msg":"stream: closing","id":"ti8uo8s2"}
+{"time":"2025-07-20T10:38:29.065842+03:00","level":"INFO","msg":"sender: closed","stream_id":"ti8uo8s2"}
+{"time":"2025-07-20T10:38:29.066023+03:00","level":"INFO","msg":"handler: closed","stream_id":"ti8uo8s2"}
+{"time":"2025-07-20T10:38:29.066104+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ti8uo8s2"}
+{"time":"2025-07-20T10:38:29.06629+03:00","level":"INFO","msg":"stream: closed","id":"ti8uo8s2"}

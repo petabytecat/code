@@ -1,0 +1,16 @@
+{"time":"2025-08-06T17:37:30.160815+03:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-08-06T17:37:35.889412+03:00","level":"INFO","msg":"stream: created new stream","id":"txgll7jb"}
+{"time":"2025-08-06T17:37:35.88965+03:00","level":"INFO","msg":"stream: started","id":"txgll7jb"}
+{"time":"2025-08-06T17:37:35.88968+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"txgll7jb"}
+{"time":"2025-08-06T17:37:35.889766+03:00","level":"INFO","msg":"sender: started","stream_id":"txgll7jb"}
+{"time":"2025-08-06T17:37:35.889665+03:00","level":"INFO","msg":"handler: started","stream_id":"txgll7jb"}
+{"time":"2025-08-06T17:37:36.531428+03:00","level":"ERROR","msg":"git repo not found","error":"repository does not exist"}
+{"time":"2025-08-06T17:37:41.616026+03:00","level":"INFO","msg":"stream: closing","id":"txgll7jb"}
+{"time":"2025-08-06T17:37:46.946907+03:00","level":"WARN","msg":"tensorboard: no root directory","error":"timed out after 10s"}
+{"time":"2025-08-06T17:37:46.947403+03:00","level":"INFO","msg":"tensorboard: tracking new log directory","rootDir":{},"logDir":"LocalOrCloudPath(LocalPath=\"/Users/dewei.zhang/Documents/GitHub/code/0SRSI/runs/ALE/Pong-v5__notebook_run__42__1754491042\")","namespace":""}
+{"time":"2025-08-06T17:37:46.949088+03:00","level":"INFO","msg":"tensorboard: saving file","fileLocation":"/Users/dewei.zhang/Documents/GitHub/code/0SRSI/runs/ALE/Pong-v5__notebook_run__42__1754491042/events.out.tfevents.1754491056.KL-25861.53363.0","runPath":"runs/ALE/Pong-v5__notebook_run__42__1754491042/events.out.tfevents.1754491056.KL-25861.53363.0"}
+{"time":"2025-08-06T17:37:48.513503+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-06T17:37:51.063244+03:00","level":"INFO","msg":"handler: closed","stream_id":"txgll7jb"}
+{"time":"2025-08-06T17:37:51.063225+03:00","level":"INFO","msg":"sender: closed","stream_id":"txgll7jb"}
+{"time":"2025-08-06T17:37:51.063285+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"txgll7jb"}
+{"time":"2025-08-06T17:37:51.063745+03:00","level":"INFO","msg":"stream: closed","id":"txgll7jb"}

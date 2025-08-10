@@ -1,0 +1,23 @@
+2025-08-06 17:37:29,268 INFO    MainThread:53363 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-08-06 17:37:29,268 INFO    MainThread:53363 [wandb_setup.py:_flush():80] Configure stats pid to 53363
+2025-08-06 17:37:29,268 INFO    MainThread:53363 [wandb_setup.py:_flush():80] Loading settings from /Users/dewei.zhang/.config/wandb/settings
+2025-08-06 17:37:29,269 INFO    MainThread:53363 [wandb_setup.py:_flush():80] Loading settings from /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/settings
+2025-08-06 17:37:29,269 INFO    MainThread:53363 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-08-06 17:37:29,269 INFO    MainThread:53363 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/run-20250806_173729-txgll7jb/logs/debug.log
+2025-08-06 17:37:29,269 INFO    MainThread:53363 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/run-20250806_173729-txgll7jb/logs/debug-internal.log
+2025-08-06 17:37:29,280 INFO    MainThread:53363 [wandb_init.py:init():830] calling init triggers
+2025-08-06 17:37:29,280 INFO    MainThread:53363 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'exp_name': 'notebook_run', 'seed': 42, 'torch_deterministic': True, 'cuda': True, 'track': True, 'wandb_project_name': 'cleanRL', 'wandb_entity': None, 'capture_video': False, 'save_model': True, 'upload_model': False, 'hf_entity': '', 'env_id': 'ALE/Pong-v5', 'total_timesteps': 10000000, 'learning_rate': 0.00024159304323406795, 'num_envs': 1, 'buffer_size': 100000, 'gamma': 0.9848904522431526, 'tau': 0.007881662783282053, 'target_network_frequency': 500, 'batch_size': 64, 'start_e': 0, 'end_e': 0, 'exploration_fraction': 0, 'learning_starts': 80000, 'train_frequency': 4, 'n_step': 3, 'prioritized_replay_alpha': 0.5090792103106702, 'prioritized_replay_beta': 0.5472741836625601, 'prioritized_replay_eps': 1e-06, 'n_atoms': 51, 'v_min': -10, 'v_max': 10, '_wandb': {'code_path': 'code/0SRSI/pong_play_rainbow.py'}}
+2025-08-06 17:37:29,280 INFO    MainThread:53363 [wandb_init.py:init():871] starting backend
+2025-08-06 17:37:30,124 INFO    MainThread:53363 [wandb_init.py:init():874] sending inform_init request
+2025-08-06 17:37:30,158 INFO    MainThread:53363 [wandb_init.py:init():882] backend started and connected
+2025-08-06 17:37:30,160 INFO    MainThread:53363 [wandb_init.py:init():953] updated telemetry
+2025-08-06 17:37:30,198 INFO    MainThread:53363 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-08-06 17:37:36,522 INFO    MainThread:53363 [wandb_init.py:init():1029] starting run threads in backend
+2025-08-06 17:37:36,933 INFO    MainThread:53363 [wandb_run.py:_console_start():2458] atexit reg
+2025-08-06 17:37:36,933 INFO    MainThread:53363 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-08-06 17:37:36,933 INFO    MainThread:53363 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-08-06 17:37:36,933 INFO    MainThread:53363 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-08-06 17:37:36,939 INFO    MainThread:53363 [wandb_init.py:init():1075] run started, returning control to user process
+2025-08-06 17:37:36,945 INFO    MainThread:53363 [wandb_run.py:_tensorboard_callback():1572] tensorboard callback: runs/ALE/Pong-v5__notebook_run__42__1754491042, True
+2025-08-06 17:37:41,614 INFO    MsgRouterThr:53363 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

@@ -1,0 +1,40 @@
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_setup.py:_flush():80] Configure stats pid to 25135
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_setup.py:_flush():80] Loading settings from /Users/dewei.zhang/.config/wandb/settings
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_setup.py:_flush():80] Loading settings from /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/settings
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/run-20250724_105511-7jr0adnu/logs/debug.log
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/dewei.zhang/Documents/GitHub/code/0SRSI/wandb/run-20250724_105511-7jr0adnu/logs/debug-internal.log
+2025-07-24 10:55:11,496 INFO    MainThread:25135 [wandb_init.py:monkeypatch_ipython():622] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x12b65ddf0>
+2025-07-24 10:55:11,498 INFO    MainThread:25135 [wandb_init.py:init():830] calling init triggers
+2025-07-24 10:55:11,498 INFO    MainThread:25135 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'exp_name': 'notebook_run', 'seed': 1, 'torch_deterministic': True, 'cuda': True, 'track': True, 'wandb_project_name': 'cleanRL', 'wandb_entity': None, 'capture_video': False, 'save_model': False, 'upload_model': False, 'hf_entity': '', 'env_id': 'ALE/Pong-v5', 'total_timesteps': 10000000, 'learning_rate': 0.0001, 'num_envs': 1, 'buffer_size': 1000000, 'gamma': 0.99, 'tau': 1.0, 'target_network_frequency': 1000, 'batch_size': 32, 'start_e': 1, 'end_e': 0.01, 'exploration_fraction': 0.1, 'learning_starts': 80000, 'train_frequency': 4, 'save_frequency': 1000, '_wandb': {'code_path': 'code/0SRSI/test_atari_clearl.ipynb'}}
+2025-07-24 10:55:11,498 INFO    MainThread:25135 [wandb_init.py:init():871] starting backend
+2025-07-24 10:55:12,535 INFO    MainThread:25135 [wandb_init.py:init():874] sending inform_init request
+2025-07-24 10:55:12,554 INFO    MainThread:25135 [wandb_init.py:init():882] backend started and connected
+2025-07-24 10:55:12,560 INFO    MainThread:25135 [wandb_run.py:_label_probe_notebook():1304] probe notebook
+2025-07-24 10:55:12,561 INFO    MainThread:25135 [wandb_init.py:init():953] updated telemetry
+2025-07-24 10:55:12,583 INFO    MainThread:25135 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-07-24 10:55:14,016 WARNING MainThread:25135 [wandb_init.py:init():1610] [no run ID] interrupted
+Traceback (most recent call last):
+  File "/Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1606, in init
+    return wi.init(run_settings, run_config, run_printer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 996, in init
+    result = wait_with_progress(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 24, in wait_with_progress
+    return wait_all_with_progress(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 87, in wait_all_with_progress
+    return asyncio_compat.run(progress_loop_with_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 30, in run
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 334, in wait
+    waiter.acquire()
+KeyboardInterrupt
+2025-07-24 10:55:36,223 INFO    MsgRouterThr:25135 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 0 handles.

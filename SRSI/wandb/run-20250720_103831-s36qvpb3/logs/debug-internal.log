@@ -1,0 +1,26 @@
+{"time":"2025-07-20T10:38:40.27393+03:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-20T10:38:41.595065+03:00","level":"INFO","msg":"stream: created new stream","id":"s36qvpb3"}
+{"time":"2025-07-20T10:38:41.595153+03:00","level":"INFO","msg":"stream: started","id":"s36qvpb3"}
+{"time":"2025-07-20T10:38:41.59519+03:00","level":"INFO","msg":"handler: started","stream_id":"s36qvpb3"}
+{"time":"2025-07-20T10:38:41.595308+03:00","level":"INFO","msg":"sender: started","stream_id":"s36qvpb3"}
+{"time":"2025-07-20T10:38:41.595377+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"s36qvpb3"}
+{"time":"2025-07-20T10:38:42.162255+03:00","level":"ERROR","msg":"git repo not found","error":"repository does not exist"}
+{"time":"2025-07-20T10:38:52.31638+03:00","level":"WARN","msg":"tensorboard: no root directory","error":"timed out after 10s"}
+{"time":"2025-07-20T10:38:52.31674+03:00","level":"INFO","msg":"tensorboard: tracking new log directory","rootDir":{},"logDir":"LocalOrCloudPath(LocalPath=\"/Users/dewei.zhang/Documents/GitHub/code/0SRSI/runs/ALE/Pong-v5__notebook_run__1__1752997111\")","namespace":""}
+{"time":"2025-07-20T10:38:52.318555+03:00","level":"INFO","msg":"tensorboard: saving file","fileLocation":"/Users/dewei.zhang/Documents/GitHub/code/0SRSI/runs/ALE/Pong-v5__notebook_run__1__1752997111/events.out.tfevents.1752997122.KL-25861.46277.15","runPath":"runs/ALE/Pong-v5__notebook_run__1__1752997111/events.out.tfevents.1752997122.KL-25861.46277.15"}
+{"time":"2025-07-20T12:01:28.35642+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T12:01:30.752303+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T12:01:35.950068+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T12:01:44.25319+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T12:16:59.326777+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": unexpected EOF"}
+{"time":"2025-07-20T13:14:48.471577+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-20T13:15:20.997865+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-20T13:15:55.131055+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-20T13:27:31.548135+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T13:27:33.993995+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T13:27:38.920253+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T13:30:17.885315+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T13:30:37.660062+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/david-zhangblade-kaust/cleanRL/s36qvpb3/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-20T13:31:30.6678+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-20T13:31:42.315136+03:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": unexpected EOF"}
+{"time":"2025-07-20T13:32:58.644788+03:00","level":"INFO","msg":"stream: closing","id":"s36qvpb3"}

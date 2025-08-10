@@ -1,0 +1,14 @@
+{"time":"2025-07-20T10:38:29.072695+03:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-20T10:38:30.398819+03:00","level":"INFO","msg":"stream: created new stream","id":"tzih7lir"}
+{"time":"2025-07-20T10:38:30.398866+03:00","level":"INFO","msg":"stream: started","id":"tzih7lir"}
+{"time":"2025-07-20T10:38:30.398869+03:00","level":"INFO","msg":"handler: started","stream_id":"tzih7lir"}
+{"time":"2025-07-20T10:38:30.398872+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"tzih7lir"}
+{"time":"2025-07-20T10:38:30.398882+03:00","level":"INFO","msg":"sender: started","stream_id":"tzih7lir"}
+{"time":"2025-07-20T10:38:30.996779+03:00","level":"ERROR","msg":"git repo not found","error":"repository does not exist"}
+{"time":"2025-07-20T10:38:33.48218+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact source-cleanRL-test_atari_clearl.ipynb","runtime_seconds":1.046288625},{"desc":"uploading summary","runtime_seconds":1.008651125},{"desc":"uploading wandb-metadata.json","runtime_seconds":0.452635958,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.291405083},{"desc":"uploading wandb-summary.json","runtime_seconds":0.291374459,"progress":"37B/37B"}],"total_operations":5}}
+{"time":"2025-07-20T10:38:39.014472+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-20T10:38:40.267743+03:00","level":"INFO","msg":"stream: closing","id":"tzih7lir"}
+{"time":"2025-07-20T10:38:40.267797+03:00","level":"INFO","msg":"handler: closed","stream_id":"tzih7lir"}
+{"time":"2025-07-20T10:38:40.267849+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"tzih7lir"}
+{"time":"2025-07-20T10:38:40.267902+03:00","level":"INFO","msg":"sender: closed","stream_id":"tzih7lir"}
+{"time":"2025-07-20T10:38:40.268065+03:00","level":"INFO","msg":"stream: closed","id":"tzih7lir"}

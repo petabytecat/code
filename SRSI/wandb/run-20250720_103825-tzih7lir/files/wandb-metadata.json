@@ -1,0 +1,37 @@
+{
+  "os":  "macOS-15.5-arm64-arm-64bit",
+  "python":  "CPython 3.12.0",
+  "startedAt":  "2025-07-20T07:38:25.606774Z",
+  "program":  "test_atari_clearl.ipynb",
+  "codePath":  "0SRSI/test_atari_clearl.ipynb",
+  "codePathLocal":  "test_atari_clearl.ipynb",
+  "git":  {
+    "remote":  "https://github.com/petabytecat/code.git",
+    "commit":  "e22805c86a1d0ffc40971f319e4cbe2b003ea4a6"
+  },
+  "email":  "david.zhangblade@gmail.com",
+  "root":  "/Users/dewei.zhang/Documents/GitHub/code/0SRSI",
+  "host":  "KL-25861",
+  "executable":  "/Users/dewei.zhang/Documents/GitHub/code/0SRSI/venv/bin/python3.12",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "245107195904",
+      "used":  "221420998656"
+    }
+  },
+  "memory":  {
+    "total":  "8589934592"
+  },
+  "apple":  {
+    "name":  "Apple M2",
+    "ecpuCores":  4,
+    "pcpuCores":  4,
+    "gpuCores":  10,
+    "memoryGb":  8,
+    "swapTotalBytes":  "5368709120",
+    "ramTotalBytes":  "8589934592"
+  },
+  "writerId":  "mfe4q7t288inej7b72wcdjlnipbg1rfc"
+}
