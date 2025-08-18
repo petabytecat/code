@@ -20,7 +20,7 @@ pyautogui.PAUSE = 0.1
 # 1: x coordinate of 2 star pokemon
 # 2: y coordinate 
 POKEMON_COORDS = {
-    "slowpoke": (711, 699, 471),
+    "slowpoke": (711, 699, 509), # 471
     "alomomola": (711, 699, 511),
     "ghastly": (711, 699, 473),
     "hatenna": (711, 699, 482),
@@ -42,7 +42,11 @@ POKEMON_COORDS = {
     "swinub": (711, 699, 446),
     "starly": (711, 699, 459),
     "varoom": (711, 699, 470),
-    "cubone": (711, 699, 461)
+    "cubone": (711, 699, 461),
+    "larvitar": (711, 699, 477),
+    "rotom": (711, 699, 519)
+
+
 }
 
 # If breeding without T3, the code will need to dump the pokemon into PC
@@ -90,7 +94,7 @@ elif args.special_coords:
     special_coords = args.special_coords
 else:
     print("Using default coordinates for Slowpoke")
-    special_coords = (711, 464) 
+    special_coords = (711, 699, 464) 
 print(f"Using coordinates: {special_coords}")
 print(team, state)
 time.sleep(3) 
@@ -99,15 +103,29 @@ def sleep(x):
     time.sleep(x)
     reset_timer += x
 
+def safe_pixel(x, y, retries=3, delay=0.05):
+    for attempt in range(retries):
+        try:
+            result = getpixelcolor.pixel(x, y)
+            if result and all(isinstance(i, int) for i in result):
+                return result
+        except Exception:
+            pass
+        time.sleep(delay)
+    # If still failing, return fallback value
+    print(f"[WARN] Pixel read failed at ({x}, {y}), returning fallback.")
+    return (0, 0, 0, 255)
+
+
 # checks if an egg is hatching
 def check_hatch():
     global reset_timer, team
-    r, g, b, y = getpixelcolor.pixel(244, 90) # detects if there is a white textbox
+    r, g, b, y = safe_pixel(244, 90) # detects if there is a white textbox
     if r > 250 and g > 250 and b > 250: 
         pyautogui.leftClick()
         sleep(0.5)
 
-        r, g, b, y = getpixelcolor.pixel(50, 677) # detects if background is orange (double check if its hatching)
+        r, g, b, y = safe_pixel(50, 677) # detects if background is orange (double check if its hatching)
 
         if r > 200 and 160 < g < 200 and 50 < b < 90:  
 
@@ -174,7 +192,7 @@ def rejoin(website):
                 times = 0
                 sleep(0.5)
 
-                r, g, b, y = getpixelcolor.pixel(1255, 360) # checks if the button is green in the correct spot
+                r, g, b, y = safe_pixel(1255, 360) # checks if the button is green in the correct spot
                 print(r, g, b)
                 if 0 <= r < 20 and 175 < g < 190 and 85 < b < 105:
                     break
@@ -211,7 +229,7 @@ def rejoin(website):
 
     # full screen
     time.sleep(1)
-    r, g, b, y = getpixelcolor.pixel(54, 39) # checks if it is full screen (to do this, what i did was I checked if the apple symbol on top left is showing and whether it is white or black)
+    r, g, b, y = safe_pixel(54, 39) # checks if it is full screen (to do this, what i did was I checked if the apple symbol on top left is showing and whether it is white or black)
     if (25 < r < 45 and 190 < g < 205 and 60 < b < 80) or (0 < r < 10 and 95 < g < 130 and 0 < b < 20) or (195 < r < 210 and 195 < g < 210 and 195 < b < 210):
         print("not full screen")
         pyautogui.moveTo(54, 39) #clicks on full screen button (before every game i make it so that roblox that isnt full screened)
@@ -265,7 +283,7 @@ while state["box"] <= 50:
         pyautogui.leftClick()
         pyautogui.keyUp('shift')
         
-        r, g, b, y = getpixelcolor.pixel(1334, 300) # checks if NPC has egg "yes" button. checks if it is white
+        r, g, b, y = safe_pixel(1334, 300) # checks if NPC has egg "yes" button. checks if it is white
         if (r == 255 and g == 255 and b == 255) or (r == 105 and g == 105 and b == 105):
             
             # finishes dialogue to recieve egg
@@ -295,17 +313,17 @@ while state["box"] <= 50:
                 pyautogui.leftClick()
                 sleep(0.25)
 
-                pyautogui.moveTo(548, 191) # clicks on the search button icon in egg tracker 
+                pyautogui.moveTo(548, 236) # CHANGE TO "191" clicks on the search button icon in egg tracker 
                 pyautogui.leftClick()
                 sleep(0.25)
 
-                pyautogui.moveTo(993, 250) # clicks on the first page of the egg tracker
+                pyautogui.moveTo(993, 290) # CHANGE TO "250" clicks on the first page of the egg tracker
                 pyautogui.leftClick()
                 sleep(2.5)
                 
                 # checks if HA
-                r1, g1, b1, y1 = getpixelcolor.pixel(special_coords[0], special_coords[2]) # 1 STAR coords
-                r2, g2, b2, y2 = getpixelcolor.pixel(special_coords[1], special_coords[2]) # 2 STAR coords
+                r1, g1, b1, y1 = safe_pixel(special_coords[0], special_coords[2]) # 1 STAR coords
+                r2, g2, b2, y2 = safe_pixel(special_coords[1], special_coords[2]) # 2 STAR coords
                 if ((25 < r1 < 40 and 190 < g1 < 205 and 80 < b1 < 105) or
                     (25 < r2 < 40 and 190 < g2 < 205 and 80 < b2 < 105)):
                     print("Hidden Ability Detected...", r1, g1, b1, r2, g2, b2)
@@ -323,7 +341,7 @@ while state["box"] <= 50:
                     # checks if joined game
                     for i in range(20):
                         sleep(1)
-                        r, g, b, y = getpixelcolor.pixel(340, 693) # checks if "skip intro" button is grey
+                        r, g, b, y = safe_pixel(340, 693) # checks if "skip intro" button is grey
                         if  r == 38 and g == 38 and b == 38:
                             pyautogui.moveTo(369, 693) # clicks skip intro
                             sleep(0.5)
@@ -338,7 +356,7 @@ while state["box"] <= 50:
                             pyautogui.leftClick()
                             while True:
                                 pyautogui.moveTo(605, 460) # clicks on NPC
-                                r, g, b, y = getpixelcolor.pixel(1354, 105) # checks if the speech bubble/npc text is white
+                                r, g, b, y = safe_pixel(1354, 105) # checks if the speech bubble/npc text is white
                                 if not (r == 255 and g == 255 and b == 255) and not (r == 105 and g == 105 and b == 105):
                                     pyautogui.leftClick()
                                 else:
@@ -349,7 +367,7 @@ while state["box"] <= 50:
 
                             while True:
                                 pyautogui.moveTo(1354, 300) # keep on clicking yes
-                                r, g, b, y = getpixelcolor.pixel(1354, 105) # checks if speech bubble is still there
+                                r, g, b, y = safe_pixel(1354, 105) # checks if speech bubble is still there
                                 if (r == 255 and g == 255 and b == 255) or (r == 105 and g == 105 and b == 105):
                                     pyautogui.leftClick()
                                 else:
@@ -447,7 +465,7 @@ while state["box"] <= 50:
             breakout = False
             for i in range(20):
                 sleep(1)
-                r, g, b, y = getpixelcolor.pixel(340, 693) # checks if there is "skip intro" button (if the skip intro button is grey)
+                r, g, b, y = safe_pixel(340, 693) # checks if there is "skip intro" button (if the skip intro button is grey)
                 if 35 < r < 45 and 35 < g < 45 and 35 < b < 45:
                     sleep(7)
                     pyautogui.moveTo(369, 693) # clicks on "skip kintro" button
@@ -491,7 +509,7 @@ while state["box"] <= 50:
         sleep(0.5)
         pyautogui.leftClick()
         sleep(4)
-        r, g, b, y = getpixelcolor.pixel(439, 251) # checks PC color (checks if the red part is red)
+        r, g, b, y = safe_pixel(439, 251) # checks PC color (checks if the red part is red)
 
         if r != 217 or g != 87 or b != 84: # if it isnt try to rejoin
                     
