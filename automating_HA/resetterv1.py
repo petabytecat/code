@@ -23,7 +23,7 @@ POKEMON_COORDS = {
     "slowpoke": (711, 699, 509), # 471
     "alomomola": (711, 699, 511),
     "ghastly": (711, 699, 473),
-    "hatenna": (711, 699, 482),
+    "hatenna": (711, 699, 522),
     "litten": (711, 699, 469),
     "dratini": (711, 699, 474),
     "chespin": (711, 699, 477),
@@ -32,29 +32,28 @@ POKEMON_COORDS = {
     "fuecoco": (711, 699, 469),
     "quaxly": (711, 699, 471),
     "nymble": (711, 699, 467),
-    "snivy": (711, 699, 464),
+    "snivy": (711, 699, 468),
     "rookidee": (711, 699, 456),
     "larvesta": (711, 699, 480),
     "cleffa": (711, 699, 456),
     "wooper": (711, 699, 459),
-    "vulpix": (711, 699, 436),
+    "vulpix": (711, 699, 476), # -40
     "foongus": (711, 699, 460),
     "swinub": (711, 699, 446),
     "starly": (711, 699, 459),
     "varoom": (711, 699, 470),
     "cubone": (711, 699, 461),
     "larvitar": (711, 699, 477),
-    "rotom": (711, 699, 519)
-
-
+    "rotom": (711, 699, 519),
+    "cufant": (711, 699, 478)
 }
 
 # If breeding without T3, the code will need to dump the pokemon into PC
 # Change this to your first empty box
 state = {
-    "box": 9,
+    "box": 10,
     "row": 1,
-    "column": 1
+    "column": 3
 }
 
 
@@ -144,9 +143,9 @@ def reset():
     before_reset = max(60 - reset_timer, 0) 
     sleep(before_reset)
     reset_timer = 0
-    pyautogui.moveTo(29, 37) # clicks on roblox symbol on top left 
+    # pyautogui.moveTo(29, 37) # clicks on roblox symbol on top left 
+    pyautogui.press('esc')
     sleep(0.5)
-    pyautogui.leftClick()
     pyautogui.moveTo(866, 629) # clicks "Respawn"
     sleep(0.5)
     pyautogui.leftClick()
@@ -236,7 +235,6 @@ def rejoin(website):
         sleep(1)
         pyautogui.leftClick()
 
-
 pyautogui.keyDown('shift')
 while state["box"] <= 50:
     pyautogui.keyUp('shift')
@@ -312,12 +310,14 @@ while state["box"] <= 50:
                 pyautogui.moveTo(145, 192) # clicks on egg tracker tab 
                 pyautogui.leftClick()
                 sleep(0.25)
+                pyautogui.leftClick()
+                sleep(0.1)
 
-                pyautogui.moveTo(548, 236) # CHANGE TO "191" clicks on the search button icon in egg tracker 
+                pyautogui.moveTo(548, 191) 
                 pyautogui.leftClick()
                 sleep(0.25)
 
-                pyautogui.moveTo(993, 290) # CHANGE TO "250" clicks on the first page of the egg tracker
+                pyautogui.moveTo(993, 250) 
                 pyautogui.leftClick()
                 sleep(2.5)
                 
@@ -352,10 +352,10 @@ while state["box"] <= 50:
                             pyautogui.leftClick()
 
                             sleep(1)
-                            pyautogui.moveTo(605, 460) # clicks on NPC
+                            pyautogui.moveTo(644, 453) # clicks on NPC
                             pyautogui.leftClick()
                             while True:
-                                pyautogui.moveTo(605, 460) # clicks on NPC
+                                pyautogui.moveTo(644, 453) # clicks on NPC
                                 r, g, b, y = safe_pixel(1354, 105) # checks if the speech bubble/npc text is white
                                 if not (r == 255 and g == 255 and b == 255) and not (r == 105 and g == 105 and b == 105):
                                     pyautogui.leftClick()
@@ -375,7 +375,8 @@ while state["box"] <= 50:
                             break
                     else: # it quit unexpectedly
                         times += 1
-
+                        sleep(0.5)
+                        
                         # clicks on ignore 
                         pyautogui.moveTo(858, 348) # "roblox quit unexpectedly" click on "ignore"
                         pyautogui.leftClick()
